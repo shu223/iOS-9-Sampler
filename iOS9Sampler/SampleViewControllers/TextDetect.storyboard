@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nBN-ic-paI">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+    </dependencies>
+    <scenes>
+        <!--Text Detect View Controller-->
+        <scene sceneID="Hdt-bR-O7O">
+            <objects>
+                <viewController id="nBN-ic-paI" customClass="TextDetectViewController" customModule="iOS9Sampler" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LrI-mD-TVY"/>
+                        <viewControllerLayoutGuide type="bottom" id="YVR-pG-3Rg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dFH-KY-yh8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ea1-Jg-FuG">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="sticker1" translatesAutoresizingMaskIntoConstraints="NO" id="y94-P2-fBZ">
+                                        <rect key="frame" x="8" y="16" width="450" height="281"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="sticker2" translatesAutoresizingMaskIntoConstraints="NO" id="BQE-yY-4T3">
+                                        <rect key="frame" x="8" y="305" width="320" height="320"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="y94-P2-fBZ" firstAttribute="top" secondItem="Ea1-Jg-FuG" secondAttribute="top" constant="16" id="0P6-nU-irQ"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BQE-yY-4T3" secondAttribute="trailing" id="Bnd-lp-DDD"/>
+                                    <constraint firstItem="BQE-yY-4T3" firstAttribute="top" secondItem="y94-P2-fBZ" secondAttribute="bottom" constant="8" id="Mjr-ro-97F"/>
+                                    <constraint firstItem="BQE-yY-4T3" firstAttribute="leading" secondItem="Ea1-Jg-FuG" secondAttribute="leading" constant="8" id="Myh-r5-MIT"/>
+                                    <constraint firstItem="y94-P2-fBZ" firstAttribute="leading" secondItem="Ea1-Jg-FuG" secondAttribute="leading" constant="8" id="UG8-pc-GgW"/>
+                                    <constraint firstAttribute="bottom" secondItem="BQE-yY-4T3" secondAttribute="bottom" constant="16" id="Zd6-qA-IWJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="y94-P2-fBZ" secondAttribute="trailing" constant="8" id="el3-xd-0zv"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ea1-Jg-FuG" firstAttribute="leading" secondItem="dFH-KY-yh8" secondAttribute="leading" id="DoY-Qa-Omg"/>
+                            <constraint firstItem="YVR-pG-3Rg" firstAttribute="top" secondItem="Ea1-Jg-FuG" secondAttribute="bottom" id="FI7-pv-oLz"/>
+                            <constraint firstAttribute="trailing" secondItem="Ea1-Jg-FuG" secondAttribute="trailing" id="H7T-wK-az4"/>
+                            <constraint firstItem="Ea1-Jg-FuG" firstAttribute="top" secondItem="dFH-KY-yh8" secondAttribute="top" id="o4B-Le-0KA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView1" destination="y94-P2-fBZ" id="WRY-15-IRA"/>
+                        <outlet property="imageView2" destination="BQE-yY-4T3" id="wqC-q6-2BB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ng6-ee-5tY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-40" y="-810"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sticker1" width="450" height="281"/>
+        <image name="sticker2" width="320" height="320"/>
+    </resources>
+</document>

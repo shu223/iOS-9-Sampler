@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="me9-uS-ygm">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Still Image Filters View Controller-->
+        <scene sceneID="Izy-uI-vNv">
+            <objects>
+                <viewController id="me9-uS-ygm" customClass="StillImageFiltersViewController" customModule="iOS9Sampler" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="chD-V6-RfY"/>
+                        <viewControllerLayoutGuide type="bottom" id="QSR-w0-9hk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eXE-bf-tpn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" image="elcaptan" translatesAutoresizingMaskIntoConstraints="NO" id="GtJ-5L-ub0">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZ8-bI-rzV">
+                                <rect key="frame" x="0.0" y="384" width="600" height="216"/>
+                                <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="me9-uS-ygm" id="Ftv-R9-xHL"/>
+                                    <outlet property="delegate" destination="me9-uS-ygm" id="5SU-Iw-Oxs"/>
+                                </connections>
+                            </pickerView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="iuc-Nj-0ro">
+                                <rect key="frame" x="281" y="281" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iuc-Nj-0ro" firstAttribute="centerX" secondItem="eXE-bf-tpn" secondAttribute="centerX" id="GcW-1s-hF5"/>
+                            <constraint firstItem="GtJ-5L-ub0" firstAttribute="top" secondItem="eXE-bf-tpn" secondAttribute="topMargin" id="Qd9-hj-Tgf"/>
+                            <constraint firstItem="QSR-w0-9hk" firstAttribute="top" secondItem="AZ8-bI-rzV" secondAttribute="bottom" id="VW1-Aa-MD2"/>
+                            <constraint firstAttribute="bottom" secondItem="GtJ-5L-ub0" secondAttribute="bottom" id="Z5j-c7-Qe1"/>
+                            <constraint firstAttribute="trailing" secondItem="GtJ-5L-ub0" secondAttribute="trailing" id="c7t-lC-YcI"/>
+                            <constraint firstItem="iuc-Nj-0ro" firstAttribute="centerY" secondItem="eXE-bf-tpn" secondAttribute="centerY" id="i6A-Jh-TDL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AZ8-bI-rzV" secondAttribute="trailing" constant="-20" id="kk0-9n-fQ3"/>
+                            <constraint firstItem="GtJ-5L-ub0" firstAttribute="leading" secondItem="eXE-bf-tpn" secondAttribute="leading" id="kob-uR-Y3R"/>
+                            <constraint firstItem="AZ8-bI-rzV" firstAttribute="leading" secondItem="eXE-bf-tpn" secondAttribute="leadingMargin" constant="-20" id="xJ1-iQ-Gcd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="GtJ-5L-ub0" id="M4x-aA-9TY"/>
+                        <outlet property="indicator" destination="iuc-Nj-0ro" id="gh3-5O-hep"/>
+                        <outlet property="picker" destination="AZ8-bI-rzV" id="rY8-yt-C82"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vP1-cr-gTJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="42" y="-365"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="elcaptan" width="414" height="736"/>
+    </resources>
+</document>
