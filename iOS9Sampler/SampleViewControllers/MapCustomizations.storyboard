@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k4R-fW-iG0">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+    </dependencies>
+    <scenes>
+        <!--Map Customizations View Controller-->
+        <scene sceneID="SkG-GL-uuX">
+            <objects>
+                <viewController id="k4R-fW-iG0" customClass="MapCustomizationsViewController" customModule="iOS9Sampler" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FqR-i3-QbC"/>
+                        <viewControllerLayoutGuide type="bottom" id="A18-1U-eqa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rEF-uE-dJa">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MjN-rM-Ma8">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B9w-iE-Bei">
+                                <rect key="frame" x="0.0" y="482" width="600" height="54"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVu-6K-cPh">
+                                        <rect key="frame" x="8" y="8" width="189" height="38"/>
+                                        <color key="backgroundColor" red="0.20000000298023224" green="0.60000002384185791" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                        <state key="normal" title="Show Traffic">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="trafficBtnTapped:" destination="k4R-fW-iG0" eventType="touchUpInside" id="sCk-GH-7iW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MZ-7D-bP1">
+                                        <rect key="frame" x="205" y="8" width="189" height="38"/>
+                                        <color key="backgroundColor" red="0.20000000300000001" green="0.60000002379999995" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                        <state key="normal" title="Show Scale">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="scaleBtnTapped:" destination="k4R-fW-iG0" eventType="touchUpInside" id="klw-IL-ylZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTH-Ng-EG7">
+                                        <rect key="frame" x="402" y="8" width="189.5" height="38"/>
+                                        <color key="backgroundColor" red="0.20000000300000001" green="0.60000002379999995" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                        <state key="normal" title="Show Compass">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="compassBtnTapped:" destination="k4R-fW-iG0" eventType="touchUpInside" id="SS3-9Y-3ut"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="0MZ-7D-bP1" firstAttribute="top" secondItem="B9w-iE-Bei" secondAttribute="top" constant="8" id="1sA-nl-pRm"/>
+                                    <constraint firstAttribute="trailing" secondItem="UTH-Ng-EG7" secondAttribute="trailing" constant="8" id="3We-t8-dss"/>
+                                    <constraint firstItem="UTH-Ng-EG7" firstAttribute="height" secondItem="0MZ-7D-bP1" secondAttribute="height" id="80F-cb-aPe"/>
+                                    <constraint firstItem="0MZ-7D-bP1" firstAttribute="width" secondItem="dVu-6K-cPh" secondAttribute="width" id="9OU-5d-Jys"/>
+                                    <constraint firstItem="dVu-6K-cPh" firstAttribute="top" secondItem="B9w-iE-Bei" secondAttribute="top" constant="8" id="AUH-gV-5fd"/>
+                                    <constraint firstItem="UTH-Ng-EG7" firstAttribute="centerY" secondItem="0MZ-7D-bP1" secondAttribute="centerY" id="CSt-GE-I48"/>
+                                    <constraint firstItem="UTH-Ng-EG7" firstAttribute="width" secondItem="0MZ-7D-bP1" secondAttribute="width" id="Gyc-tg-RJf"/>
+                                    <constraint firstAttribute="height" constant="62" id="Idl-RK-xcM"/>
+                                    <constraint firstItem="0MZ-7D-bP1" firstAttribute="height" secondItem="dVu-6K-cPh" secondAttribute="height" id="NlA-K1-9i3"/>
+                                    <constraint firstItem="dVu-6K-cPh" firstAttribute="leading" secondItem="B9w-iE-Bei" secondAttribute="leading" constant="8" id="Pao-da-9Qo"/>
+                                    <constraint firstItem="0MZ-7D-bP1" firstAttribute="leading" secondItem="dVu-6K-cPh" secondAttribute="trailing" constant="8" id="cQS-gC-cKG"/>
+                                    <constraint firstItem="UTH-Ng-EG7" firstAttribute="leading" secondItem="0MZ-7D-bP1" secondAttribute="trailing" constant="8" id="kSz-UU-JCI"/>
+                                    <constraint firstAttribute="bottom" secondItem="dVu-6K-cPh" secondAttribute="bottom" constant="8" id="tfX-5o-kiw"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Idl-RK-xcM"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bHK-Tz-Zen">
+                                <rect key="frame" x="8" y="446" width="584" height="29"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="SatelliteFlyover"/>
+                                    <segment title="HybridFlyover"/>
+                                </segments>
+                                <color key="tintColor" red="0.20000000300000001" green="0.60000002379999995" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="k4R-fW-iG0" eventType="valueChanged" id="BuJ-rC-OqV"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MjN-rM-Ma8" firstAttribute="top" secondItem="rEF-uE-dJa" secondAttribute="top" id="2eg-J4-FOL"/>
+                            <constraint firstAttribute="trailing" secondItem="bHK-Tz-Zen" secondAttribute="trailing" constant="8" id="Bkg-MF-uas"/>
+                            <constraint firstItem="MjN-rM-Ma8" firstAttribute="leading" secondItem="rEF-uE-dJa" secondAttribute="leading" id="J7x-pb-KjP"/>
+                            <constraint firstItem="B9w-iE-Bei" firstAttribute="leading" secondItem="rEF-uE-dJa" secondAttribute="leading" id="Nca-sD-HhF"/>
+                            <constraint firstItem="bHK-Tz-Zen" firstAttribute="leading" secondItem="rEF-uE-dJa" secondAttribute="leading" constant="8" id="ffL-FY-d7v"/>
+                            <constraint firstAttribute="trailing" secondItem="MjN-rM-Ma8" secondAttribute="trailing" id="i3s-bY-6am"/>
+                            <constraint firstItem="B9w-iE-Bei" firstAttribute="top" secondItem="bHK-Tz-Zen" secondAttribute="bottom" constant="8" id="jcB-M4-I4g"/>
+                            <constraint firstAttribute="trailing" secondItem="B9w-iE-Bei" secondAttribute="trailing" id="o9y-TL-Zzm"/>
+                            <constraint firstItem="A18-1U-eqa" firstAttribute="top" secondItem="B9w-iE-Bei" secondAttribute="bottom" id="qMS-Px-DMg"/>
+                            <constraint firstItem="A18-1U-eqa" firstAttribute="top" secondItem="MjN-rM-Ma8" secondAttribute="bottom" id="rte-1u-wJJ"/>
+                        </constraints>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="compassBtn" destination="UTH-Ng-EG7" id="QSO-Nl-jrp"/>
+                        <outlet property="mapView" destination="MjN-rM-Ma8" id="AdS-0P-cf5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J2q-3z-BEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32" y="-298"/>
+        </scene>
+    </scenes>
+</document>

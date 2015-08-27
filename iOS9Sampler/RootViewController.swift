@@ -35,6 +35,11 @@ class RootViewController: UITableViewController {
                 kItemKeyClassPrefix: "StillImageFilters",
             ],
             [
+                kItemKeyTitle: "Map Customizations",
+                kItemKeyDetail: "Flyover can be selected with new map types, and Traffic, Scale and Compass can be shown.",
+                kItemKeyClassPrefix: "MapCustomizations"
+            ],
+            [
                 kItemKeyTitle: "Audio Unit Component Manager",
                 kItemKeyDetail: "Retrieve available audio units using AudioUnitComponentManager and apply them to a sound. If there are some Audio Unit Extensions, they will be also shown.",
                 kItemKeyClassPrefix: "AudioUnitComponentManager",

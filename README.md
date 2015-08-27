@@ -28,6 +28,13 @@ New filters of CIFilter which can be used for Still Images.
 **NOTE:** 29 filters are supported in this example, however **"CIEdgeWork" and "CISpotLight" don't work correctly** with current code. I would much appreciated your pull request!
 
 
+###Map Customizations
+
+**Flyover** can be selected with new map types, and **Traffic**, Scale and Compass can be shown.
+
+<img src="ResourcesForREADME/map2.jpg" width="405">
+
+
 ###Audio Unit Component Manager
 
 Retrieve audio unit components using AudioUnitComponentManager and apply them to a sound using some new methods. If there are some Audio Unit Extensions, they will be also shown in the components list.

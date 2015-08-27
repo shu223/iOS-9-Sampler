@@ -17,6 +17,9 @@
 		8A3A32151B35DAD10016C4CE /* AudioUnitComponentManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3A32141B35DAD10016C4CE /* AudioUnitComponentManagerViewController.swift */; };
 		8A3A32171B35DAE10016C4CE /* AudioUnitComponentManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3A32161B35DAE10016C4CE /* AudioUnitComponentManager.storyboard */; };
 		8A3A321E1B35F0740016C4CE /* drumLoop.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8A3A321C1B35F0740016C4CE /* drumLoop.caf */; };
+		8A7858891B8DDDBA00F93493 /* MapCustomizationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7858881B8DDDBA00F93493 /* MapCustomizationsViewController.swift */; };
+		8A78588B1B8DDDD100F93493 /* MapCustomizations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A78588A1B8DDDD100F93493 /* MapCustomizations.storyboard */; };
+		8A78588E1B8DDF8100F93493 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A78588D1B8DDF8100F93493 /* MapKit.framework */; };
 		8A7C19CA1B8B63AF00F75F88 /* FilterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7C19C91B8B63AF00F75F88 /* FilterHelper.swift */; };
 		8AD5D7571B295E8C001924F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD5D7561B295E8C001924F0 /* AppDelegate.swift */; };
 		8AD5D7591B295E8C001924F0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD5D7581B295E8C001924F0 /* RootViewController.swift */; };
@@ -56,6 +59,9 @@
 		8A3A32141B35DAD10016C4CE /* AudioUnitComponentManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioUnitComponentManagerViewController.swift; sourceTree = "<group>"; };
 		8A3A32161B35DAE10016C4CE /* AudioUnitComponentManager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AudioUnitComponentManager.storyboard; sourceTree = "<group>"; };
 		8A3A321C1B35F0740016C4CE /* drumLoop.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = drumLoop.caf; sourceTree = "<group>"; };
+		8A7858881B8DDDBA00F93493 /* MapCustomizationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapCustomizationsViewController.swift; sourceTree = "<group>"; };
+		8A78588A1B8DDDD100F93493 /* MapCustomizations.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapCustomizations.storyboard; sourceTree = "<group>"; };
+		8A78588D1B8DDF8100F93493 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8A7C19C91B8B63AF00F75F88 /* FilterHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterHelper.swift; sourceTree = "<group>"; };
 		8AD5D7531B295E8C001924F0 /* iOS9Sampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS9Sampler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD5D7561B295E8C001924F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A78588E1B8DDF8100F93493 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +111,7 @@
 				8A7C19CC1B8B63C700F75F88 /* AudioUnitComponentManager */,
 				8A7C19C71B8B635B00F75F88 /* ImageFilters */,
 				8A7C19C61B8B634C00F75F88 /* FilterAttributes */,
+				8A78588C1B8DDDEF00F93493 /* MapCustomizations */,
 			);
 			path = SampleViewControllers;
 			sourceTree = "<group>";
@@ -122,6 +130,15 @@
 				8A3A321C1B35F0740016C4CE /* drumLoop.caf */,
 			);
 			path = sounds;
+			sourceTree = "<group>";
+		};
+		8A78588C1B8DDDEF00F93493 /* MapCustomizations */ = {
+			isa = PBXGroup;
+			children = (
+				8A7858881B8DDDBA00F93493 /* MapCustomizationsViewController.swift */,
+				8A78588A1B8DDDD100F93493 /* MapCustomizations.storyboard */,
+			);
+			name = MapCustomizations;
 			sourceTree = "<group>";
 		};
 		8A7C19C61B8B634C00F75F88 /* FilterAttributes */ = {
@@ -172,6 +189,7 @@
 		8AD5D74A1B295E8C001924F0 = {
 			isa = PBXGroup;
 			children = (
+				8A78588D1B8DDF8100F93493 /* MapKit.framework */,
 				8A3A32181B35F0740016C4CE /* Resources */,
 				8AD5D7551B295E8C001924F0 /* iOS9Sampler */,
 				8AD5D76A1B295E8C001924F0 /* iOS9SamplerTests */,
@@ -334,6 +352,7 @@
 				8A3A32171B35DAE10016C4CE /* AudioUnitComponentManager.storyboard in Resources */,
 				8AD5D75E1B295E8C001924F0 /* Assets.xcassets in Resources */,
 				8A3A321E1B35F0740016C4CE /* drumLoop.caf in Resources */,
+				8A78588B1B8DDDD100F93493 /* MapCustomizations.storyboard in Resources */,
 				8A3588261B33CCD400D4D32C /* TextDetect.storyboard in Resources */,
 				8AD5D75C1B295E8C001924F0 /* Main.storyboard in Resources */,
 			);
@@ -363,6 +382,7 @@
 				8AD5D7591B295E8C001924F0 /* RootViewController.swift in Sources */,
 				8A3588331B33F3B500D4D32C /* FilterDetailViewController.swift in Sources */,
 				8A3588241B33CCC000D4D32C /* TextDetectViewController.swift in Sources */,
+				8A7858891B8DDDBA00F93493 /* MapCustomizationsViewController.swift in Sources */,
 				8A7C19CA1B8B63AF00F75F88 /* FilterHelper.swift in Sources */,
 				8A35882F1B33EC7A00D4D32C /* FiltersViewController.swift in Sources */,
 				8A3A32151B35DAD10016C4CE /* AudioUnitComponentManagerViewController.swift in Sources */,
