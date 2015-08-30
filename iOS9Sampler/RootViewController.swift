@@ -68,11 +68,11 @@ class RootViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! RootViewCell
         
         let item = items[indexPath.row]
-        cell.textLabel!.text       = item[kItemKeyTitle]
-        cell.detailTextLabel!.text = item[kItemKeyDetail]
+        cell.titleLabel!.text  = item[kItemKeyTitle]
+        cell.detailLabel!.text = item[kItemKeyDetail]
         
         return cell
     }
@@ -80,6 +80,14 @@ class RootViewController: UITableViewController {
     
     // =========================================================================
     // MARK: - UITableViewDelegate
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 

@@ -28,6 +28,7 @@
 		8AD5D7611B295E8C001924F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AD5D75F1B295E8C001924F0 /* LaunchScreen.storyboard */; };
 		8AD5D76C1B295E8C001924F0 /* iOS9SamplerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD5D76B1B295E8C001924F0 /* iOS9SamplerTests.swift */; };
 		8AD5D7771B295E8C001924F0 /* iOS9SamplerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD5D7761B295E8C001924F0 /* iOS9SamplerUITests.swift */; };
+		8ADBD9FA1B8F675E00BB46D8 /* RootViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADBD9F91B8F675E00BB46D8 /* RootViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		8AD5D7721B295E8C001924F0 /* iOS9SamplerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS9SamplerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD5D7761B295E8C001924F0 /* iOS9SamplerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS9SamplerUITests.swift; sourceTree = "<group>"; };
 		8AD5D7781B295E8C001924F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8ADBD9F91B8F675E00BB46D8 /* RootViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 				8AD5D75F1B295E8C001924F0 /* LaunchScreen.storyboard */,
 				8AD5D7561B295E8C001924F0 /* AppDelegate.swift */,
 				8AD5D7581B295E8C001924F0 /* RootViewController.swift */,
+				8ADBD9F91B8F675E00BB46D8 /* RootViewCell.swift */,
 				8A7C19C81B8B63AF00F75F88 /* Common */,
 				8A3588221B33CCC000D4D32C /* SampleViewControllers */,
 			);
@@ -383,6 +386,7 @@
 				8A3588331B33F3B500D4D32C /* FilterDetailViewController.swift in Sources */,
 				8A3588241B33CCC000D4D32C /* TextDetectViewController.swift in Sources */,
 				8A7858891B8DDDBA00F93493 /* MapCustomizationsViewController.swift in Sources */,
+				8ADBD9FA1B8F675E00BB46D8 /* RootViewCell.swift in Sources */,
 				8A7C19CA1B8B63AF00F75F88 /* FilterHelper.swift in Sources */,
 				8A35882F1B33EC7A00D4D32C /* FiltersViewController.swift in Sources */,
 				8A3A32151B35DAD10016C4CE /* AudioUnitComponentManagerViewController.swift in Sources */,
