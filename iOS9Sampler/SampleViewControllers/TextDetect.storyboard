@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nBN-ic-paI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nBN-ic-paI">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Text Detect View Controller-->
@@ -37,12 +38,33 @@
                                     <constraint firstAttribute="trailing" secondItem="y94-P2-fBZ" secondAttribute="trailing" constant="8" id="el3-xd-0zv"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddH-X9-xHh">
+                                <rect key="frame" x="20" y="524" width="560" height="60"/>
+                                <color key="backgroundColor" red="0.20000000300000001" green="0.60000002379999995" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="KXc-6l-Cda"/>
+                                </constraints>
+                                <state key="normal" title="DETECT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="detactBtnTapped:" destination="nBN-ic-paI" eventType="touchUpInside" id="zF9-tL-n67"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ddH-X9-xHh" firstAttribute="leading" secondItem="dFH-KY-yh8" secondAttribute="leadingMargin" id="7LE-ZJ-FqJ"/>
                             <constraint firstItem="Ea1-Jg-FuG" firstAttribute="leading" secondItem="dFH-KY-yh8" secondAttribute="leading" id="DoY-Qa-Omg"/>
                             <constraint firstItem="YVR-pG-3Rg" firstAttribute="top" secondItem="Ea1-Jg-FuG" secondAttribute="bottom" id="FI7-pv-oLz"/>
                             <constraint firstAttribute="trailing" secondItem="Ea1-Jg-FuG" secondAttribute="trailing" id="H7T-wK-az4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ddH-X9-xHh" secondAttribute="trailing" id="bNU-YJ-ehS"/>
+                            <constraint firstItem="YVR-pG-3Rg" firstAttribute="top" secondItem="ddH-X9-xHh" secondAttribute="bottom" constant="16" id="fCY-Zu-96f"/>
                             <constraint firstItem="Ea1-Jg-FuG" firstAttribute="top" secondItem="dFH-KY-yh8" secondAttribute="top" id="o4B-Le-0KA"/>
                         </constraints>
                     </view>
