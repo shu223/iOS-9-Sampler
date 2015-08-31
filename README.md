@@ -41,6 +41,12 @@ Retrieve audio unit components using AudioUnitComponentManager and apply them to
 
 <img src="ResourcesForREADME/aucomponents.jpg" width="200">
 
+###Content Blockers
+
+Example for Content Blocker Extensions.
+
+<img src="ResourcesForREADME/blocker.jpg" width="200">
+
 
 ###Attributes of New Filters
 

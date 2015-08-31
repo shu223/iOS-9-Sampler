@@ -45,6 +45,11 @@ class RootViewController: UITableViewController {
                 kItemKeyClassPrefix: "AudioUnitComponentManager",
             ],
             [
+                kItemKeyTitle: "Content Blockers",
+                kItemKeyDetail: "Example for Content Blocker Extension.",
+                kItemKeyClassPrefix: "ContentBlocker"
+            ],
+            [
                 kItemKeyTitle: "Attributes of New Filters",
                 kItemKeyDetail: "Attributes viewer for new filters of CIFilter.",
                 kItemKeyClassPrefix: "Filters"

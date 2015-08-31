@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fgD-Ng-lPf">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="AvenirNext.ttc">
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Content Blocker View Controller-->
+        <scene sceneID="kZ3-vY-oFz">
+            <objects>
+                <viewController id="fgD-Ng-lPf" customClass="ContentBlockerViewController" customModule="iOS9Sampler" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TMN-Y2-koX"/>
+                        <viewControllerLayoutGuide type="bottom" id="FY0-ui-s4L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xSg-LX-tGL">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68D-4U-vAA">
+                                <rect key="frame" x="20" y="16" width="560" height="232.5"/>
+                                <string key="text">How to try  1. Go to [Settings] &gt; [Safari] &gt; [Content Blockers]  2. Turn following Content Blockers on/off.    - TwitterHeaderBlocker   - TwitterImageBlocker  3. Tap the following button to open Safari.</string>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQ2-D1-9Kr">
+                                <rect key="frame" x="36" y="312.5" width="528" height="60"/>
+                                <color key="backgroundColor" red="0.20000000300000001" green="0.60000002379999995" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="sen-yT-Joy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <state key="normal" title="Show Twitter in Safari">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="safariBtnTapped:" destination="fgD-Ng-lPf" eventType="touchUpInside" id="cyA-yb-5og"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="68D-4U-vAA" firstAttribute="top" secondItem="TMN-Y2-koX" secondAttribute="bottom" constant="16" id="3C9-Ky-Mja"/>
+                            <constraint firstItem="RQ2-D1-9Kr" firstAttribute="top" secondItem="68D-4U-vAA" secondAttribute="bottom" constant="64" id="98T-St-BNs"/>
+                            <constraint firstItem="RQ2-D1-9Kr" firstAttribute="centerX" secondItem="xSg-LX-tGL" secondAttribute="centerX" id="DJb-KU-A1P"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RQ2-D1-9Kr" secondAttribute="trailing" constant="16" id="JQh-I9-PTe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="68D-4U-vAA" secondAttribute="trailing" id="TnH-QX-212"/>
+                            <constraint firstItem="RQ2-D1-9Kr" firstAttribute="leading" secondItem="xSg-LX-tGL" secondAttribute="leadingMargin" constant="16" id="j2x-Qa-xtJ"/>
+                            <constraint firstItem="68D-4U-vAA" firstAttribute="leading" secondItem="xSg-LX-tGL" secondAttribute="leadingMargin" id="rHf-1I-6OJ"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tFy-77-bmv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-364" y="-358"/>
+        </scene>
+    </scenes>
+</document>

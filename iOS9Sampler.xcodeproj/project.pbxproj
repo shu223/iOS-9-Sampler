@@ -19,8 +19,15 @@
 		8A3A321E1B35F0740016C4CE /* drumLoop.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8A3A321C1B35F0740016C4CE /* drumLoop.caf */; };
 		8A7858891B8DDDBA00F93493 /* MapCustomizationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7858881B8DDDBA00F93493 /* MapCustomizationsViewController.swift */; };
 		8A78588B1B8DDDD100F93493 /* MapCustomizations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A78588A1B8DDDD100F93493 /* MapCustomizations.storyboard */; };
-		8A78588E1B8DDF8100F93493 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A78588D1B8DDF8100F93493 /* MapKit.framework */; };
 		8A7C19CA1B8B63AF00F75F88 /* FilterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7C19C91B8B63AF00F75F88 /* FilterHelper.swift */; };
+		8A9078CF1B949A5F000518C3 /* blockerList.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A9078CE1B949A5F000518C3 /* blockerList.json */; };
+		8A9078D11B949A5F000518C3 /* ActionRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9078D01B949A5F000518C3 /* ActionRequestHandler.swift */; };
+		8A9078D51B949A5F000518C3 /* TwitterHeaderBlocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8A9078CC1B949A5F000518C3 /* TwitterHeaderBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8A9078DA1B949B64000518C3 /* ContentBlockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9078D91B949B64000518C3 /* ContentBlockerViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8A9078DC1B949B72000518C3 /* ContentBlocker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A9078DB1B949B72000518C3 /* ContentBlocker.storyboard */; settings = {ASSET_TAGS = (); }; };
+		8A9078E51B949BCC000518C3 /* blockerList.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A9078E41B949BCC000518C3 /* blockerList.json */; };
+		8A9078E71B949BCC000518C3 /* ActionRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9078E61B949BCC000518C3 /* ActionRequestHandler.swift */; };
+		8A9078EB1B949BCC000518C3 /* TwitterImageBlocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8A9078E21B949BCC000518C3 /* TwitterImageBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8AD5D7571B295E8C001924F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD5D7561B295E8C001924F0 /* AppDelegate.swift */; };
 		8AD5D7591B295E8C001924F0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD5D7581B295E8C001924F0 /* RootViewController.swift */; };
 		8AD5D75C1B295E8C001924F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AD5D75A1B295E8C001924F0 /* Main.storyboard */; };
@@ -32,6 +39,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8A9078D31B949A5F000518C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AD5D74B1B295E8C001924F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A9078CB1B949A5F000518C3;
+			remoteInfo = TwitterHeaderBlocker;
+		};
+		8A9078E91B949BCC000518C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AD5D74B1B295E8C001924F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A9078E11B949BCC000518C3;
+			remoteInfo = TwitterImageBlocker;
+		};
 		8AD5D7681B295E8C001924F0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8AD5D74B1B295E8C001924F0 /* Project object */;
@@ -48,6 +69,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8A9078C71B948F05000518C3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8A9078D51B949A5F000518C3 /* TwitterHeaderBlocker.appex in Embed App Extensions */,
+				8A9078EB1B949BCC000518C3 /* TwitterImageBlocker.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		8A3588231B33CCC000D4D32C /* TextDetectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDetectViewController.swift; sourceTree = "<group>"; };
 		8A3588251B33CCD400D4D32C /* TextDetect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TextDetect.storyboard; sourceTree = "<group>"; };
@@ -62,8 +98,17 @@
 		8A3A321C1B35F0740016C4CE /* drumLoop.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = drumLoop.caf; sourceTree = "<group>"; };
 		8A7858881B8DDDBA00F93493 /* MapCustomizationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapCustomizationsViewController.swift; sourceTree = "<group>"; };
 		8A78588A1B8DDDD100F93493 /* MapCustomizations.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapCustomizations.storyboard; sourceTree = "<group>"; };
-		8A78588D1B8DDF8100F93493 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8A7C19C91B8B63AF00F75F88 /* FilterHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterHelper.swift; sourceTree = "<group>"; };
+		8A9078CC1B949A5F000518C3 /* TwitterHeaderBlocker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TwitterHeaderBlocker.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A9078CE1B949A5F000518C3 /* blockerList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = blockerList.json; sourceTree = "<group>"; };
+		8A9078D01B949A5F000518C3 /* ActionRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequestHandler.swift; sourceTree = "<group>"; };
+		8A9078D21B949A5F000518C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A9078D91B949B64000518C3 /* ContentBlockerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentBlockerViewController.swift; sourceTree = "<group>"; };
+		8A9078DB1B949B72000518C3 /* ContentBlocker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ContentBlocker.storyboard; sourceTree = "<group>"; };
+		8A9078E21B949BCC000518C3 /* TwitterImageBlocker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TwitterImageBlocker.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A9078E41B949BCC000518C3 /* blockerList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = blockerList.json; sourceTree = "<group>"; };
+		8A9078E61B949BCC000518C3 /* ActionRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequestHandler.swift; sourceTree = "<group>"; };
+		8A9078E81B949BCC000518C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AD5D7531B295E8C001924F0 /* iOS9Sampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS9Sampler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD5D7561B295E8C001924F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AD5D7581B295E8C001924F0 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -81,11 +126,24 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8A9078C91B949A5F000518C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A9078DF1B949BCC000518C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8AD5D7501B295E8C001924F0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A78588E1B8DDF8100F93493 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +172,7 @@
 				8A7C19C71B8B635B00F75F88 /* ImageFilters */,
 				8A7C19C61B8B634C00F75F88 /* FilterAttributes */,
 				8A78588C1B8DDDEF00F93493 /* MapCustomizations */,
+				8A9078DD1B949B79000518C3 /* ContentBlocker */,
 			);
 			path = SampleViewControllers;
 			sourceTree = "<group>";
@@ -188,12 +247,58 @@
 			name = AudioUnitComponentManager;
 			sourceTree = "<group>";
 		};
+		8A9078CD1B949A5F000518C3 /* TwitterHeaderBlocker */ = {
+			isa = PBXGroup;
+			children = (
+				8A9078CE1B949A5F000518C3 /* blockerList.json */,
+				8A9078D01B949A5F000518C3 /* ActionRequestHandler.swift */,
+				8A9078D21B949A5F000518C3 /* Info.plist */,
+			);
+			path = TwitterHeaderBlocker;
+			sourceTree = "<group>";
+		};
+		8A9078DD1B949B79000518C3 /* ContentBlocker */ = {
+			isa = PBXGroup;
+			children = (
+				8A9078D91B949B64000518C3 /* ContentBlockerViewController.swift */,
+				8A9078DB1B949B72000518C3 /* ContentBlocker.storyboard */,
+			);
+			name = ContentBlocker;
+			sourceTree = "<group>";
+		};
+		8A9078E31B949BCC000518C3 /* TwitterImageBlocker */ = {
+			isa = PBXGroup;
+			children = (
+				8A9078E41B949BCC000518C3 /* blockerList.json */,
+				8A9078E61B949BCC000518C3 /* ActionRequestHandler.swift */,
+				8A9078E81B949BCC000518C3 /* Info.plist */,
+			);
+			path = TwitterImageBlocker;
+			sourceTree = "<group>";
+		};
+		8A9078EF1B949CF8000518C3 /* ContentBlockers */ = {
+			isa = PBXGroup;
+			children = (
+				8A9078CD1B949A5F000518C3 /* TwitterHeaderBlocker */,
+				8A9078E31B949BCC000518C3 /* TwitterImageBlocker */,
+			);
+			name = ContentBlockers;
+			sourceTree = "<group>";
+		};
+		8A9078F01B949D42000518C3 /* iOS9SamplerExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				8A9078EF1B949CF8000518C3 /* ContentBlockers */,
+			);
+			name = iOS9SamplerExtensions;
+			sourceTree = "<group>";
+		};
 		8AD5D74A1B295E8C001924F0 = {
 			isa = PBXGroup;
 			children = (
-				8A78588D1B8DDF8100F93493 /* MapKit.framework */,
 				8A3A32181B35F0740016C4CE /* Resources */,
 				8AD5D7551B295E8C001924F0 /* iOS9Sampler */,
+				8A9078F01B949D42000518C3 /* iOS9SamplerExtensions */,
 				8AD5D76A1B295E8C001924F0 /* iOS9SamplerTests */,
 				8AD5D7751B295E8C001924F0 /* iOS9SamplerUITests */,
 				8AD5D7541B295E8C001924F0 /* Products */,
@@ -206,6 +311,8 @@
 				8AD5D7531B295E8C001924F0 /* iOS9Sampler.app */,
 				8AD5D7671B295E8C001924F0 /* iOS9SamplerTests.xctest */,
 				8AD5D7721B295E8C001924F0 /* iOS9SamplerUITests.xctest */,
+				8A9078CC1B949A5F000518C3 /* TwitterHeaderBlocker.appex */,
+				8A9078E21B949BCC000518C3 /* TwitterImageBlocker.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -248,6 +355,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8A9078CB1B949A5F000518C3 /* TwitterHeaderBlocker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A9078D61B949A60000518C3 /* Build configuration list for PBXNativeTarget "TwitterHeaderBlocker" */;
+			buildPhases = (
+				8A9078C81B949A5F000518C3 /* Sources */,
+				8A9078C91B949A5F000518C3 /* Frameworks */,
+				8A9078CA1B949A5F000518C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TwitterHeaderBlocker;
+			productName = TwitterHeaderBlocker;
+			productReference = 8A9078CC1B949A5F000518C3 /* TwitterHeaderBlocker.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		8A9078E11B949BCC000518C3 /* TwitterImageBlocker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A9078EC1B949BCD000518C3 /* Build configuration list for PBXNativeTarget "TwitterImageBlocker" */;
+			buildPhases = (
+				8A9078DE1B949BCC000518C3 /* Sources */,
+				8A9078DF1B949BCC000518C3 /* Frameworks */,
+				8A9078E01B949BCC000518C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TwitterImageBlocker;
+			productName = TwitterImageBlocker;
+			productReference = 8A9078E21B949BCC000518C3 /* TwitterImageBlocker.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		8AD5D7521B295E8C001924F0 /* iOS9Sampler */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AD5D77B1B295E8C001924F0 /* Build configuration list for PBXNativeTarget "iOS9Sampler" */;
@@ -255,10 +396,13 @@
 				8AD5D74F1B295E8C001924F0 /* Sources */,
 				8AD5D7501B295E8C001924F0 /* Frameworks */,
 				8AD5D7511B295E8C001924F0 /* Resources */,
+				8A9078C71B948F05000518C3 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8A9078D41B949A5F000518C3 /* PBXTargetDependency */,
+				8A9078EA1B949BCC000518C3 /* PBXTargetDependency */,
 			);
 			name = iOS9Sampler;
 			productName = iOS9Sampler;
@@ -311,6 +455,12 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Shuichi Tsutsumi";
 				TargetAttributes = {
+					8A9078CB1B949A5F000518C3 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					8A9078E11B949BCC000518C3 = {
+						CreatedOnToolsVersion = 7.0;
+					};
 					8AD5D7521B295E8C001924F0 = {
 						CreatedOnToolsVersion = 7.0;
 					};
@@ -340,11 +490,29 @@
 				8AD5D7521B295E8C001924F0 /* iOS9Sampler */,
 				8AD5D7661B295E8C001924F0 /* iOS9SamplerTests */,
 				8AD5D7711B295E8C001924F0 /* iOS9SamplerUITests */,
+				8A9078CB1B949A5F000518C3 /* TwitterHeaderBlocker */,
+				8A9078E11B949BCC000518C3 /* TwitterImageBlocker */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8A9078CA1B949A5F000518C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A9078CF1B949A5F000518C3 /* blockerList.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A9078E01B949BCC000518C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A9078E51B949BCC000518C3 /* blockerList.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8AD5D7511B295E8C001924F0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -354,6 +522,7 @@
 				8AD5D7611B295E8C001924F0 /* LaunchScreen.storyboard in Resources */,
 				8A3A32171B35DAE10016C4CE /* AudioUnitComponentManager.storyboard in Resources */,
 				8AD5D75E1B295E8C001924F0 /* Assets.xcassets in Resources */,
+				8A9078DC1B949B72000518C3 /* ContentBlocker.storyboard in Resources */,
 				8A3A321E1B35F0740016C4CE /* drumLoop.caf in Resources */,
 				8A78588B1B8DDDD100F93493 /* MapCustomizations.storyboard in Resources */,
 				8A3588261B33CCD400D4D32C /* TextDetect.storyboard in Resources */,
@@ -378,11 +547,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8A9078C81B949A5F000518C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A9078D11B949A5F000518C3 /* ActionRequestHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A9078DE1B949BCC000518C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A9078E71B949BCC000518C3 /* ActionRequestHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8AD5D74F1B295E8C001924F0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8AD5D7591B295E8C001924F0 /* RootViewController.swift in Sources */,
+				8A9078DA1B949B64000518C3 /* ContentBlockerViewController.swift in Sources */,
 				8A3588331B33F3B500D4D32C /* FilterDetailViewController.swift in Sources */,
 				8A3588241B33CCC000D4D32C /* TextDetectViewController.swift in Sources */,
 				8A7858891B8DDDBA00F93493 /* MapCustomizationsViewController.swift in Sources */,
@@ -414,6 +600,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8A9078D41B949A5F000518C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A9078CB1B949A5F000518C3 /* TwitterHeaderBlocker */;
+			targetProxy = 8A9078D31B949A5F000518C3 /* PBXContainerItemProxy */;
+		};
+		8A9078EA1B949BCC000518C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A9078E11B949BCC000518C3 /* TwitterImageBlocker */;
+			targetProxy = 8A9078E91B949BCC000518C3 /* PBXContainerItemProxy */;
+		};
 		8AD5D7691B295E8C001924F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8AD5D7521B295E8C001924F0 /* iOS9Sampler */;
@@ -446,6 +642,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8A9078D71B949A60000518C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				INFOPLIST_FILE = TwitterHeaderBlocker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Shuichi-Tsutsumi.iOS9Sampler.TwitterHeaderBlocker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8A9078D81B949A60000518C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				INFOPLIST_FILE = TwitterHeaderBlocker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Shuichi-Tsutsumi.iOS9Sampler.TwitterHeaderBlocker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		8A9078ED1B949BCD000518C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				INFOPLIST_FILE = TwitterImageBlocker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Shuichi-Tsutsumi.iOS9Sampler.TwitterImageBlocker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8A9078EE1B949BCD000518C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				INFOPLIST_FILE = TwitterImageBlocker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Shuichi-Tsutsumi.iOS9Sampler.TwitterImageBlocker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		8AD5D7791B295E8C001924F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -532,6 +776,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = iOS9Sampler/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Shuichi-Tsutsumi.iOS9Sampler";
@@ -546,6 +791,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = iOS9Sampler/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Shuichi-Tsutsumi.iOS9Sampler";
@@ -605,6 +851,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8A9078D61B949A60000518C3 /* Build configuration list for PBXNativeTarget "TwitterHeaderBlocker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A9078D71B949A60000518C3 /* Debug */,
+				8A9078D81B949A60000518C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A9078EC1B949BCD000518C3 /* Build configuration list for PBXNativeTarget "TwitterImageBlocker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A9078ED1B949BCD000518C3 /* Debug */,
+				8A9078EE1B949BCD000518C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8AD5D74E1B295E8C001924F0 /* Build configuration list for PBXProject "iOS9Sampler" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

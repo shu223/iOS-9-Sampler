@@ -1,0 +1,11 @@
+[
+    {
+        "action": {
+            "type": "css-display-none",
+            "selector": "header"
+        },
+        "trigger": {
+            "url-filter": ".*"
+        }
+    }
+]
