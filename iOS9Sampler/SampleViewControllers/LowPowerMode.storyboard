@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Zw3-Q4-WsS">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="AvenirNext.ttc">
+            <string>AvenirNext-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Low Power Mode View Controller-->
+        <scene sceneID="gmn-nN-Tag">
+            <objects>
+                <viewController id="Zw3-Q4-WsS" customClass="LowPowerModeViewController" customModule="iOS9Sampler" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Fv-4E-TrW"/>
+                        <viewControllerLayoutGuide type="bottom" id="81P-Cm-eq4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YMR-f6-JY3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLT-bA-4ju">
+                                <rect key="frame" x="278" y="288" width="43" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7i-o0-uc3">
+                                <rect key="frame" x="20" y="28" width="560" height="160"/>
+                                <string key="text">How to try  1. Go to [Settings] &gt; [Battery]  2. Turn [Low Power Mode] on/off.  3. Reopen this example.  "NSProcessInfoPowerStateDidChangeNotification" is posted and observed by this example.</string>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="u7i-o0-uc3" firstAttribute="top" secondItem="2Fv-4E-TrW" secondAttribute="bottom" constant="8" id="N0v-oO-sZL"/>
+                            <constraint firstItem="VLT-bA-4ju" firstAttribute="centerY" secondItem="YMR-f6-JY3" secondAttribute="centerY" id="eMg-Ad-5An"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="u7i-o0-uc3" secondAttribute="trailing" id="kwf-fa-d86"/>
+                            <constraint firstItem="VLT-bA-4ju" firstAttribute="centerX" secondItem="YMR-f6-JY3" secondAttribute="centerX" id="pRK-aW-ogO"/>
+                            <constraint firstItem="u7i-o0-uc3" firstAttribute="leading" secondItem="YMR-f6-JY3" secondAttribute="leadingMargin" id="sxZ-q7-nQf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="stateLabel" destination="VLT-bA-4ju" id="GeX-bd-G4l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q4h-Q8-VHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-16" y="-794"/>
+        </scene>
+    </scenes>
+</document>

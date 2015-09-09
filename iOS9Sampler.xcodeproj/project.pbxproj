@@ -38,6 +38,8 @@
 		8ADBD9FA1B8F675E00BB46D8 /* RootViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADBD9F91B8F675E00BB46D8 /* RootViewCell.swift */; };
 		8AF73F9A1BA0237E00E3783E /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF73F991BA0237E00E3783E /* SpeechViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8AF73F9C1BA0238900E3783E /* Speech.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF73F9B1BA0238900E3783E /* Speech.storyboard */; settings = {ASSET_TAGS = (); }; };
+		8AF73FA51BA03C8900E3783E /* LowPowerMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF73FA41BA03C8900E3783E /* LowPowerMode.storyboard */; settings = {ASSET_TAGS = (); }; };
+		8AF73FA71BA03C9600E3783E /* LowPowerModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF73FA61BA03C9600E3783E /* LowPowerModeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +129,8 @@
 		8ADBD9F91B8F675E00BB46D8 /* RootViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewCell.swift; sourceTree = "<group>"; };
 		8AF73F991BA0237E00E3783E /* SpeechViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
 		8AF73F9B1BA0238900E3783E /* Speech.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Speech.storyboard; sourceTree = "<group>"; };
+		8AF73FA41BA03C8900E3783E /* LowPowerMode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LowPowerMode.storyboard; sourceTree = "<group>"; };
+		8AF73FA61BA03C9600E3783E /* LowPowerModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LowPowerModeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,7 @@
 				8A78588C1B8DDDEF00F93493 /* MapCustomizations */,
 				8A9078DD1B949B79000518C3 /* ContentBlocker */,
 				8AF73F9D1BA02C2E00E3783E /* SpeechVoices */,
+				8AF73FA81BA0432300E3783E /* LowPowerMode */,
 			);
 			path = SampleViewControllers;
 			sourceTree = "<group>";
@@ -366,6 +371,15 @@
 			name = SpeechVoices;
 			sourceTree = "<group>";
 		};
+		8AF73FA81BA0432300E3783E /* LowPowerMode */ = {
+			isa = PBXGroup;
+			children = (
+				8AF73FA61BA03C9600E3783E /* LowPowerModeViewController.swift */,
+				8AF73FA41BA03C8900E3783E /* LowPowerMode.storyboard */,
+			);
+			name = LowPowerMode;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -541,6 +555,7 @@
 				8A78588B1B8DDDD100F93493 /* MapCustomizations.storyboard in Resources */,
 				8A3588261B33CCD400D4D32C /* TextDetect.storyboard in Resources */,
 				8AD5D75C1B295E8C001924F0 /* Main.storyboard in Resources */,
+				8AF73FA51BA03C8900E3783E /* LowPowerMode.storyboard in Resources */,
 				8AF73F9C1BA0238900E3783E /* Speech.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,6 +608,7 @@
 				8A35882F1B33EC7A00D4D32C /* FiltersViewController.swift in Sources */,
 				8A3A32151B35DAD10016C4CE /* AudioUnitComponentManagerViewController.swift in Sources */,
 				8AD5D7571B295E8C001924F0 /* AppDelegate.swift in Sources */,
+				8AF73FA71BA03C9600E3783E /* LowPowerModeViewController.swift in Sources */,
 				8A3588351B3424E100D4D32C /* StillImageFiltersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

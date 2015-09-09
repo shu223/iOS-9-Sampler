@@ -61,3 +61,17 @@ Example for Content Blocker Extensions.
 Attributes viewer for **41 new filters** of CIFilter.
 
 <img src="ResourcesForREADME/filterattributes.jpg" width="405">
+
+
+###Low Power Mode
+
+Detect changes of \"Low Power Mode\" setting.
+
+
+##watchOS-2-Sampler
+
+You can check the **examples for watchOS 2** features on [watchOS-2-Sampler](https://github.com/shu223/watchOS-2-Sampler)!!
+
+<a href="https://github.com/shu223/watchOS-2-Sampler"><img src="ResourcesForREADME/watchos2sampler.jpg" width="200"></a>
+
+- https://github.com/shu223/watchOS-2-Sampler

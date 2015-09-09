@@ -59,6 +59,11 @@ class RootViewController: UITableViewController {
                 kItemKeyDetail: "Attributes viewer for new filters of CIFilter.",
                 kItemKeyClassPrefix: "Filters"
             ],
+            [
+                kItemKeyTitle: "Low Power Mode",
+                kItemKeyDetail: "Detect changes of \"Low Power Mode\" setting.",
+                kItemKeyClassPrefix: "LowPowerMode"
+            ],
         ]
     }
 
