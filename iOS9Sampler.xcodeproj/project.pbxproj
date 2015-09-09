@@ -36,6 +36,8 @@
 		8AD5D76C1B295E8C001924F0 /* iOS9SamplerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD5D76B1B295E8C001924F0 /* iOS9SamplerTests.swift */; };
 		8AD5D7771B295E8C001924F0 /* iOS9SamplerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD5D7761B295E8C001924F0 /* iOS9SamplerUITests.swift */; };
 		8ADBD9FA1B8F675E00BB46D8 /* RootViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADBD9F91B8F675E00BB46D8 /* RootViewCell.swift */; };
+		8AF73F9A1BA0237E00E3783E /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF73F991BA0237E00E3783E /* SpeechViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8AF73F9C1BA0238900E3783E /* Speech.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF73F9B1BA0238900E3783E /* Speech.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +125,8 @@
 		8AD5D7761B295E8C001924F0 /* iOS9SamplerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS9SamplerUITests.swift; sourceTree = "<group>"; };
 		8AD5D7781B295E8C001924F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8ADBD9F91B8F675E00BB46D8 /* RootViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewCell.swift; sourceTree = "<group>"; };
+		8AF73F991BA0237E00E3783E /* SpeechViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
+		8AF73F9B1BA0238900E3783E /* Speech.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Speech.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +177,7 @@
 				8A7C19C61B8B634C00F75F88 /* FilterAttributes */,
 				8A78588C1B8DDDEF00F93493 /* MapCustomizations */,
 				8A9078DD1B949B79000518C3 /* ContentBlocker */,
+				8AF73F9D1BA02C2E00E3783E /* SpeechVoices */,
 			);
 			path = SampleViewControllers;
 			sourceTree = "<group>";
@@ -352,6 +357,15 @@
 			path = iOS9SamplerUITests;
 			sourceTree = "<group>";
 		};
+		8AF73F9D1BA02C2E00E3783E /* SpeechVoices */ = {
+			isa = PBXGroup;
+			children = (
+				8AF73F991BA0237E00E3783E /* SpeechViewController.swift */,
+				8AF73F9B1BA0238900E3783E /* Speech.storyboard */,
+			);
+			name = SpeechVoices;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -527,6 +541,7 @@
 				8A78588B1B8DDDD100F93493 /* MapCustomizations.storyboard in Resources */,
 				8A3588261B33CCD400D4D32C /* TextDetect.storyboard in Resources */,
 				8AD5D75C1B295E8C001924F0 /* Main.storyboard in Resources */,
+				8AF73F9C1BA0238900E3783E /* Speech.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,6 +586,7 @@
 				8A9078DA1B949B64000518C3 /* ContentBlockerViewController.swift in Sources */,
 				8A3588331B33F3B500D4D32C /* FilterDetailViewController.swift in Sources */,
 				8A3588241B33CCC000D4D32C /* TextDetectViewController.swift in Sources */,
+				8AF73F9A1BA0237E00E3783E /* SpeechViewController.swift in Sources */,
 				8A7858891B8DDDBA00F93493 /* MapCustomizationsViewController.swift in Sources */,
 				8ADBD9FA1B8F675E00BB46D8 /* RootViewCell.swift in Sources */,
 				8A7C19CA1B8B63AF00F75F88 /* FilterHelper.swift in Sources */,

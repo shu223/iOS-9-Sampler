@@ -41,6 +41,14 @@ Retrieve audio unit components using AudioUnitComponentManager and apply them to
 
 <img src="ResourcesForREADME/aucomponents.jpg" width="200">
 
+
+###Speech Voices
+
+Example for new properties which are added to AVSpeechSynthesisVoice such as language, name, quality...
+
+<img src="ResourcesForREADME/speech.jpg" width="200">
+
+
 ###Content Blockers
 
 Example for Content Blocker Extensions.

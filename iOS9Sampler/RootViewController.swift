@@ -45,6 +45,11 @@ class RootViewController: UITableViewController {
                 kItemKeyClassPrefix: "AudioUnitComponentManager",
             ],
             [
+                kItemKeyTitle: "Speech Voices",
+                kItemKeyDetail: "Example for new properties which are added to AVSpeechSynthesisVoice such as language, name, quality...",
+                kItemKeyClassPrefix: "Speech",
+            ],
+            [
                 kItemKeyTitle: "Content Blockers",
                 kItemKeyDetail: "Example for Content Blocker Extension.",
                 kItemKeyClassPrefix: "ContentBlocker"
