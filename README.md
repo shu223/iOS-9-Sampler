@@ -49,6 +49,13 @@ Example for new properties which are added to AVSpeechSynthesisVoice such as lan
 <img src="ResourcesForREADME/speech.jpg" width="200">
 
 
+###Selfies & Screenshots
+
+Fetch photos filtered with new subtypes "SelfPortraits" and "Screenshot" which are added to Photos.framework.
+
+<img src="ResourcesForREADME/screenshots.jpg" width="200">
+
+
 ###Content Blockers
 
 Example for Content Blocker Extensions.
@@ -65,7 +72,7 @@ Attributes viewer for **41 new filters** of CIFilter.
 
 ###Low Power Mode
 
-Detect changes of \"Low Power Mode\" setting.
+Detect changes of "Low Power Mode" setting.
 
 
 ##watchOS-2-Sampler

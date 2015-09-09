@@ -40,6 +40,9 @@
 		8AF73F9C1BA0238900E3783E /* Speech.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF73F9B1BA0238900E3783E /* Speech.storyboard */; settings = {ASSET_TAGS = (); }; };
 		8AF73FA51BA03C8900E3783E /* LowPowerMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF73FA41BA03C8900E3783E /* LowPowerMode.storyboard */; settings = {ASSET_TAGS = (); }; };
 		8AF73FA71BA03C9600E3783E /* LowPowerModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF73FA61BA03C9600E3783E /* LowPowerModeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8AF73FAA1BA051E100E3783E /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF73FA91BA051E100E3783E /* PhotosViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8AF73FAC1BA051EC00E3783E /* Photos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF73FAB1BA051EC00E3783E /* Photos.storyboard */; settings = {ASSET_TAGS = (); }; };
+		8AF73FAE1BA0529600E3783E /* PhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF73FAD1BA0529600E3783E /* PhotosCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +134,9 @@
 		8AF73F9B1BA0238900E3783E /* Speech.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Speech.storyboard; sourceTree = "<group>"; };
 		8AF73FA41BA03C8900E3783E /* LowPowerMode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LowPowerMode.storyboard; sourceTree = "<group>"; };
 		8AF73FA61BA03C9600E3783E /* LowPowerModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LowPowerModeViewController.swift; sourceTree = "<group>"; };
+		8AF73FA91BA051E100E3783E /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		8AF73FAB1BA051EC00E3783E /* Photos.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Photos.storyboard; sourceTree = "<group>"; };
+		8AF73FAD1BA0529600E3783E /* PhotosCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +178,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A1E8E9D1BA0691300CAA287 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				8AF73FA91BA051E100E3783E /* PhotosViewController.swift */,
+				8AF73FAD1BA0529600E3783E /* PhotosCell.swift */,
+				8AF73FAB1BA051EC00E3783E /* Photos.storyboard */,
+			);
+			name = Photos;
+			sourceTree = "<group>";
+		};
 		8A3588221B33CCC000D4D32C /* SampleViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +199,7 @@
 				8A9078DD1B949B79000518C3 /* ContentBlocker */,
 				8AF73F9D1BA02C2E00E3783E /* SpeechVoices */,
 				8AF73FA81BA0432300E3783E /* LowPowerMode */,
+				8A1E8E9D1BA0691300CAA287 /* Photos */,
 			);
 			path = SampleViewControllers;
 			sourceTree = "<group>";
@@ -552,6 +569,7 @@
 				8AD5D75E1B295E8C001924F0 /* Assets.xcassets in Resources */,
 				8A9078DC1B949B72000518C3 /* ContentBlocker.storyboard in Resources */,
 				8A3A321E1B35F0740016C4CE /* drumLoop.caf in Resources */,
+				8AF73FAC1BA051EC00E3783E /* Photos.storyboard in Resources */,
 				8A78588B1B8DDDD100F93493 /* MapCustomizations.storyboard in Resources */,
 				8A3588261B33CCD400D4D32C /* TextDetect.storyboard in Resources */,
 				8AD5D75C1B295E8C001924F0 /* Main.storyboard in Resources */,
@@ -605,9 +623,11 @@
 				8A7858891B8DDDBA00F93493 /* MapCustomizationsViewController.swift in Sources */,
 				8ADBD9FA1B8F675E00BB46D8 /* RootViewCell.swift in Sources */,
 				8A7C19CA1B8B63AF00F75F88 /* FilterHelper.swift in Sources */,
+				8AF73FAE1BA0529600E3783E /* PhotosCell.swift in Sources */,
 				8A35882F1B33EC7A00D4D32C /* FiltersViewController.swift in Sources */,
 				8A3A32151B35DAD10016C4CE /* AudioUnitComponentManagerViewController.swift in Sources */,
 				8AD5D7571B295E8C001924F0 /* AppDelegate.swift in Sources */,
+				8AF73FAA1BA051E100E3783E /* PhotosViewController.swift in Sources */,
 				8AF73FA71BA03C9600E3783E /* LowPowerModeViewController.swift in Sources */,
 				8A3588351B3424E100D4D32C /* StillImageFiltersViewController.swift in Sources */,
 			);

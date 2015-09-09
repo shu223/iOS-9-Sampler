@@ -50,6 +50,11 @@ class RootViewController: UITableViewController {
                 kItemKeyClassPrefix: "Speech",
             ],
             [
+                kItemKeyTitle: "Selfies & Screenshots",
+                kItemKeyDetail: "Fetch photos filtered with new subtypes \"SelfPortraits\" and \"Screenshot\" which are added to Photos framework.",
+                kItemKeyClassPrefix: "Photos"
+            ],
+            [
                 kItemKeyTitle: "Content Blockers",
                 kItemKeyDetail: "Example for Content Blocker Extension.",
                 kItemKeyClassPrefix: "ContentBlocker"
