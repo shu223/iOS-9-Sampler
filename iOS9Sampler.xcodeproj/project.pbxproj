@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A0714B31BA46CF300A1CC22 /* SearchAPIsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0714B21BA46CF300A1CC22 /* SearchAPIsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8A0714B51BA46D0500A1CC22 /* SearchAPIs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0714B41BA46D0500A1CC22 /* SearchAPIs.storyboard */; settings = {ASSET_TAGS = (); }; };
 		8A3588241B33CCC000D4D32C /* TextDetectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3588231B33CCC000D4D32C /* TextDetectViewController.swift */; };
 		8A3588261B33CCD400D4D32C /* TextDetect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3588251B33CCD400D4D32C /* TextDetect.storyboard */; };
 		8A35882F1B33EC7A00D4D32C /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A35882E1B33EC7A00D4D32C /* FiltersViewController.swift */; };
@@ -92,6 +94,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8A0714B21BA46CF300A1CC22 /* SearchAPIsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAPIsViewController.swift; sourceTree = "<group>"; };
+		8A0714B41BA46D0500A1CC22 /* SearchAPIs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchAPIs.storyboard; sourceTree = "<group>"; };
 		8A3588231B33CCC000D4D32C /* TextDetectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDetectViewController.swift; sourceTree = "<group>"; };
 		8A3588251B33CCD400D4D32C /* TextDetect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TextDetect.storyboard; sourceTree = "<group>"; };
 		8A3588271B33CD1700D4D32C /* iOS9Sampler-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "iOS9Sampler-Bridging-Header.h"; path = "SampleViewControllers/iOS9Sampler-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -178,6 +182,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A0714B61BA47DE100A1CC22 /* SearchAPIs */ = {
+			isa = PBXGroup;
+			children = (
+				8A0714B21BA46CF300A1CC22 /* SearchAPIsViewController.swift */,
+				8A0714B41BA46D0500A1CC22 /* SearchAPIs.storyboard */,
+			);
+			name = SearchAPIs;
+			sourceTree = "<group>";
+		};
 		8A1E8E9D1BA0691300CAA287 /* Photos */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +209,7 @@
 				8A7C19C71B8B635B00F75F88 /* ImageFilters */,
 				8A7C19C61B8B634C00F75F88 /* FilterAttributes */,
 				8A78588C1B8DDDEF00F93493 /* MapCustomizations */,
+				8A0714B61BA47DE100A1CC22 /* SearchAPIs */,
 				8A9078DD1B949B79000518C3 /* ContentBlocker */,
 				8AF73F9D1BA02C2E00E3783E /* SpeechVoices */,
 				8AF73FA81BA0432300E3783E /* LowPowerMode */,
@@ -565,6 +579,7 @@
 				8A3588371B342BF200D4D32C /* StillImageFilters.storyboard in Resources */,
 				8A3588311B33EC8800D4D32C /* Filters.storyboard in Resources */,
 				8AD5D7611B295E8C001924F0 /* LaunchScreen.storyboard in Resources */,
+				8A0714B51BA46D0500A1CC22 /* SearchAPIs.storyboard in Resources */,
 				8A3A32171B35DAE10016C4CE /* AudioUnitComponentManager.storyboard in Resources */,
 				8AD5D75E1B295E8C001924F0 /* Assets.xcassets in Resources */,
 				8A9078DC1B949B72000518C3 /* ContentBlocker.storyboard in Resources */,
@@ -626,6 +641,7 @@
 				8AF73FAE1BA0529600E3783E /* PhotosCell.swift in Sources */,
 				8A35882F1B33EC7A00D4D32C /* FiltersViewController.swift in Sources */,
 				8A3A32151B35DAD10016C4CE /* AudioUnitComponentManagerViewController.swift in Sources */,
+				8A0714B31BA46CF300A1CC22 /* SearchAPIsViewController.swift in Sources */,
 				8AD5D7571B295E8C001924F0 /* AppDelegate.swift in Sources */,
 				8AF73FAA1BA051E100E3783E /* PhotosViewController.swift in Sources */,
 				8AF73FA71BA03C9600E3783E /* LowPowerModeViewController.swift in Sources */,

@@ -51,9 +51,16 @@ Example for new properties which are added to AVSpeechSynthesisVoice such as lan
 
 ###Selfies & Screenshots
 
-Fetch photos filtered with new subtypes "SelfPortraits" and "Screenshot" which are added to Photos.framework.
+Fetch photos filtered with new subtypes "SelfPortraits" and "Screenshot" which are added to **Photos.framework**.
 
 <img src="ResourcesForREADME/screenshots.jpg" width="200">
+
+
+###Search APIs
+
+Example for Search APIs using NSUserActivity and **Core Spotlight**.
+
+<img src="ResourcesForREADME/searchapis.jpg" width="200">
 
 
 ###Content Blockers

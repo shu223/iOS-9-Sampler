@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="d42-4i-PtP">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="AvenirNext.ttc">
+            <string>AvenirNext-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--SearchAP Is View Controller-->
+        <scene sceneID="fH4-SY-R4v">
+            <objects>
+                <viewController id="d42-4i-PtP" customClass="SearchAPIsViewController" customModule="iOS9Sampler" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ebH-li-Huj"/>
+                        <viewControllerLayoutGuide type="bottom" id="1bZ-Ky-hkg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zw2-CJ-52D">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZ2-CX-B8G">
+                                <rect key="frame" x="20" y="28" width="560" height="178"/>
+                                <string key="text">How to try  Search items have been already indexed. Try to search with Spotlight with keywords such as:  - dog - cat - pig - sheep - bird - fish</string>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qZ2-CX-B8G" firstAttribute="trailing" secondItem="Zw2-CJ-52D" secondAttribute="trailingMargin" id="IG1-MB-3xU"/>
+                            <constraint firstItem="qZ2-CX-B8G" firstAttribute="top" secondItem="ebH-li-Huj" secondAttribute="bottom" constant="8" id="Sao-85-62f"/>
+                            <constraint firstItem="qZ2-CX-B8G" firstAttribute="leading" secondItem="Zw2-CJ-52D" secondAttribute="leadingMargin" id="j8v-EJ-suM"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Poi-yX-D2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="-427"/>
+        </scene>
+    </scenes>
+</document>

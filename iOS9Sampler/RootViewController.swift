@@ -55,6 +55,11 @@ class RootViewController: UITableViewController {
                 kItemKeyClassPrefix: "Photos"
             ],
             [
+                kItemKeyTitle: "Search APIs",
+                kItemKeyDetail: "Example for Search APIs using NSUserActivity and Core Spotlight.",
+                kItemKeyClassPrefix: "SearchAPIs"
+            ],
+            [
                 kItemKeyTitle: "Content Blockers",
                 kItemKeyDetail: "Example for Content Blocker Extension.",
                 kItemKeyClassPrefix: "ContentBlocker"
