@@ -19,6 +19,8 @@
 		8A3A32151B35DAD10016C4CE /* AudioUnitComponentManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3A32141B35DAD10016C4CE /* AudioUnitComponentManagerViewController.swift */; };
 		8A3A32171B35DAE10016C4CE /* AudioUnitComponentManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3A32161B35DAE10016C4CE /* AudioUnitComponentManager.storyboard */; };
 		8A3A321E1B35F0740016C4CE /* drumLoop.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8A3A321C1B35F0740016C4CE /* drumLoop.caf */; };
+		8A6FC3931BA53238007942FE /* Safari.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A6FC3921BA53238007942FE /* Safari.storyboard */; settings = {ASSET_TAGS = (); }; };
+		8A6FC3951BA53249007942FE /* SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6FC3941BA53249007942FE /* SafariViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8A7858891B8DDDBA00F93493 /* MapCustomizationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7858881B8DDDBA00F93493 /* MapCustomizationsViewController.swift */; };
 		8A78588B1B8DDDD100F93493 /* MapCustomizations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A78588A1B8DDDD100F93493 /* MapCustomizations.storyboard */; };
 		8A7C19CA1B8B63AF00F75F88 /* FilterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7C19C91B8B63AF00F75F88 /* FilterHelper.swift */; };
@@ -107,6 +109,8 @@
 		8A3A32141B35DAD10016C4CE /* AudioUnitComponentManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioUnitComponentManagerViewController.swift; sourceTree = "<group>"; };
 		8A3A32161B35DAE10016C4CE /* AudioUnitComponentManager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AudioUnitComponentManager.storyboard; sourceTree = "<group>"; };
 		8A3A321C1B35F0740016C4CE /* drumLoop.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = drumLoop.caf; sourceTree = "<group>"; };
+		8A6FC3921BA53238007942FE /* Safari.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Safari.storyboard; sourceTree = "<group>"; };
+		8A6FC3941BA53249007942FE /* SafariViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariViewController.swift; sourceTree = "<group>"; };
 		8A7858881B8DDDBA00F93493 /* MapCustomizationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapCustomizationsViewController.swift; sourceTree = "<group>"; };
 		8A78588A1B8DDDD100F93493 /* MapCustomizations.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapCustomizations.storyboard; sourceTree = "<group>"; };
 		8A7C19C91B8B63AF00F75F88 /* FilterHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterHelper.swift; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 				8A78588C1B8DDDEF00F93493 /* MapCustomizations */,
 				8A0714B61BA47DE100A1CC22 /* SearchAPIs */,
 				8A9078DD1B949B79000518C3 /* ContentBlocker */,
+				8A6FC3961BA53256007942FE /* SFSafariViewController */,
 				8AF73F9D1BA02C2E00E3783E /* SpeechVoices */,
 				8AF73FA81BA0432300E3783E /* LowPowerMode */,
 				8A1E8E9D1BA0691300CAA287 /* Photos */,
@@ -232,6 +237,15 @@
 				8A3A321C1B35F0740016C4CE /* drumLoop.caf */,
 			);
 			path = sounds;
+			sourceTree = "<group>";
+		};
+		8A6FC3961BA53256007942FE /* SFSafariViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8A6FC3941BA53249007942FE /* SafariViewController.swift */,
+				8A6FC3921BA53238007942FE /* Safari.storyboard */,
+			);
+			name = SFSafariViewController;
 			sourceTree = "<group>";
 		};
 		8A78588C1B8DDDEF00F93493 /* MapCustomizations */ = {
@@ -583,6 +597,7 @@
 				8A3A32171B35DAE10016C4CE /* AudioUnitComponentManager.storyboard in Resources */,
 				8AD5D75E1B295E8C001924F0 /* Assets.xcassets in Resources */,
 				8A9078DC1B949B72000518C3 /* ContentBlocker.storyboard in Resources */,
+				8A6FC3931BA53238007942FE /* Safari.storyboard in Resources */,
 				8A3A321E1B35F0740016C4CE /* drumLoop.caf in Resources */,
 				8AF73FAC1BA051EC00E3783E /* Photos.storyboard in Resources */,
 				8A78588B1B8DDDD100F93493 /* MapCustomizations.storyboard in Resources */,
@@ -645,6 +660,7 @@
 				8AD5D7571B295E8C001924F0 /* AppDelegate.swift in Sources */,
 				8AF73FAA1BA051E100E3783E /* PhotosViewController.swift in Sources */,
 				8AF73FA71BA03C9600E3783E /* LowPowerModeViewController.swift in Sources */,
+				8A6FC3951BA53249007942FE /* SafariViewController.swift in Sources */,
 				8A3588351B3424E100D4D32C /* StillImageFiltersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

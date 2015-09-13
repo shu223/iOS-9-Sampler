@@ -65,8 +65,13 @@ class RootViewController: UITableViewController {
                 kItemKeyClassPrefix: "ContentBlocker"
             ],
             [
+                kItemKeyTitle: "SFSafariViewController",
+                kItemKeyDetail: "Open web pages with SFSafariViewController.",
+                kItemKeyClassPrefix: "Safari"
+            ],
+            [
                 kItemKeyTitle: "Attributes of New Filters",
-                kItemKeyDetail: "Attributes viewer for new filters of CIFilter.",
+                kItemKeyDetail: "Extract new filters of CIFilter using \"kCIAttributeFilterAvailable_iOS\".",
                 kItemKeyClassPrefix: "Filters"
             ],
             [

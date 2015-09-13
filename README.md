@@ -70,6 +70,13 @@ Example for Content Blocker Extensions.
 <img src="ResourcesForREADME/blocker.jpg" width="200">
 
 
+###SFSafariViewController
+
+Open web pages with SFSafariViewController.
+
+<img src="ResourcesForREADME/safari.jpg" width="200">
+
+
 ###Attributes of New Filters
 
 Attributes viewer for **41 new filters** of CIFilter.
