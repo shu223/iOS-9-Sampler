@@ -55,6 +55,11 @@ class RootViewController: UITableViewController {
                 kItemKeyClassPrefix: "Spring"
             ],
             [
+                kItemKeyTitle: "UIStackView",
+                kItemKeyDetail: "Auto Layout example using UIStackView.",
+                kItemKeyClassPrefix: "StackView"
+            ],
+            [
                 kItemKeyTitle: "Selfies & Screenshots",
                 kItemKeyDetail: "Fetch photos filtered with new subtypes \"SelfPortraits\" and \"Screenshot\" which are added to Photos framework.",
                 kItemKeyClassPrefix: "Photos"

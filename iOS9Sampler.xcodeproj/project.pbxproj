@@ -42,6 +42,8 @@
 		8AD5D76C1B295E8C001924F0 /* iOS9SamplerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD5D76B1B295E8C001924F0 /* iOS9SamplerTests.swift */; };
 		8AD5D7771B295E8C001924F0 /* iOS9SamplerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD5D7761B295E8C001924F0 /* iOS9SamplerUITests.swift */; };
 		8ADBD9FA1B8F675E00BB46D8 /* RootViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADBD9F91B8F675E00BB46D8 /* RootViewCell.swift */; };
+		8ADC74841BA578F400FA178A /* StackView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ADC74831BA578F400FA178A /* StackView.storyboard */; settings = {ASSET_TAGS = (); }; };
+		8ADC74881BA5792D00FA178A /* StackViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADC74871BA5792D00FA178A /* StackViewViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8AF73F9A1BA0237E00E3783E /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF73F991BA0237E00E3783E /* SpeechViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8AF73F9C1BA0238900E3783E /* Speech.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF73F9B1BA0238900E3783E /* Speech.storyboard */; settings = {ASSET_TAGS = (); }; };
 		8AF73FA51BA03C8900E3783E /* LowPowerMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF73FA41BA03C8900E3783E /* LowPowerMode.storyboard */; settings = {ASSET_TAGS = (); }; };
@@ -142,6 +144,8 @@
 		8AD5D7761B295E8C001924F0 /* iOS9SamplerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS9SamplerUITests.swift; sourceTree = "<group>"; };
 		8AD5D7781B295E8C001924F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8ADBD9F91B8F675E00BB46D8 /* RootViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewCell.swift; sourceTree = "<group>"; };
+		8ADC74831BA578F400FA178A /* StackView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StackView.storyboard; sourceTree = "<group>"; };
+		8ADC74871BA5792D00FA178A /* StackViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackViewViewController.swift; sourceTree = "<group>"; };
 		8AF73F991BA0237E00E3783E /* SpeechViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
 		8AF73F9B1BA0238900E3783E /* Speech.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Speech.storyboard; sourceTree = "<group>"; };
 		8AF73FA41BA03C8900E3783E /* LowPowerMode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LowPowerMode.storyboard; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 				8A6FC3961BA53256007942FE /* SFSafariViewController */,
 				8A7C19C61B8B634C00F75F88 /* FilterAttributes */,
 				8AF73FA81BA0432300E3783E /* LowPowerMode */,
+				8ADC74871BA5792D00FA178A /* StackViewViewController.swift */,
+				8ADC74831BA578F400FA178A /* StackView.storyboard */,
 			);
 			path = SampleViewControllers;
 			sourceTree = "<group>";
@@ -618,6 +624,7 @@
 				8A6FC39A1BA550C3007942FE /* Spring.storyboard in Resources */,
 				8A3588261B33CCD400D4D32C /* TextDetect.storyboard in Resources */,
 				8AD5D75C1B295E8C001924F0 /* Main.storyboard in Resources */,
+				8ADC74841BA578F400FA178A /* StackView.storyboard in Resources */,
 				8AF73FA51BA03C8900E3783E /* LowPowerMode.storyboard in Resources */,
 				8AF73F9C1BA0238900E3783E /* Speech.storyboard in Resources */,
 			);
@@ -660,6 +667,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ADC74881BA5792D00FA178A /* StackViewViewController.swift in Sources */,
 				8AD5D7591B295E8C001924F0 /* RootViewController.swift in Sources */,
 				8A9078DA1B949B64000518C3 /* ContentBlockerViewController.swift in Sources */,
 				8A3588331B33F3B500D4D32C /* FilterDetailViewController.swift in Sources */,

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Yad-3h-7gK">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Stack View View Controller-->
+        <scene sceneID="YWG-OL-2EW">
+            <objects>
+                <viewController id="Yad-3h-7gK" customClass="StackViewViewController" customModule="iOS9Sampler" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dOM-mN-tOx"/>
+                        <viewControllerLayoutGuide type="bottom" id="JmH-06-xix"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BYI-RZ-CgV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AXy-yF-EPH">
+                                <rect key="frame" x="10" y="335" width="580" height="255"/>
+                            </stackView>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="gL0-vI-T5E">
+                                <rect key="frame" x="10" y="33" width="94" height="29"/>
+                                <connections>
+                                    <action selector="stepperChanged:" destination="Yad-3h-7gK" eventType="valueChanged" id="Klv-fh-1O9"/>
+                                </connections>
+                            </stepper>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vZz-Mm-K48">
+                                <rect key="frame" x="10" y="70" width="580" height="255"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JmH-06-xix" firstAttribute="top" secondItem="AXy-yF-EPH" secondAttribute="bottom" constant="10" id="9sH-0y-FV0"/>
+                            <constraint firstItem="vZz-Mm-K48" firstAttribute="top" secondItem="dOM-mN-tOx" secondAttribute="bottom" constant="50" id="NQS-vB-Q1P"/>
+                            <constraint firstItem="AXy-yF-EPH" firstAttribute="top" secondItem="vZz-Mm-K48" secondAttribute="bottom" constant="10" id="PS4-hi-HQS"/>
+                            <constraint firstItem="AXy-yF-EPH" firstAttribute="leading" secondItem="BYI-RZ-CgV" secondAttribute="leading" constant="10" id="Wf1-t6-IIe"/>
+                            <constraint firstAttribute="trailing" secondItem="AXy-yF-EPH" secondAttribute="trailing" constant="10" id="dze-bf-EeZ"/>
+                            <constraint firstItem="vZz-Mm-K48" firstAttribute="top" secondItem="gL0-vI-T5E" secondAttribute="bottom" constant="8" id="k8l-xn-9Sk"/>
+                            <constraint firstItem="vZz-Mm-K48" firstAttribute="leading" secondItem="BYI-RZ-CgV" secondAttribute="leading" constant="10" id="l0q-Bl-0IW"/>
+                            <constraint firstItem="AXy-yF-EPH" firstAttribute="height" secondItem="vZz-Mm-K48" secondAttribute="height" id="lhc-ES-84b"/>
+                            <constraint firstAttribute="trailing" secondItem="vZz-Mm-K48" secondAttribute="trailing" constant="10" id="n72-qv-bhI"/>
+                            <constraint firstItem="gL0-vI-T5E" firstAttribute="leading" secondItem="BYI-RZ-CgV" secondAttribute="leading" constant="10" id="o0y-LB-x4q"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="holizontalStackView" destination="vZz-Mm-K48" id="Pvb-A0-eT0"/>
+                        <outlet property="verticalStackView" destination="AXy-yF-EPH" id="csr-cS-07V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CJj-BF-may" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="318" y="-324"/>
+        </scene>
+    </scenes>
+</document>

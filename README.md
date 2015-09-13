@@ -55,6 +55,11 @@ Animation example using CASpringAnimation.
 
 ![](ResourcesForREADME/spring.gif)
 
+###UIStackView
+
+Auto Layout example using UIStackView.
+
+![](ResourcesForREADME/uistackview.gif)
 
 ###Selfies & Screenshots
 
