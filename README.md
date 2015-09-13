@@ -49,6 +49,13 @@ Example for new properties which are added to AVSpeechSynthesisVoice such as lan
 <img src="ResourcesForREADME/speech.jpg" width="200">
 
 
+###CASpringAnimation
+
+Animation example using CASpringAnimation.
+
+![](ResourcesForREADME/spring.gif)
+
+
 ###Selfies & Screenshots
 
 Fetch photos filtered with new subtypes "SelfPortraits" and "Screenshot" which are added to **Photos.framework**.

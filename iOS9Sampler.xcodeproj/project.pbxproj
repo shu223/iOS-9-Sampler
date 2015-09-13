@@ -21,6 +21,8 @@
 		8A3A321E1B35F0740016C4CE /* drumLoop.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8A3A321C1B35F0740016C4CE /* drumLoop.caf */; };
 		8A6FC3931BA53238007942FE /* Safari.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A6FC3921BA53238007942FE /* Safari.storyboard */; settings = {ASSET_TAGS = (); }; };
 		8A6FC3951BA53249007942FE /* SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6FC3941BA53249007942FE /* SafariViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8A6FC3981BA550BA007942FE /* SpringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6FC3971BA550BA007942FE /* SpringViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8A6FC39A1BA550C3007942FE /* Spring.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A6FC3991BA550C3007942FE /* Spring.storyboard */; settings = {ASSET_TAGS = (); }; };
 		8A7858891B8DDDBA00F93493 /* MapCustomizationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7858881B8DDDBA00F93493 /* MapCustomizationsViewController.swift */; };
 		8A78588B1B8DDDD100F93493 /* MapCustomizations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A78588A1B8DDDD100F93493 /* MapCustomizations.storyboard */; };
 		8A7C19CA1B8B63AF00F75F88 /* FilterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7C19C91B8B63AF00F75F88 /* FilterHelper.swift */; };
@@ -111,6 +113,8 @@
 		8A3A321C1B35F0740016C4CE /* drumLoop.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = drumLoop.caf; sourceTree = "<group>"; };
 		8A6FC3921BA53238007942FE /* Safari.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Safari.storyboard; sourceTree = "<group>"; };
 		8A6FC3941BA53249007942FE /* SafariViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariViewController.swift; sourceTree = "<group>"; };
+		8A6FC3971BA550BA007942FE /* SpringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringViewController.swift; sourceTree = "<group>"; };
+		8A6FC3991BA550C3007942FE /* Spring.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Spring.storyboard; sourceTree = "<group>"; };
 		8A7858881B8DDDBA00F93493 /* MapCustomizationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapCustomizationsViewController.swift; sourceTree = "<group>"; };
 		8A78588A1B8DDDD100F93493 /* MapCustomizations.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapCustomizations.storyboard; sourceTree = "<group>"; };
 		8A7C19C91B8B63AF00F75F88 /* FilterHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterHelper.swift; sourceTree = "<group>"; };
@@ -208,17 +212,18 @@
 		8A3588221B33CCC000D4D32C /* SampleViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8A7C19CB1B8B63BD00F75F88 /* TextDetection */,
-				8A7C19CC1B8B63C700F75F88 /* AudioUnitComponentManager */,
-				8A7C19C71B8B635B00F75F88 /* ImageFilters */,
-				8A7C19C61B8B634C00F75F88 /* FilterAttributes */,
 				8A78588C1B8DDDEF00F93493 /* MapCustomizations */,
+				8A7C19CB1B8B63BD00F75F88 /* TextDetection */,
+				8A7C19C71B8B635B00F75F88 /* ImageFilters */,
+				8A7C19CC1B8B63C700F75F88 /* AudioUnitComponentManager */,
+				8AF73F9D1BA02C2E00E3783E /* SpeechVoices */,
+				8A6FC39B1BA550C9007942FE /* CASpringAnimation */,
+				8A1E8E9D1BA0691300CAA287 /* Photos */,
 				8A0714B61BA47DE100A1CC22 /* SearchAPIs */,
 				8A9078DD1B949B79000518C3 /* ContentBlocker */,
 				8A6FC3961BA53256007942FE /* SFSafariViewController */,
-				8AF73F9D1BA02C2E00E3783E /* SpeechVoices */,
+				8A7C19C61B8B634C00F75F88 /* FilterAttributes */,
 				8AF73FA81BA0432300E3783E /* LowPowerMode */,
-				8A1E8E9D1BA0691300CAA287 /* Photos */,
 			);
 			path = SampleViewControllers;
 			sourceTree = "<group>";
@@ -246,6 +251,15 @@
 				8A6FC3921BA53238007942FE /* Safari.storyboard */,
 			);
 			name = SFSafariViewController;
+			sourceTree = "<group>";
+		};
+		8A6FC39B1BA550C9007942FE /* CASpringAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				8A6FC3971BA550BA007942FE /* SpringViewController.swift */,
+				8A6FC3991BA550C3007942FE /* Spring.storyboard */,
+			);
+			name = CASpringAnimation;
 			sourceTree = "<group>";
 		};
 		8A78588C1B8DDDEF00F93493 /* MapCustomizations */ = {
@@ -601,6 +615,7 @@
 				8A3A321E1B35F0740016C4CE /* drumLoop.caf in Resources */,
 				8AF73FAC1BA051EC00E3783E /* Photos.storyboard in Resources */,
 				8A78588B1B8DDDD100F93493 /* MapCustomizations.storyboard in Resources */,
+				8A6FC39A1BA550C3007942FE /* Spring.storyboard in Resources */,
 				8A3588261B33CCD400D4D32C /* TextDetect.storyboard in Resources */,
 				8AD5D75C1B295E8C001924F0 /* Main.storyboard in Resources */,
 				8AF73FA51BA03C8900E3783E /* LowPowerMode.storyboard in Resources */,
@@ -650,6 +665,7 @@
 				8A3588331B33F3B500D4D32C /* FilterDetailViewController.swift in Sources */,
 				8A3588241B33CCC000D4D32C /* TextDetectViewController.swift in Sources */,
 				8AF73F9A1BA0237E00E3783E /* SpeechViewController.swift in Sources */,
+				8A6FC3981BA550BA007942FE /* SpringViewController.swift in Sources */,
 				8A7858891B8DDDBA00F93493 /* MapCustomizationsViewController.swift in Sources */,
 				8ADBD9FA1B8F675E00BB46D8 /* RootViewCell.swift in Sources */,
 				8A7C19CA1B8B63AF00F75F88 /* FilterHelper.swift in Sources */,

@@ -25,6 +25,11 @@ class RootViewController: UITableViewController {
         
         items = [
             [
+                kItemKeyTitle: "Map Customizations",
+                kItemKeyDetail: "Flyover can be selected with new map types, and Traffic, Scale and Compass can be shown.",
+                kItemKeyClassPrefix: "MapCustomizations"
+            ],
+            [
                 kItemKeyTitle: "Text Detector",
                 kItemKeyDetail: "Text detection using new detector type \"CIDetectorTypeText\".",
                 kItemKeyClassPrefix: "TextDetect"
@@ -35,11 +40,6 @@ class RootViewController: UITableViewController {
                 kItemKeyClassPrefix: "StillImageFilters",
             ],
             [
-                kItemKeyTitle: "Map Customizations",
-                kItemKeyDetail: "Flyover can be selected with new map types, and Traffic, Scale and Compass can be shown.",
-                kItemKeyClassPrefix: "MapCustomizations"
-            ],
-            [
                 kItemKeyTitle: "Audio Unit Component Manager",
                 kItemKeyDetail: "Retrieve available audio units using AudioUnitComponentManager and apply them to a sound. If there are some Audio Unit Extensions, they will be also shown.",
                 kItemKeyClassPrefix: "AudioUnitComponentManager",
@@ -48,6 +48,11 @@ class RootViewController: UITableViewController {
                 kItemKeyTitle: "Speech Voices",
                 kItemKeyDetail: "Example for new properties which are added to AVSpeechSynthesisVoice such as language, name, quality...",
                 kItemKeyClassPrefix: "Speech",
+            ],
+            [
+                kItemKeyTitle: "CASpringAnimation",
+                kItemKeyDetail: "Animation example using CASpringAnimation.",
+                kItemKeyClassPrefix: "Spring"
             ],
             [
                 kItemKeyTitle: "Selfies & Screenshots",
