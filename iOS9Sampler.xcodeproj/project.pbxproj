@@ -25,6 +25,9 @@
 		8A6FC39A1BA550C3007942FE /* Spring.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A6FC3991BA550C3007942FE /* Spring.storyboard */; settings = {ASSET_TAGS = (); }; };
 		8A7858891B8DDDBA00F93493 /* MapCustomizationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7858881B8DDDBA00F93493 /* MapCustomizationsViewController.swift */; };
 		8A78588B1B8DDDD100F93493 /* MapCustomizations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A78588A1B8DDDD100F93493 /* MapCustomizations.storyboard */; };
+		8A7AC62E1BA9BE46005CC482 /* AddedFonts9.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A7AC62D1BA9BE46005CC482 /* AddedFonts9.plist */; settings = {ASSET_TAGS = (); }; };
+		8A7AC6301BA9BFCE005CC482 /* FontsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7AC62F1BA9BFCE005CC482 /* FontsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8A7AC6321BA9BFD8005CC482 /* Fonts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A7AC6311BA9BFD8005CC482 /* Fonts.storyboard */; settings = {ASSET_TAGS = (); }; };
 		8A7C19CA1B8B63AF00F75F88 /* FilterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7C19C91B8B63AF00F75F88 /* FilterHelper.swift */; };
 		8A81FCF21BA90D8000F8A4F8 /* StringTransformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81FCF11BA90D8000F8A4F8 /* StringTransformViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8A81FCF41BA90D8E00F8A4F8 /* StringTransform.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A81FCF31BA90D8E00F8A4F8 /* StringTransform.storyboard */; settings = {ASSET_TAGS = (); }; };
@@ -121,6 +124,9 @@
 		8A6FC3991BA550C3007942FE /* Spring.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Spring.storyboard; sourceTree = "<group>"; };
 		8A7858881B8DDDBA00F93493 /* MapCustomizationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapCustomizationsViewController.swift; sourceTree = "<group>"; };
 		8A78588A1B8DDDD100F93493 /* MapCustomizations.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapCustomizations.storyboard; sourceTree = "<group>"; };
+		8A7AC62D1BA9BE46005CC482 /* AddedFonts9.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AddedFonts9.plist; sourceTree = "<group>"; };
+		8A7AC62F1BA9BFCE005CC482 /* FontsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsViewController.swift; sourceTree = "<group>"; };
+		8A7AC6311BA9BFD8005CC482 /* Fonts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Fonts.storyboard; sourceTree = "<group>"; };
 		8A7C19C91B8B63AF00F75F88 /* FilterHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterHelper.swift; sourceTree = "<group>"; };
 		8A81FCF11BA90D8000F8A4F8 /* StringTransformViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTransformViewController.swift; sourceTree = "<group>"; };
 		8A81FCF31BA90D8E00F8A4F8 /* StringTransform.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StringTransform.storyboard; sourceTree = "<group>"; };
@@ -234,6 +240,7 @@
 				8A81FCF51BA90D9300F8A4F8 /* StringTransform */,
 				8A7C19C61B8B634C00F75F88 /* FilterAttributes */,
 				8AF73FA81BA0432300E3783E /* LowPowerMode */,
+				8A7AC6331BA9BFE1005CC482 /* Fonts */,
 			);
 			path = SampleViewControllers;
 			sourceTree = "<group>";
@@ -241,6 +248,7 @@
 		8A3A32181B35F0740016C4CE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8A7AC62C1BA9BE46005CC482 /* data */,
 				8A3A321B1B35F0740016C4CE /* sounds */,
 			);
 			path = Resources;
@@ -279,6 +287,23 @@
 				8A78588A1B8DDDD100F93493 /* MapCustomizations.storyboard */,
 			);
 			name = MapCustomizations;
+			sourceTree = "<group>";
+		};
+		8A7AC62C1BA9BE46005CC482 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				8A7AC62D1BA9BE46005CC482 /* AddedFonts9.plist */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		8A7AC6331BA9BFE1005CC482 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8A7AC62F1BA9BFCE005CC482 /* FontsViewController.swift */,
+				8A7AC6311BA9BFD8005CC482 /* Fonts.storyboard */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		8A7C19C61B8B634C00F75F88 /* FilterAttributes */ = {
@@ -639,7 +664,9 @@
 				8A3A32171B35DAE10016C4CE /* AudioUnitComponentManager.storyboard in Resources */,
 				8AD5D75E1B295E8C001924F0 /* Assets.xcassets in Resources */,
 				8A9078DC1B949B72000518C3 /* ContentBlocker.storyboard in Resources */,
+				8A7AC62E1BA9BE46005CC482 /* AddedFonts9.plist in Resources */,
 				8A6FC3931BA53238007942FE /* Safari.storyboard in Resources */,
+				8A7AC6321BA9BFD8005CC482 /* Fonts.storyboard in Resources */,
 				8A3A321E1B35F0740016C4CE /* drumLoop.caf in Resources */,
 				8AF73FAC1BA051EC00E3783E /* Photos.storyboard in Resources */,
 				8A78588B1B8DDDD100F93493 /* MapCustomizations.storyboard in Resources */,
@@ -691,6 +718,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ADC74881BA5792D00FA178A /* StackViewViewController.swift in Sources */,
+				8A7AC6301BA9BFCE005CC482 /* FontsViewController.swift in Sources */,
 				8AD5D7591B295E8C001924F0 /* RootViewController.swift in Sources */,
 				8A9078DA1B949B64000518C3 /* ContentBlockerViewController.swift in Sources */,
 				8A3588331B33F3B500D4D32C /* FilterDetailViewController.swift in Sources */,

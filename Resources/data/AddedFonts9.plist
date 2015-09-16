@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>KohinoorTelugu-Regular</string>
+	<string>KohinoorTelugu-Medium</string>
+	<string>KohinoorTelugu-Light</string>
+	<string>GillSans-SemiBold</string>
+	<string>GillSans-SemiBoldItalic</string>
+	<string>GillSans-UltraBold</string>
+	<string>KohinoorDevanagari-Regular</string>
+	<string>KohinoorDevanagari-Semibold</string>
+	<string>KohinoorBangla-Semibold</string>
+	<string>KohinoorBangla-Regular</string>
+	<string>KohinoorBangla-Light</string>
+	<string>PingFangTC-Medium</string>
+	<string>PingFangTC-Regular</string>
+	<string>PingFangTC-Light</string>
+	<string>PingFangTC-Ultralight</string>
+	<string>PingFangTC-Semibold</string>
+	<string>PingFangTC-Thin</string>
+	<string>PingFangHK-Ultralight</string>
+	<string>PingFangHK-Semibold</string>
+	<string>PingFangHK-Thin</string>
+	<string>PingFangHK-Light</string>
+	<string>PingFangHK-Regular</string>
+	<string>PingFangHK-Medium</string>
+	<string>HiraginoSans-W3</string>
+	<string>HiraginoSans-W6</string>
+	<string>PingFangSC-Ultralight</string>
+	<string>PingFangSC-Regular</string>
+	<string>PingFangSC-Semibold</string>
+	<string>PingFangSC-Thin</string>
+	<string>PingFangSC-Light</string>
+	<string>PingFangSC-Medium</string>
+</array>
+</plist>

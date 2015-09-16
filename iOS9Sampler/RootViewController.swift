@@ -94,6 +94,11 @@ class RootViewController: UITableViewController {
                 kItemKeyDetail: "Detect changes of \"Low Power Mode\" setting.",
                 kItemKeyClassPrefix: "LowPowerMode"
             ],
+            [
+                kItemKeyTitle: "New Fonts",
+                kItemKeyDetail: "Gallery of new fonts.",
+                kItemKeyClassPrefix: "Fonts"
+            ],
         ]
     }
 

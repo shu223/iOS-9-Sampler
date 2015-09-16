@@ -107,6 +107,13 @@ Extract new filters of CIFilter using `kCIAttributeFilterAvailable_iOS`. There a
 Detect changes of "Low Power Mode" setting.
 
 
+###New Fonts
+
+Gallery of **31 new fonts**.
+
+<img src="ResourcesForREADME/fonts.jpg" width="200">
+
+
 ##watchOS-2-Sampler
 
 You can check the **examples for watchOS 2** features on [watchOS-2-Sampler](https://github.com/shu223/watchOS-2-Sampler)!!
