@@ -121,3 +121,17 @@ You can check the **examples for watchOS 2** features on [watchOS-2-Sampler](htt
 <a href="https://github.com/shu223/watchOS-2-Sampler"><img src="ResourcesForREADME/watchos2sampler.jpg" width="200"></a>
 
 - https://github.com/shu223/watchOS-2-Sampler
+
+
+##Author
+
+Shuichi Tsutsumi (Freelance iOS engineer)
+
+- [Twitter](https://twitter.com/shu223)
+- [Facebook](https://www.facebook.com/shuichi.tsutsumi)
+- [LinkedIn](https://www.linkedin.com/profile/view?id=214896557)
+- [Blog (Japanese)](http://d.hatena.ne.jp/shu223/)
+
+##Special Thanks
+
+The icon is **designed by [Okazu](https://www.facebook.com/pashimo)**
