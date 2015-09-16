@@ -109,17 +109,22 @@ class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource,
             else {
                 
                 var extent = outputImage!.extent
-                let scale = UIScreen.mainScreen().scale
+//                let scale = UIScreen.mainScreen().scale
+                var scale: CGFloat!
                 
                 // some outputImage have infinite extents. e.g. CIDroste
                 if extent.isInfinite == true {
                     let size = self.imageView.frame.size
+                    scale = UIScreen.mainScreen().scale
                     extent = CGRectMake(0, 0, size.width * scale, size.height * scale)
                 }
-                print("extent:\(extent)\n")
+                else {
+                    scale = extent.size.width / self.orgImage.size.width
+                }
                 
                 let cgImage = context.createCGImage(outputImage!, fromRect: extent)
                 let image = UIImage(CGImage: cgImage, scale: scale, orientation: UIImageOrientation.Up)
+                print("extent:\(extent), image:\(image), org:\(self.orgImage), scale:\(scale)\n")
                 
                 dispatch_async(dispatch_get_main_queue()) {
                     self.imageView.image = image

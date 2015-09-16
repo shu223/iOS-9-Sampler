@@ -27,7 +27,7 @@ Text detection using new detector type "CIDetectorTypeText".
 
 New filters of CIFilter which can be used for Still Images.
 
-<img src="ResourcesForREADME/imagefilter.jpg">
+<img src="ResourcesForREADME/imagefilters.gif">
 
 （From left: Original, CICMYKHalftone, CIKaleidscope, CIPointillize）
 
