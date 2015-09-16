@@ -26,6 +26,8 @@
 		8A7858891B8DDDBA00F93493 /* MapCustomizationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7858881B8DDDBA00F93493 /* MapCustomizationsViewController.swift */; };
 		8A78588B1B8DDDD100F93493 /* MapCustomizations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A78588A1B8DDDD100F93493 /* MapCustomizations.storyboard */; };
 		8A7C19CA1B8B63AF00F75F88 /* FilterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7C19C91B8B63AF00F75F88 /* FilterHelper.swift */; };
+		8A81FCF21BA90D8000F8A4F8 /* StringTransformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81FCF11BA90D8000F8A4F8 /* StringTransformViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8A81FCF41BA90D8E00F8A4F8 /* StringTransform.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A81FCF31BA90D8E00F8A4F8 /* StringTransform.storyboard */; settings = {ASSET_TAGS = (); }; };
 		8A9078CF1B949A5F000518C3 /* blockerList.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A9078CE1B949A5F000518C3 /* blockerList.json */; };
 		8A9078D11B949A5F000518C3 /* ActionRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9078D01B949A5F000518C3 /* ActionRequestHandler.swift */; };
 		8A9078D51B949A5F000518C3 /* TwitterHeaderBlocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8A9078CC1B949A5F000518C3 /* TwitterHeaderBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -120,6 +122,8 @@
 		8A7858881B8DDDBA00F93493 /* MapCustomizationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapCustomizationsViewController.swift; sourceTree = "<group>"; };
 		8A78588A1B8DDDD100F93493 /* MapCustomizations.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapCustomizations.storyboard; sourceTree = "<group>"; };
 		8A7C19C91B8B63AF00F75F88 /* FilterHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterHelper.swift; sourceTree = "<group>"; };
+		8A81FCF11BA90D8000F8A4F8 /* StringTransformViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTransformViewController.swift; sourceTree = "<group>"; };
+		8A81FCF31BA90D8E00F8A4F8 /* StringTransform.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StringTransform.storyboard; sourceTree = "<group>"; };
 		8A9078CC1B949A5F000518C3 /* TwitterHeaderBlocker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TwitterHeaderBlocker.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A9078CE1B949A5F000518C3 /* blockerList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = blockerList.json; sourceTree = "<group>"; };
 		8A9078D01B949A5F000518C3 /* ActionRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequestHandler.swift; sourceTree = "<group>"; };
@@ -222,14 +226,14 @@
 				8A7C19CC1B8B63C700F75F88 /* AudioUnitComponentManager */,
 				8AF73F9D1BA02C2E00E3783E /* SpeechVoices */,
 				8A6FC39B1BA550C9007942FE /* CASpringAnimation */,
+				8A81FCF01BA90D6000F8A4F8 /* StackView */,
 				8A1E8E9D1BA0691300CAA287 /* Photos */,
 				8A0714B61BA47DE100A1CC22 /* SearchAPIs */,
 				8A9078DD1B949B79000518C3 /* ContentBlocker */,
 				8A6FC3961BA53256007942FE /* SFSafariViewController */,
+				8A81FCF51BA90D9300F8A4F8 /* StringTransform */,
 				8A7C19C61B8B634C00F75F88 /* FilterAttributes */,
 				8AF73FA81BA0432300E3783E /* LowPowerMode */,
-				8ADC74871BA5792D00FA178A /* StackViewViewController.swift */,
-				8ADC74831BA578F400FA178A /* StackView.storyboard */,
 			);
 			path = SampleViewControllers;
 			sourceTree = "<group>";
@@ -320,6 +324,24 @@
 				8A3A32161B35DAE10016C4CE /* AudioUnitComponentManager.storyboard */,
 			);
 			name = AudioUnitComponentManager;
+			sourceTree = "<group>";
+		};
+		8A81FCF01BA90D6000F8A4F8 /* StackView */ = {
+			isa = PBXGroup;
+			children = (
+				8ADC74871BA5792D00FA178A /* StackViewViewController.swift */,
+				8ADC74831BA578F400FA178A /* StackView.storyboard */,
+			);
+			name = StackView;
+			sourceTree = "<group>";
+		};
+		8A81FCF51BA90D9300F8A4F8 /* StringTransform */ = {
+			isa = PBXGroup;
+			children = (
+				8A81FCF11BA90D8000F8A4F8 /* StringTransformViewController.swift */,
+				8A81FCF31BA90D8E00F8A4F8 /* StringTransform.storyboard */,
+			);
+			name = StringTransform;
 			sourceTree = "<group>";
 		};
 		8A9078CD1B949A5F000518C3 /* TwitterHeaderBlocker */ = {
@@ -626,6 +648,7 @@
 				8AD5D75C1B295E8C001924F0 /* Main.storyboard in Resources */,
 				8ADC74841BA578F400FA178A /* StackView.storyboard in Resources */,
 				8AF73FA51BA03C8900E3783E /* LowPowerMode.storyboard in Resources */,
+				8A81FCF41BA90D8E00F8A4F8 /* StringTransform.storyboard in Resources */,
 				8AF73F9C1BA0238900E3783E /* Speech.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -679,6 +702,7 @@
 				8A7C19CA1B8B63AF00F75F88 /* FilterHelper.swift in Sources */,
 				8AF73FAE1BA0529600E3783E /* PhotosCell.swift in Sources */,
 				8A35882F1B33EC7A00D4D32C /* FiltersViewController.swift in Sources */,
+				8A81FCF21BA90D8000F8A4F8 /* StringTransformViewController.swift in Sources */,
 				8A3A32151B35DAD10016C4CE /* AudioUnitComponentManagerViewController.swift in Sources */,
 				8A0714B31BA46CF300A1CC22 /* SearchAPIsViewController.swift in Sources */,
 				8AD5D7571B295E8C001924F0 /* AppDelegate.swift in Sources */,

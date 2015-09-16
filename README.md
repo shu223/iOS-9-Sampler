@@ -62,9 +62,16 @@ Auto Layout example using UIStackView.
 
 ###Selfies & Screenshots
 
-Fetch photos filtered with new subtypes "SelfPortraits" and "Screenshot" which are added to **Photos.framework**.
+Fetch photos filtered with new subtypes `PHAssetCollectionSubtype.SmartAlbumSelfPortraits` and `PHAssetMediaSubtype.PhotoScreenshot` which are added to Photos framework.
 
 <img src="ResourcesForREADME/screenshots.jpg" width="200">
+
+
+###String Transform
+
+**String transliteration** examples using new APIs of Foundation framework.
+
+<img src="ResourcesForREADME/stringtransform.jpg" width="200">
 
 
 ###Search APIs
@@ -90,7 +97,7 @@ Open web pages with SFSafariViewController.
 
 ###Attributes of New Filters
 
-Attributes viewer for **41 new filters** of CIFilter.
+Extract new filters of CIFilter using `kCIAttributeFilterAvailable_iOS`. There are **41 new filters**.
 
 <img src="ResourcesForREADME/filterattributes.jpg" width="405">
 

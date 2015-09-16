@@ -65,6 +65,11 @@ class RootViewController: UITableViewController {
                 kItemKeyClassPrefix: "Photos"
             ],
             [
+                kItemKeyTitle: "String Transform",
+                kItemKeyDetail: "String transliteration examples using new APIs of Foundation framework.",
+                kItemKeyClassPrefix: "StringTransform"
+            ],
+            [
                 kItemKeyTitle: "Search APIs",
                 kItemKeyDetail: "Example for Search APIs using NSUserActivity and Core Spotlight.",
                 kItemKeyClassPrefix: "SearchAPIs"
@@ -94,7 +99,6 @@ class RootViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
