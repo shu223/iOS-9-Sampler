@@ -14,7 +14,10 @@ JUST BUILD with **Xcode 7**.
 
 **Flyover** can be selected with new map types, and **Traffic**, Scale and Compass can be shown.
 
-<img src="ResourcesForREADME/map2.jpg" width="405">
+<!--<img src="ResourcesForREADME/map2.jpg" width="405">-->
+
+![](ResourcesForREADME/map.gif)
+
 
 ###Text Detector
 
@@ -28,8 +31,6 @@ Text detection using new detector type "CIDetectorTypeText".
 New filters of CIFilter which can be used for Still Images.
 
 <img src="ResourcesForREADME/imagefilters.gif">
-
-（From left: Original, CICMYKHalftone, CIKaleidscope, CIPointillize）
 
 **NOTE:** 29 filters are supported in this example, however **"CIEdgeWork" and "CISpotLight" don't work correctly** with current code. I would much appreciated your pull request!
 
