@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GTH-Fa-Lrb">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Contacts View Controller-->
+        <scene sceneID="Jkj-Uz-d8H">
+            <objects>
+                <viewController id="GTH-Fa-Lrb" customClass="ContactsViewController" customModule="iOS9Sampler" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FWm-HE-zyi"/>
+                        <viewControllerLayoutGuide type="bottom" id="nQz-VL-AKW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uq6-Sn-Xjx">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar userInteractionEnabled="NO" contentMode="redraw" text="" placeholder="Search by name" translatesAutoresizingMaskIntoConstraints="NO" id="mou-dX-7A8">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="GTH-Fa-Lrb" id="deB-jQ-CSG"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="z2f-42-V5S">
+                                <rect key="frame" x="0.0" y="44" width="600" height="492"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="GTH-Fa-Lrb" id="ROH-pU-ujX"/>
+                                    <outlet property="delegate" destination="GTH-Fa-Lrb" id="dS8-Ms-eVN"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="mou-dX-7A8" firstAttribute="leading" secondItem="uq6-Sn-Xjx" secondAttribute="leadingMargin" constant="-20" id="8Bx-2Q-UrV"/>
+                            <constraint firstItem="z2f-42-V5S" firstAttribute="top" secondItem="mou-dX-7A8" secondAttribute="bottom" id="VWc-Vj-W6B"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="z2f-42-V5S" secondAttribute="trailing" constant="-20" id="Z0b-He-iLo"/>
+                            <constraint firstItem="mou-dX-7A8" firstAttribute="top" secondItem="FWm-HE-zyi" secondAttribute="bottom" id="aJ7-xb-kFm"/>
+                            <constraint firstItem="nQz-VL-AKW" firstAttribute="top" secondItem="z2f-42-V5S" secondAttribute="bottom" id="ceO-5I-Vlf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mou-dX-7A8" secondAttribute="trailing" constant="-20" id="j2e-Ee-Gzf"/>
+                            <constraint firstItem="z2f-42-V5S" firstAttribute="leading" secondItem="uq6-Sn-Xjx" secondAttribute="leadingMargin" constant="-20" id="vpD-hs-snN"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="QzQ-8K-GrG" appends="YES" id="O7x-It-6JW"/>
+                        </connections>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="searchBar" destination="mou-dX-7A8" id="MC7-5z-Ppc"/>
+                        <outlet property="tableView" destination="z2f-42-V5S" id="dMt-A3-AZa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O6Z-rI-S7k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="QzQ-8K-GrG">
+                    <connections>
+                        <action selector="tapped:" destination="GTH-Fa-Lrb" id="R2h-nZ-X2V"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="90" y="-1004"/>
+        </scene>
+    </scenes>
+</document>

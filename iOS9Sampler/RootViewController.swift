@@ -99,6 +99,11 @@ class RootViewController: UITableViewController {
                 kItemKeyDetail: "Gallery of new fonts.",
                 kItemKeyClassPrefix: "Fonts"
             ],
+            [
+                kItemKeyTitle: "Contacts",
+                kItemKeyDetail: "Contacts framework sample.",
+                kItemKeyClassPrefix: "Contacts"
+            ],
         ]
     }
 

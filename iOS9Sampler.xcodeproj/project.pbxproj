@@ -56,6 +56,8 @@
 		8AF73FAA1BA051E100E3783E /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF73FA91BA051E100E3783E /* PhotosViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8AF73FAC1BA051EC00E3783E /* Photos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF73FAB1BA051EC00E3783E /* Photos.storyboard */; settings = {ASSET_TAGS = (); }; };
 		8AF73FAE1BA0529600E3783E /* PhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF73FAD1BA0529600E3783E /* PhotosCell.swift */; settings = {ASSET_TAGS = (); }; };
+		BDD0D4A81BB2E6FF00995959 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD0D4A61BB2E6FF00995959 /* ContactsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		BDD0D4AA1BB2E85C00995959 /* Contacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD0D4A91BB2E85C00995959 /* Contacts.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +165,8 @@
 		8AF73FA91BA051E100E3783E /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		8AF73FAB1BA051EC00E3783E /* Photos.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Photos.storyboard; sourceTree = "<group>"; };
 		8AF73FAD1BA0529600E3783E /* PhotosCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCell.swift; sourceTree = "<group>"; };
+		BDD0D4A61BB2E6FF00995959 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		BDD0D4A91BB2E85C00995959 /* Contacts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Contacts.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +245,7 @@
 				8A7C19C61B8B634C00F75F88 /* FilterAttributes */,
 				8AF73FA81BA0432300E3783E /* LowPowerMode */,
 				8A7AC6331BA9BFE1005CC482 /* Fonts */,
+				BDD0D4A41BB2E68900995959 /* Contacts */,
 			);
 			path = SampleViewControllers;
 			sourceTree = "<group>";
@@ -492,6 +497,15 @@
 			name = LowPowerMode;
 			sourceTree = "<group>";
 		};
+		BDD0D4A41BB2E68900995959 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				BDD0D4A61BB2E6FF00995959 /* ContactsViewController.swift */,
+				BDD0D4A91BB2E85C00995959 /* Contacts.storyboard */,
+			);
+			name = Contacts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -669,6 +683,7 @@
 				8A7AC6321BA9BFD8005CC482 /* Fonts.storyboard in Resources */,
 				8A3A321E1B35F0740016C4CE /* drumLoop.caf in Resources */,
 				8AF73FAC1BA051EC00E3783E /* Photos.storyboard in Resources */,
+				BDD0D4AA1BB2E85C00995959 /* Contacts.storyboard in Resources */,
 				8A78588B1B8DDDD100F93493 /* MapCustomizations.storyboard in Resources */,
 				8A6FC39A1BA550C3007942FE /* Spring.storyboard in Resources */,
 				8A3588261B33CCD400D4D32C /* TextDetect.storyboard in Resources */,
@@ -718,6 +733,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ADC74881BA5792D00FA178A /* StackViewViewController.swift in Sources */,
+				BDD0D4A81BB2E6FF00995959 /* ContactsViewController.swift in Sources */,
 				8A7AC6301BA9BFCE005CC482 /* FontsViewController.swift in Sources */,
 				8AD5D7591B295E8C001924F0 /* RootViewController.swift in Sources */,
 				8A9078DA1B949B64000518C3 /* ContentBlockerViewController.swift in Sources */,
