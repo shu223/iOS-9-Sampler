@@ -20,10 +20,10 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ea1-Jg-FuG">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="sticker1" translatesAutoresizingMaskIntoConstraints="NO" id="y94-P2-fBZ">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="sticker1" translatesAutoresizingMaskIntoConstraints="NO" id="y94-P2-fBZ">
                                         <rect key="frame" x="8" y="16" width="450" height="281"/>
                                     </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="sticker2" translatesAutoresizingMaskIntoConstraints="NO" id="BQE-yY-4T3">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="sticker2" translatesAutoresizingMaskIntoConstraints="NO" id="BQE-yY-4T3">
                                         <rect key="frame" x="8" y="305" width="320" height="320"/>
                                     </imageView>
                                 </subviews>
