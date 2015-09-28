@@ -40,7 +40,7 @@ New filters of CIFilter which can be used for Still Images.
 
 <img src="ResourcesForREADME/imagefilters.gif">
 
-**NOTE:** 29 filters are supported in this example, however **"CIEdgeWork" and "CISpotLight" don't work correctly** with current code. I would much appreciated your pull request!
+**NOTE:** 29 filters are supported in this example, however **"CISpotLight" don't work correctly** with current code. I would much appreciated your pull request!
 
 
 ###Audio Unit Component Manager
