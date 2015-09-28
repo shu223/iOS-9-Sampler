@@ -132,11 +132,19 @@ Contacts framework sample.
 
 ###Quick Actions (3D Touch)  
 
-Press the Icon on Home screen, you can access to the shortcut menu.
+Press the Icon on Home screen deeply, so you can access to the shortcut menu.
 
 <img src="ResourcesForREADME/shortcut.jpg" width="200">
 
 Please see `UIApplicationShortcutItems` key in Info.plist and `application:performActionForShortcutItem:completionHandler:` method in AppDelegate to know how it's implemented.
+
+**NOTE:** Your device have to support 3D Touch.
+
+###Force Touch (3D Touch)
+
+Visualize the forces of touches using new properties of UITouch `force` and `maximumPossibleForce`.
+
+![](ResourcesForREADME/forcetouch.gif)
 
 **NOTE:** Your device have to support 3D Touch.
 

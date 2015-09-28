@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2hD-kk-7EQ">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="AvenirNext.ttc">
+            <string>AvenirNext-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Quick Actions View Controller-->
+        <scene sceneID="xdg-jG-mgy">
+            <objects>
+                <viewController id="2hD-kk-7EQ" customClass="QuickActionsViewController" customModule="iOS9Sampler" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X9w-fc-Wpr"/>
+                        <viewControllerLayoutGuide type="bottom" id="rDm-nV-mPX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hR5-3O-neh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your device supports 3D Touch!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXN-qx-1ct">
+                                <rect key="frame" x="20" y="40" width="560" height="20.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[How to try] Press the Icon on Home screen deeply, so you can access to the shortcut menu." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6Q-6N-A1k">
+                                <rect key="frame" x="20" y="68" width="560" height="41"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="shortcut" translatesAutoresizingMaskIntoConstraints="NO" id="NgG-zU-1tq">
+                                <rect key="frame" x="200" y="142" width="200" height="355"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hXN-qx-1ct" firstAttribute="trailing" secondItem="hR5-3O-neh" secondAttribute="trailingMargin" id="FBi-D1-xYM"/>
+                            <constraint firstItem="NgG-zU-1tq" firstAttribute="centerX" secondItem="hR5-3O-neh" secondAttribute="centerX" id="KUH-06-TPz"/>
+                            <constraint firstItem="NgG-zU-1tq" firstAttribute="top" secondItem="H6Q-6N-A1k" secondAttribute="bottom" constant="33" id="WYh-yG-rIK"/>
+                            <constraint firstItem="hXN-qx-1ct" firstAttribute="leading" secondItem="hR5-3O-neh" secondAttribute="leadingMargin" id="aif-YB-trg"/>
+                            <constraint firstItem="H6Q-6N-A1k" firstAttribute="top" secondItem="hXN-qx-1ct" secondAttribute="bottom" constant="8" id="dly-dm-bVG"/>
+                            <constraint firstItem="hXN-qx-1ct" firstAttribute="top" secondItem="X9w-fc-Wpr" secondAttribute="bottom" constant="20" id="lEb-fw-13V"/>
+                            <constraint firstItem="H6Q-6N-A1k" firstAttribute="trailing" secondItem="hR5-3O-neh" secondAttribute="trailingMargin" id="vVY-ay-6vY"/>
+                            <constraint firstItem="H6Q-6N-A1k" firstAttribute="leading" secondItem="hR5-3O-neh" secondAttribute="leadingMargin" id="w6U-Qw-IGf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="hXN-qx-1ct" id="N8F-ue-tSo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AhM-aA-UKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="233" y="-515"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="shortcut" width="200" height="355"/>
+    </resources>
+</document>

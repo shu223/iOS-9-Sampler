@@ -104,6 +104,16 @@ class RootViewController: UITableViewController {
                 kItemKeyDetail: "Contacts framework sample.",
                 kItemKeyClassPrefix: "Contacts"
             ],
+            [
+                kItemKeyTitle: "Quick Actions",
+                kItemKeyDetail: "Access the shortcut menu on the Home screen using 3D Touch.",
+                kItemKeyClassPrefix: "QuickActions"
+            ],
+            [
+                kItemKeyTitle: "Force Touch",
+                kItemKeyDetail: "Visualize the forces of touches using new properties of UITouch.",
+                kItemKeyClassPrefix: "ForceTouch"
+            ],
         ]
     }
 
