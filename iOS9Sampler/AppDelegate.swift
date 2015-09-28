@@ -41,6 +41,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
+    // =========================================================================
+    // MARK: - Home Screen Quick Action
+    
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        
+        switch shortcutItem.type {
+        case "com.shu223.ios9sampler.share":
+            let items = ["iOS-9-Sampler is great!",
+                NSURL(string: "https://github.com/shu223/iOS-9-Sampler")!
+            ]
+            let activityVC = UIActivityViewController(
+                activityItems: items,
+                applicationActivities: nil)
+            self.window?.rootViewController?.presentViewController(activityVC, animated: true, completion: { () -> Void in
+                //
+            })
+        default:
+            break
+        }
+    }
 
 }
 

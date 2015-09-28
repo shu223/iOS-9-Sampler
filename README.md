@@ -129,7 +129,17 @@ Contacts framework sample.
 
 <img src="ResourcesForREADME/contacts.jpg" width="200">
 
-  
+
+###Quick Actions (3D Touch)  
+
+Press the Icon on Home screen, you can access to the shortcut menu.
+
+<img src="ResourcesForREADME/shortcut.jpg" width="200">
+
+Please see `UIApplicationShortcutItems` key in Info.plist and `application:performActionForShortcutItem:completionHandler:` method in AppDelegate to know how it's implemented.
+
+**NOTE:** Your device have to support 3D Touch.
+
 
 ##watchOS-2-Sampler
 
