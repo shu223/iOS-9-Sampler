@@ -22,6 +22,7 @@ class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource,
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        imageView.backgroundColor = UIColor.blackColor();
         orgImage = imageView.image
 
         let exceptCategories = [
