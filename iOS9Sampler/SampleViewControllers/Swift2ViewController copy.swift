@@ -14,7 +14,7 @@ class Swift2ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("You now use 'Print' instead of 'println' to show console messages. To see other Swift 2 items - check the source code")
+        print("You now use 'print' instead of 'println' to show console messages. To see other Swift 2 items - check the source code")
         
     }
     
