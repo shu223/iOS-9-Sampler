@@ -62,7 +62,7 @@
 		8AF73FAC1BA051EC00E3783E /* Photos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF73FAB1BA051EC00E3783E /* Photos.storyboard */; settings = {ASSET_TAGS = (); }; };
 		8AF73FAE1BA0529600E3783E /* PhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF73FAD1BA0529600E3783E /* PhotosCell.swift */; settings = {ASSET_TAGS = (); }; };
 		A14EB9221BC9358200117FD8 /* Swift2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14EB9211BC9358200117FD8 /* Swift2.storyboard */; settings = {ASSET_TAGS = (); }; };
-		A14EB9241BC9359C00117FD8 /* Swift2ViewController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EB9231BC9359C00117FD8 /* Swift2ViewController copy.swift */; settings = {ASSET_TAGS = (); }; };
+		A14EB9241BC9359C00117FD8 /* Swift2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EB9231BC9359C00117FD8 /* Swift2ViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BDD0D4A81BB2E6FF00995959 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD0D4A61BB2E6FF00995959 /* ContactsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BDD0D4AA1BB2E85C00995959 /* Contacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD0D4A91BB2E85C00995959 /* Contacts.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -179,7 +179,7 @@
 		8AF73FAB1BA051EC00E3783E /* Photos.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Photos.storyboard; sourceTree = "<group>"; };
 		8AF73FAD1BA0529600E3783E /* PhotosCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCell.swift; sourceTree = "<group>"; };
 		A14EB9211BC9358200117FD8 /* Swift2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Swift2.storyboard; sourceTree = "<group>"; };
-		A14EB9231BC9359C00117FD8 /* Swift2ViewController copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Swift2ViewController copy.swift"; sourceTree = "<group>"; };
+		A14EB9231BC9359C00117FD8 /* Swift2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift2ViewController.swift; sourceTree = "<group>"; };
 		BDD0D4A61BB2E6FF00995959 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		BDD0D4A91BB2E85C00995959 /* Contacts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Contacts.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -554,7 +554,7 @@
 		A14EB9251BC935B000117FD8 /* Swift2 */ = {
 			isa = PBXGroup;
 			children = (
-				A14EB9231BC9359C00117FD8 /* Swift2ViewController copy.swift */,
+				A14EB9231BC9359C00117FD8 /* Swift2ViewController.swift */,
 				A14EB9211BC9358200117FD8 /* Swift2.storyboard */,
 			);
 			name = Swift2;
@@ -813,7 +813,7 @@
 				8A7C19CA1B8B63AF00F75F88 /* FilterHelper.swift in Sources */,
 				8AF73FAE1BA0529600E3783E /* PhotosCell.swift in Sources */,
 				8A35882F1B33EC7A00D4D32C /* FiltersViewController.swift in Sources */,
-				A14EB9241BC9359C00117FD8 /* Swift2ViewController copy.swift in Sources */,
+				A14EB9241BC9359C00117FD8 /* Swift2ViewController.swift in Sources */,
 				8A81FCF21BA90D8000F8A4F8 /* StringTransformViewController.swift in Sources */,
 				8A2AC8741BB91ACD00C05128 /* QuickActionsViewController.swift in Sources */,
 				8A3A32151B35DAD10016C4CE /* AudioUnitComponentManagerViewController.swift in Sources */,

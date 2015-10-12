@@ -116,7 +116,7 @@ class RootViewController: UITableViewController {
             ],
             [
                 kItemKeyTitle: "New Swift 2 features",
-                kItemKeyDetail: "To make this a complete reference here are the aesme new features in Swift 2",
+                kItemKeyDetail: "To make this a complete reference here are the awesome new features in Swift 2",
                 kItemKeyClassPrefix: "Swift2"
             ],
         ]
