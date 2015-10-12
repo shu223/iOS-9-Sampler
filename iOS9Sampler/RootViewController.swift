@@ -114,6 +114,11 @@ class RootViewController: UITableViewController {
                 kItemKeyDetail: "Visualize the forces of touches using new properties of UITouch.",
                 kItemKeyClassPrefix: "ForceTouch"
             ],
+            [
+                kItemKeyTitle: "New Swift 2 features",
+                kItemKeyDetail: "To make this a complete reference here are the aesme new features in Swift 2",
+                kItemKeyClassPrefix: "Swift2"
+            ],
         ]
     }
 

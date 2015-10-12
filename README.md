@@ -148,6 +148,11 @@ Visualize the forces of touches using new properties of UITouch `force` and `max
 
 **NOTE:** Your device have to support 3D Touch.
 
+##Swift-2-Sampler 
+To make this a nice reference for all new features including new Swift Syntax, I have added a sample of some of the new Syntax for Swift 2 to make it easy to see the benefits: 
+specifically: 
+- "print"
+- "guard"
 
 ##watchOS-2-Sampler
 
