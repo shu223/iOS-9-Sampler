@@ -55,6 +55,11 @@ class RootViewController: UITableViewController {
                 kItemKeyClassPrefix: "Spring"
             ],
             [
+                kItemKeyTitle: "Core Image Transitions",
+                kItemKeyDetail: "New transition effects which are added to CITransitionCategory.",
+                kItemKeyClassPrefix: "CoreImageTransitions"
+            ],
+            [
                 kItemKeyTitle: "UIStackView",
                 kItemKeyDetail: "Auto Layout example using UIStackView.",
                 kItemKeyClassPrefix: "StackView"
@@ -114,14 +119,14 @@ class RootViewController: UITableViewController {
                 kItemKeyDetail: "Visualize the forces of touches using new properties of UITouch.",
                 kItemKeyClassPrefix: "ForceTouch"
             ],
-            [
-                kItemKeyTitle: "New Swift 2 features",
-                kItemKeyDetail: "To make this a complete reference here are the awesome new features in Swift 2",
-                kItemKeyClassPrefix: "Swift2"
-            ],
         ]
     }
 
+    override func viewDidAppear(animated: Bool) {
+        // Needed after custome transition
+        navigationController?.delegate = nil;
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

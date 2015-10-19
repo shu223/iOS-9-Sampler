@@ -3,3 +3,4 @@
 //
 
 #import "PulsingHaloLayer.h"
+#import "CoreImageTransition.h"

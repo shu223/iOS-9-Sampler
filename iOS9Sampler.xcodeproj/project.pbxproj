@@ -28,6 +28,12 @@
 		8A6FC3951BA53249007942FE /* SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6FC3941BA53249007942FE /* SafariViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8A6FC3981BA550BA007942FE /* SpringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6FC3971BA550BA007942FE /* SpringViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8A6FC39A1BA550C3007942FE /* Spring.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A6FC3991BA550C3007942FE /* Spring.storyboard */; settings = {ASSET_TAGS = (); }; };
+		8A76D7751BD4B68C00C3881D /* CoreImageTransitionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A76D7741BD4B68C00C3881D /* CoreImageTransitionsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8A76D7771BD4B69C00C3881D /* CoreImageTransitions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A76D7761BD4B69C00C3881D /* CoreImageTransitions.storyboard */; settings = {ASSET_TAGS = (); }; };
+		8A76D7921BD4B8C400C3881D /* CoreImageTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A76D7831BD4B8C400C3881D /* CoreImageTransition.m */; settings = {ASSET_TAGS = (); }; };
+		8A76D7931BD4B8C400C3881D /* CoreImageTransitionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A76D7851BD4B8C400C3881D /* CoreImageTransitionHelper.m */; settings = {ASSET_TAGS = (); }; };
+		8A76D7941BD4B8C400C3881D /* CoreImageTransitionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A76D7881BD4B8C400C3881D /* CoreImageTransitionView.m */; settings = {ASSET_TAGS = (); }; };
+		8A76D79C1BD4BC3300C3881D /* restrictedshine.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 8A76D79A1BD4BC3300C3881D /* restrictedshine.tiff */; settings = {ASSET_TAGS = (); }; };
 		8A7858891B8DDDBA00F93493 /* MapCustomizationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7858881B8DDDBA00F93493 /* MapCustomizationsViewController.swift */; };
 		8A78588B1B8DDDD100F93493 /* MapCustomizations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A78588A1B8DDDD100F93493 /* MapCustomizations.storyboard */; };
 		8A7AC62E1BA9BE46005CC482 /* AddedFonts9.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A7AC62D1BA9BE46005CC482 /* AddedFonts9.plist */; settings = {ASSET_TAGS = (); }; };
@@ -61,8 +67,6 @@
 		8AF73FAA1BA051E100E3783E /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF73FA91BA051E100E3783E /* PhotosViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8AF73FAC1BA051EC00E3783E /* Photos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF73FAB1BA051EC00E3783E /* Photos.storyboard */; settings = {ASSET_TAGS = (); }; };
 		8AF73FAE1BA0529600E3783E /* PhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF73FAD1BA0529600E3783E /* PhotosCell.swift */; settings = {ASSET_TAGS = (); }; };
-		A14EB9221BC9358200117FD8 /* Swift2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14EB9211BC9358200117FD8 /* Swift2.storyboard */; settings = {ASSET_TAGS = (); }; };
-		A14EB9241BC9359C00117FD8 /* Swift2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14EB9231BC9359C00117FD8 /* Swift2ViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BDD0D4A81BB2E6FF00995959 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD0D4A61BB2E6FF00995959 /* ContactsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BDD0D4AA1BB2E85C00995959 /* Contacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD0D4A91BB2E85C00995959 /* Contacts.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -137,6 +141,16 @@
 		8A6FC3941BA53249007942FE /* SafariViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariViewController.swift; sourceTree = "<group>"; };
 		8A6FC3971BA550BA007942FE /* SpringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringViewController.swift; sourceTree = "<group>"; };
 		8A6FC3991BA550C3007942FE /* Spring.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Spring.storyboard; sourceTree = "<group>"; };
+		8A76D7741BD4B68C00C3881D /* CoreImageTransitionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreImageTransitionsViewController.swift; sourceTree = "<group>"; };
+		8A76D7761BD4B69C00C3881D /* CoreImageTransitions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CoreImageTransitions.storyboard; sourceTree = "<group>"; };
+		8A76D7821BD4B8C400C3881D /* CoreImageTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreImageTransition.h; sourceTree = "<group>"; };
+		8A76D7831BD4B8C400C3881D /* CoreImageTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreImageTransition.m; sourceTree = "<group>"; };
+		8A76D7841BD4B8C400C3881D /* CoreImageTransitionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreImageTransitionHelper.h; sourceTree = "<group>"; };
+		8A76D7851BD4B8C400C3881D /* CoreImageTransitionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreImageTransitionHelper.m; sourceTree = "<group>"; };
+		8A76D7861BD4B8C400C3881D /* CoreImageTransitionTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreImageTransitionTypes.h; sourceTree = "<group>"; };
+		8A76D7871BD4B8C400C3881D /* CoreImageTransitionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreImageTransitionView.h; sourceTree = "<group>"; };
+		8A76D7881BD4B8C400C3881D /* CoreImageTransitionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreImageTransitionView.m; sourceTree = "<group>"; };
+		8A76D79A1BD4BC3300C3881D /* restrictedshine.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = restrictedshine.tiff; sourceTree = "<group>"; };
 		8A7858881B8DDDBA00F93493 /* MapCustomizationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapCustomizationsViewController.swift; sourceTree = "<group>"; };
 		8A78588A1B8DDDD100F93493 /* MapCustomizations.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapCustomizations.storyboard; sourceTree = "<group>"; };
 		8A7AC62D1BA9BE46005CC482 /* AddedFonts9.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AddedFonts9.plist; sourceTree = "<group>"; };
@@ -178,8 +192,6 @@
 		8AF73FA91BA051E100E3783E /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		8AF73FAB1BA051EC00E3783E /* Photos.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Photos.storyboard; sourceTree = "<group>"; };
 		8AF73FAD1BA0529600E3783E /* PhotosCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCell.swift; sourceTree = "<group>"; };
-		A14EB9211BC9358200117FD8 /* Swift2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Swift2.storyboard; sourceTree = "<group>"; };
-		A14EB9231BC9359C00117FD8 /* Swift2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift2ViewController.swift; sourceTree = "<group>"; };
 		BDD0D4A61BB2E6FF00995959 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		BDD0D4A91BB2E85C00995959 /* Contacts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Contacts.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -263,6 +275,7 @@
 		8A2AC8781BB91E2200C05128 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				8A76D7791BD4B8C400C3881D /* CoreImageTransitions */,
 				8A2AC8791BB91E2200C05128 /* PulsingHalo */,
 			);
 			path = libs;
@@ -298,7 +311,7 @@
 				BDD0D4A41BB2E68900995959 /* Contacts */,
 				8A2AC8771BB91ADF00C05128 /* QuickActions */,
 				8A2AC8721BB91A6F00C05128 /* ForceTouch */,
-				A14EB9251BC935B000117FD8 /* Swift2 */,
+				8A76D7781BD4B74E00C3881D /* CoreImageTransitions */,
 			);
 			path = SampleViewControllers;
 			sourceTree = "<group>";
@@ -336,6 +349,38 @@
 				8A6FC3991BA550C3007942FE /* Spring.storyboard */,
 			);
 			name = CASpringAnimation;
+			sourceTree = "<group>";
+		};
+		8A76D7781BD4B74E00C3881D /* CoreImageTransitions */ = {
+			isa = PBXGroup;
+			children = (
+				8A76D7741BD4B68C00C3881D /* CoreImageTransitionsViewController.swift */,
+				8A76D7761BD4B69C00C3881D /* CoreImageTransitions.storyboard */,
+			);
+			name = CoreImageTransitions;
+			sourceTree = "<group>";
+		};
+		8A76D7791BD4B8C400C3881D /* CoreImageTransitions */ = {
+			isa = PBXGroup;
+			children = (
+				8A76D7981BD4BC3300C3881D /* Resources */,
+				8A76D7821BD4B8C400C3881D /* CoreImageTransition.h */,
+				8A76D7831BD4B8C400C3881D /* CoreImageTransition.m */,
+				8A76D7841BD4B8C400C3881D /* CoreImageTransitionHelper.h */,
+				8A76D7851BD4B8C400C3881D /* CoreImageTransitionHelper.m */,
+				8A76D7861BD4B8C400C3881D /* CoreImageTransitionTypes.h */,
+				8A76D7871BD4B8C400C3881D /* CoreImageTransitionView.h */,
+				8A76D7881BD4B8C400C3881D /* CoreImageTransitionView.m */,
+			);
+			path = CoreImageTransitions;
+			sourceTree = "<group>";
+		};
+		8A76D7981BD4BC3300C3881D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8A76D79A1BD4BC3300C3881D /* restrictedshine.tiff */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		8A78588C1B8DDDEF00F93493 /* MapCustomizations */ = {
@@ -551,15 +596,6 @@
 			name = LowPowerMode;
 			sourceTree = "<group>";
 		};
-		A14EB9251BC935B000117FD8 /* Swift2 */ = {
-			isa = PBXGroup;
-			children = (
-				A14EB9231BC9359C00117FD8 /* Swift2ViewController.swift */,
-				A14EB9211BC9358200117FD8 /* Swift2.storyboard */,
-			);
-			name = Swift2;
-			sourceTree = "<group>";
-		};
 		BDD0D4A41BB2E68900995959 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
@@ -750,14 +786,15 @@
 				8A78588B1B8DDDD100F93493 /* MapCustomizations.storyboard in Resources */,
 				8A6FC39A1BA550C3007942FE /* Spring.storyboard in Resources */,
 				8A3588261B33CCD400D4D32C /* TextDetect.storyboard in Resources */,
+				8A76D7771BD4B69C00C3881D /* CoreImageTransitions.storyboard in Resources */,
 				8AD5D75C1B295E8C001924F0 /* Main.storyboard in Resources */,
 				8ADC74841BA578F400FA178A /* StackView.storyboard in Resources */,
+				8A76D79C1BD4BC3300C3881D /* restrictedshine.tiff in Resources */,
 				8A2AC86C1BB91A3800C05128 /* ForceTouch.storyboard in Resources */,
 				8AF73FA51BA03C8900E3783E /* LowPowerMode.storyboard in Resources */,
 				8A2AC8761BB91ADA00C05128 /* QuickActions.storyboard in Resources */,
 				8A81FCF41BA90D8E00F8A4F8 /* StringTransform.storyboard in Resources */,
 				8AF73F9C1BA0238900E3783E /* Speech.storyboard in Resources */,
-				A14EB9221BC9358200117FD8 /* Swift2.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -802,8 +839,11 @@
 				BDD0D4A81BB2E6FF00995959 /* ContactsViewController.swift in Sources */,
 				8A7AC6301BA9BFCE005CC482 /* FontsViewController.swift in Sources */,
 				8AD5D7591B295E8C001924F0 /* RootViewController.swift in Sources */,
+				8A76D7941BD4B8C400C3881D /* CoreImageTransitionView.m in Sources */,
 				8A9078DA1B949B64000518C3 /* ContentBlockerViewController.swift in Sources */,
 				8A3588331B33F3B500D4D32C /* FilterDetailViewController.swift in Sources */,
+				8A76D7921BD4B8C400C3881D /* CoreImageTransition.m in Sources */,
+				8A76D7931BD4B8C400C3881D /* CoreImageTransitionHelper.m in Sources */,
 				8A2AC87C1BB91E2200C05128 /* PulsingHaloLayer.m in Sources */,
 				8A3588241B33CCC000D4D32C /* TextDetectViewController.swift in Sources */,
 				8AF73F9A1BA0237E00E3783E /* SpeechViewController.swift in Sources */,
@@ -812,8 +852,8 @@
 				8ADBD9FA1B8F675E00BB46D8 /* RootViewCell.swift in Sources */,
 				8A7C19CA1B8B63AF00F75F88 /* FilterHelper.swift in Sources */,
 				8AF73FAE1BA0529600E3783E /* PhotosCell.swift in Sources */,
+				8A76D7751BD4B68C00C3881D /* CoreImageTransitionsViewController.swift in Sources */,
 				8A35882F1B33EC7A00D4D32C /* FiltersViewController.swift in Sources */,
-				A14EB9241BC9359C00117FD8 /* Swift2ViewController.swift in Sources */,
 				8A81FCF21BA90D8000F8A4F8 /* StringTransformViewController.swift in Sources */,
 				8A2AC8741BB91ACD00C05128 /* QuickActionsViewController.swift in Sources */,
 				8A3A32151B35DAD10016C4CE /* AudioUnitComponentManagerViewController.swift in Sources */,

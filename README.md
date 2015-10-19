@@ -83,6 +83,12 @@ Fetch photos filtered with new subtypes `PHAssetCollectionSubtype.SmartAlbumSelf
 <img src="ResourcesForREADME/stringtransform.jpg" width="200">
 
 
+###Core Image Transitions
+
+New transition effects which are added to `CITransitionCategory`.
+
+![](ResourcesForREADME/ripple.gif)
+
 ###Search APIs
 
 Example for Search APIs using NSUserActivity and **Core Spotlight**.
@@ -147,13 +153,6 @@ Visualize the forces of touches using new properties of UITouch `force` and `max
 ![](ResourcesForREADME/forcetouch.gif)
 
 **NOTE:** Your device have to support 3D Touch.
-
-###Swift-2-Sampler  (Created by [grantkemp](https://github.com/grantkemp))
-
-To make this a nice reference for all new features including new Swift Syntax, I have added a sample of some of the new Syntax for Swift 2 to make it easy to see the benefits: 
-specifically: 
-- "print"
-- "guard"
 
 ##watchOS-2-Sampler
 
