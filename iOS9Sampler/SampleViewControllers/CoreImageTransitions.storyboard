@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="olo-Ld-LWx">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Core Image Transitions View Controller-->
+        <scene sceneID="rmA-Mc-Odw">
+            <objects>
+                <viewController id="olo-Ld-LWx" customClass="CoreImageTransitionsViewController" customModule="iOS9Sampler" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nUS-qB-hfY"/>
+                        <viewControllerLayoutGuide type="bottom" id="KEp-wu-p8i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bll-me-4kJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" image="elcaptan" translatesAutoresizingMaskIntoConstraints="NO" id="MnN-3l-cxi">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="736"/>
+                                <animations/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5Yv-Jo-06t">
+                                <rect key="frame" x="183.5" y="28" width="233" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="Ripple"/>
+                                    <segment title="PageCurl1"/>
+                                    <segment title="PageCurl2"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MnN-3l-cxi" firstAttribute="top" secondItem="bll-me-4kJ" secondAttribute="top" id="0sF-NZ-UwR"/>
+                            <constraint firstItem="MnN-3l-cxi" firstAttribute="leading" secondItem="bll-me-4kJ" secondAttribute="leading" id="IVd-g6-ZRo"/>
+                            <constraint firstAttribute="trailing" secondItem="MnN-3l-cxi" secondAttribute="trailing" id="pfh-4T-18R"/>
+                            <constraint firstItem="5Yv-Jo-06t" firstAttribute="top" secondItem="nUS-qB-hfY" secondAttribute="bottom" constant="8" id="rWr-fs-Jy8"/>
+                            <constraint firstItem="5Yv-Jo-06t" firstAttribute="centerX" secondItem="bll-me-4kJ" secondAttribute="centerX" id="tkt-8u-VcV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="segmentedCtl" destination="5Yv-Jo-06t" id="cQy-7L-wyS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vEV-Aq-5Ei" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="191" y="-601"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="elcaptan" width="414" height="736"/>
+    </resources>
+</document>

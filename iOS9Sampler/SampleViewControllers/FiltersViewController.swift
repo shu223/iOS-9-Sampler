@@ -18,7 +18,7 @@ class FiltersViewController: UITableViewController {
         super.viewDidLoad()
 
         items = FilterHelper.filterNamesFor_iOS9(kCICategoryBuiltIn)
-        print("num:\(items.count)\n")        
+        print("num:\(items.count)\n")
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,8 +55,12 @@ class FiltersViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         
-        cell.textLabel!.text = items[indexPath.row]
+        let name = items[indexPath.row]
+        cell.textLabel?.text = name
         
+        let filter = CIFilter(name: name)!
+        cell.detailTextLabel?.text = filter.categoriesStringForFilter()
+
         return cell
     }
     

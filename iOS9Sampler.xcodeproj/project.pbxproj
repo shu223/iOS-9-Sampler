@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		8A0714B31BA46CF300A1CC22 /* SearchAPIsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0714B21BA46CF300A1CC22 /* SearchAPIsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8A0714B51BA46D0500A1CC22 /* SearchAPIs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0714B41BA46D0500A1CC22 /* SearchAPIs.storyboard */; settings = {ASSET_TAGS = (); }; };
+		8A2AC86C1BB91A3800C05128 /* ForceTouch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A2AC86A1BB91A3800C05128 /* ForceTouch.storyboard */; settings = {ASSET_TAGS = (); }; };
+		8A2AC86D1BB91A3800C05128 /* ForceTouchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2AC86B1BB91A3800C05128 /* ForceTouchViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8A2AC8741BB91ACD00C05128 /* QuickActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2AC8731BB91ACD00C05128 /* QuickActionsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8A2AC8761BB91ADA00C05128 /* QuickActions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A2AC8751BB91ADA00C05128 /* QuickActions.storyboard */; settings = {ASSET_TAGS = (); }; };
+		8A2AC87C1BB91E2200C05128 /* PulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2AC87B1BB91E2200C05128 /* PulsingHaloLayer.m */; settings = {ASSET_TAGS = (); }; };
 		8A3588241B33CCC000D4D32C /* TextDetectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3588231B33CCC000D4D32C /* TextDetectViewController.swift */; };
 		8A3588261B33CCD400D4D32C /* TextDetect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3588251B33CCD400D4D32C /* TextDetect.storyboard */; };
 		8A35882F1B33EC7A00D4D32C /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A35882E1B33EC7A00D4D32C /* FiltersViewController.swift */; };
@@ -23,6 +28,12 @@
 		8A6FC3951BA53249007942FE /* SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6FC3941BA53249007942FE /* SafariViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8A6FC3981BA550BA007942FE /* SpringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6FC3971BA550BA007942FE /* SpringViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8A6FC39A1BA550C3007942FE /* Spring.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A6FC3991BA550C3007942FE /* Spring.storyboard */; settings = {ASSET_TAGS = (); }; };
+		8A76D7751BD4B68C00C3881D /* CoreImageTransitionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A76D7741BD4B68C00C3881D /* CoreImageTransitionsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8A76D7771BD4B69C00C3881D /* CoreImageTransitions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A76D7761BD4B69C00C3881D /* CoreImageTransitions.storyboard */; settings = {ASSET_TAGS = (); }; };
+		8A76D7921BD4B8C400C3881D /* CoreImageTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A76D7831BD4B8C400C3881D /* CoreImageTransition.m */; settings = {ASSET_TAGS = (); }; };
+		8A76D7931BD4B8C400C3881D /* CoreImageTransitionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A76D7851BD4B8C400C3881D /* CoreImageTransitionHelper.m */; settings = {ASSET_TAGS = (); }; };
+		8A76D7941BD4B8C400C3881D /* CoreImageTransitionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A76D7881BD4B8C400C3881D /* CoreImageTransitionView.m */; settings = {ASSET_TAGS = (); }; };
+		8A76D79C1BD4BC3300C3881D /* restrictedshine.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 8A76D79A1BD4BC3300C3881D /* restrictedshine.tiff */; settings = {ASSET_TAGS = (); }; };
 		8A7858891B8DDDBA00F93493 /* MapCustomizationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7858881B8DDDBA00F93493 /* MapCustomizationsViewController.swift */; };
 		8A78588B1B8DDDD100F93493 /* MapCustomizations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A78588A1B8DDDD100F93493 /* MapCustomizations.storyboard */; };
 		8A7AC62E1BA9BE46005CC482 /* AddedFonts9.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A7AC62D1BA9BE46005CC482 /* AddedFonts9.plist */; settings = {ASSET_TAGS = (); }; };
@@ -56,6 +67,8 @@
 		8AF73FAA1BA051E100E3783E /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF73FA91BA051E100E3783E /* PhotosViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8AF73FAC1BA051EC00E3783E /* Photos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF73FAB1BA051EC00E3783E /* Photos.storyboard */; settings = {ASSET_TAGS = (); }; };
 		8AF73FAE1BA0529600E3783E /* PhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF73FAD1BA0529600E3783E /* PhotosCell.swift */; settings = {ASSET_TAGS = (); }; };
+		BDD0D4A81BB2E6FF00995959 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD0D4A61BB2E6FF00995959 /* ContactsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		BDD0D4AA1BB2E85C00995959 /* Contacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD0D4A91BB2E85C00995959 /* Contacts.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +120,12 @@
 /* Begin PBXFileReference section */
 		8A0714B21BA46CF300A1CC22 /* SearchAPIsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAPIsViewController.swift; sourceTree = "<group>"; };
 		8A0714B41BA46D0500A1CC22 /* SearchAPIs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchAPIs.storyboard; sourceTree = "<group>"; };
+		8A2AC86A1BB91A3800C05128 /* ForceTouch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ForceTouch.storyboard; sourceTree = "<group>"; };
+		8A2AC86B1BB91A3800C05128 /* ForceTouchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceTouchViewController.swift; sourceTree = "<group>"; };
+		8A2AC8731BB91ACD00C05128 /* QuickActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickActionsViewController.swift; sourceTree = "<group>"; };
+		8A2AC8751BB91ADA00C05128 /* QuickActions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QuickActions.storyboard; sourceTree = "<group>"; };
+		8A2AC87A1BB91E2200C05128 /* PulsingHaloLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulsingHaloLayer.h; sourceTree = "<group>"; };
+		8A2AC87B1BB91E2200C05128 /* PulsingHaloLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulsingHaloLayer.m; sourceTree = "<group>"; };
 		8A3588231B33CCC000D4D32C /* TextDetectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDetectViewController.swift; sourceTree = "<group>"; };
 		8A3588251B33CCD400D4D32C /* TextDetect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TextDetect.storyboard; sourceTree = "<group>"; };
 		8A3588271B33CD1700D4D32C /* iOS9Sampler-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "iOS9Sampler-Bridging-Header.h"; path = "SampleViewControllers/iOS9Sampler-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -122,6 +141,16 @@
 		8A6FC3941BA53249007942FE /* SafariViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariViewController.swift; sourceTree = "<group>"; };
 		8A6FC3971BA550BA007942FE /* SpringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringViewController.swift; sourceTree = "<group>"; };
 		8A6FC3991BA550C3007942FE /* Spring.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Spring.storyboard; sourceTree = "<group>"; };
+		8A76D7741BD4B68C00C3881D /* CoreImageTransitionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreImageTransitionsViewController.swift; sourceTree = "<group>"; };
+		8A76D7761BD4B69C00C3881D /* CoreImageTransitions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CoreImageTransitions.storyboard; sourceTree = "<group>"; };
+		8A76D7821BD4B8C400C3881D /* CoreImageTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreImageTransition.h; sourceTree = "<group>"; };
+		8A76D7831BD4B8C400C3881D /* CoreImageTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreImageTransition.m; sourceTree = "<group>"; };
+		8A76D7841BD4B8C400C3881D /* CoreImageTransitionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreImageTransitionHelper.h; sourceTree = "<group>"; };
+		8A76D7851BD4B8C400C3881D /* CoreImageTransitionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreImageTransitionHelper.m; sourceTree = "<group>"; };
+		8A76D7861BD4B8C400C3881D /* CoreImageTransitionTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreImageTransitionTypes.h; sourceTree = "<group>"; };
+		8A76D7871BD4B8C400C3881D /* CoreImageTransitionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreImageTransitionView.h; sourceTree = "<group>"; };
+		8A76D7881BD4B8C400C3881D /* CoreImageTransitionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreImageTransitionView.m; sourceTree = "<group>"; };
+		8A76D79A1BD4BC3300C3881D /* restrictedshine.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = restrictedshine.tiff; sourceTree = "<group>"; };
 		8A7858881B8DDDBA00F93493 /* MapCustomizationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapCustomizationsViewController.swift; sourceTree = "<group>"; };
 		8A78588A1B8DDDD100F93493 /* MapCustomizations.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapCustomizations.storyboard; sourceTree = "<group>"; };
 		8A7AC62D1BA9BE46005CC482 /* AddedFonts9.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AddedFonts9.plist; sourceTree = "<group>"; };
@@ -163,6 +192,8 @@
 		8AF73FA91BA051E100E3783E /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		8AF73FAB1BA051EC00E3783E /* Photos.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Photos.storyboard; sourceTree = "<group>"; };
 		8AF73FAD1BA0529600E3783E /* PhotosCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCell.swift; sourceTree = "<group>"; };
+		BDD0D4A61BB2E6FF00995959 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		BDD0D4A91BB2E85C00995959 /* Contacts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Contacts.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +254,42 @@
 			name = Photos;
 			sourceTree = "<group>";
 		};
+		8A2AC8721BB91A6F00C05128 /* ForceTouch */ = {
+			isa = PBXGroup;
+			children = (
+				8A2AC86B1BB91A3800C05128 /* ForceTouchViewController.swift */,
+				8A2AC86A1BB91A3800C05128 /* ForceTouch.storyboard */,
+			);
+			name = ForceTouch;
+			sourceTree = "<group>";
+		};
+		8A2AC8771BB91ADF00C05128 /* QuickActions */ = {
+			isa = PBXGroup;
+			children = (
+				8A2AC8731BB91ACD00C05128 /* QuickActionsViewController.swift */,
+				8A2AC8751BB91ADA00C05128 /* QuickActions.storyboard */,
+			);
+			name = QuickActions;
+			sourceTree = "<group>";
+		};
+		8A2AC8781BB91E2200C05128 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				8A76D7791BD4B8C400C3881D /* CoreImageTransitions */,
+				8A2AC8791BB91E2200C05128 /* PulsingHalo */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		8A2AC8791BB91E2200C05128 /* PulsingHalo */ = {
+			isa = PBXGroup;
+			children = (
+				8A2AC87A1BB91E2200C05128 /* PulsingHaloLayer.h */,
+				8A2AC87B1BB91E2200C05128 /* PulsingHaloLayer.m */,
+			);
+			path = PulsingHalo;
+			sourceTree = "<group>";
+		};
 		8A3588221B33CCC000D4D32C /* SampleViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +308,10 @@
 				8A7C19C61B8B634C00F75F88 /* FilterAttributes */,
 				8AF73FA81BA0432300E3783E /* LowPowerMode */,
 				8A7AC6331BA9BFE1005CC482 /* Fonts */,
+				BDD0D4A41BB2E68900995959 /* Contacts */,
+				8A2AC8771BB91ADF00C05128 /* QuickActions */,
+				8A2AC8721BB91A6F00C05128 /* ForceTouch */,
+				8A76D7781BD4B74E00C3881D /* CoreImageTransitions */,
 			);
 			path = SampleViewControllers;
 			sourceTree = "<group>";
@@ -278,6 +349,38 @@
 				8A6FC3991BA550C3007942FE /* Spring.storyboard */,
 			);
 			name = CASpringAnimation;
+			sourceTree = "<group>";
+		};
+		8A76D7781BD4B74E00C3881D /* CoreImageTransitions */ = {
+			isa = PBXGroup;
+			children = (
+				8A76D7741BD4B68C00C3881D /* CoreImageTransitionsViewController.swift */,
+				8A76D7761BD4B69C00C3881D /* CoreImageTransitions.storyboard */,
+			);
+			name = CoreImageTransitions;
+			sourceTree = "<group>";
+		};
+		8A76D7791BD4B8C400C3881D /* CoreImageTransitions */ = {
+			isa = PBXGroup;
+			children = (
+				8A76D7981BD4BC3300C3881D /* Resources */,
+				8A76D7821BD4B8C400C3881D /* CoreImageTransition.h */,
+				8A76D7831BD4B8C400C3881D /* CoreImageTransition.m */,
+				8A76D7841BD4B8C400C3881D /* CoreImageTransitionHelper.h */,
+				8A76D7851BD4B8C400C3881D /* CoreImageTransitionHelper.m */,
+				8A76D7861BD4B8C400C3881D /* CoreImageTransitionTypes.h */,
+				8A76D7871BD4B8C400C3881D /* CoreImageTransitionView.h */,
+				8A76D7881BD4B8C400C3881D /* CoreImageTransitionView.m */,
+			);
+			path = CoreImageTransitions;
+			sourceTree = "<group>";
+		};
+		8A76D7981BD4BC3300C3881D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8A76D79A1BD4BC3300C3881D /* restrictedshine.tiff */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		8A78588C1B8DDDEF00F93493 /* MapCustomizations */ = {
@@ -423,6 +526,7 @@
 				8A9078F01B949D42000518C3 /* iOS9SamplerExtensions */,
 				8AD5D76A1B295E8C001924F0 /* iOS9SamplerTests */,
 				8AD5D7751B295E8C001924F0 /* iOS9SamplerUITests */,
+				8A2AC8781BB91E2200C05128 /* libs */,
 				8AD5D7541B295E8C001924F0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -490,6 +594,15 @@
 				8AF73FA41BA03C8900E3783E /* LowPowerMode.storyboard */,
 			);
 			name = LowPowerMode;
+			sourceTree = "<group>";
+		};
+		BDD0D4A41BB2E68900995959 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				BDD0D4A61BB2E6FF00995959 /* ContactsViewController.swift */,
+				BDD0D4A91BB2E85C00995959 /* Contacts.storyboard */,
+			);
+			name = Contacts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -669,12 +782,17 @@
 				8A7AC6321BA9BFD8005CC482 /* Fonts.storyboard in Resources */,
 				8A3A321E1B35F0740016C4CE /* drumLoop.caf in Resources */,
 				8AF73FAC1BA051EC00E3783E /* Photos.storyboard in Resources */,
+				BDD0D4AA1BB2E85C00995959 /* Contacts.storyboard in Resources */,
 				8A78588B1B8DDDD100F93493 /* MapCustomizations.storyboard in Resources */,
 				8A6FC39A1BA550C3007942FE /* Spring.storyboard in Resources */,
 				8A3588261B33CCD400D4D32C /* TextDetect.storyboard in Resources */,
+				8A76D7771BD4B69C00C3881D /* CoreImageTransitions.storyboard in Resources */,
 				8AD5D75C1B295E8C001924F0 /* Main.storyboard in Resources */,
 				8ADC74841BA578F400FA178A /* StackView.storyboard in Resources */,
+				8A76D79C1BD4BC3300C3881D /* restrictedshine.tiff in Resources */,
+				8A2AC86C1BB91A3800C05128 /* ForceTouch.storyboard in Resources */,
 				8AF73FA51BA03C8900E3783E /* LowPowerMode.storyboard in Resources */,
+				8A2AC8761BB91ADA00C05128 /* QuickActions.storyboard in Resources */,
 				8A81FCF41BA90D8E00F8A4F8 /* StringTransform.storyboard in Resources */,
 				8AF73F9C1BA0238900E3783E /* Speech.storyboard in Resources */,
 			);
@@ -718,10 +836,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ADC74881BA5792D00FA178A /* StackViewViewController.swift in Sources */,
+				BDD0D4A81BB2E6FF00995959 /* ContactsViewController.swift in Sources */,
 				8A7AC6301BA9BFCE005CC482 /* FontsViewController.swift in Sources */,
 				8AD5D7591B295E8C001924F0 /* RootViewController.swift in Sources */,
+				8A76D7941BD4B8C400C3881D /* CoreImageTransitionView.m in Sources */,
 				8A9078DA1B949B64000518C3 /* ContentBlockerViewController.swift in Sources */,
 				8A3588331B33F3B500D4D32C /* FilterDetailViewController.swift in Sources */,
+				8A76D7921BD4B8C400C3881D /* CoreImageTransition.m in Sources */,
+				8A76D7931BD4B8C400C3881D /* CoreImageTransitionHelper.m in Sources */,
+				8A2AC87C1BB91E2200C05128 /* PulsingHaloLayer.m in Sources */,
 				8A3588241B33CCC000D4D32C /* TextDetectViewController.swift in Sources */,
 				8AF73F9A1BA0237E00E3783E /* SpeechViewController.swift in Sources */,
 				8A6FC3981BA550BA007942FE /* SpringViewController.swift in Sources */,
@@ -729,10 +852,13 @@
 				8ADBD9FA1B8F675E00BB46D8 /* RootViewCell.swift in Sources */,
 				8A7C19CA1B8B63AF00F75F88 /* FilterHelper.swift in Sources */,
 				8AF73FAE1BA0529600E3783E /* PhotosCell.swift in Sources */,
+				8A76D7751BD4B68C00C3881D /* CoreImageTransitionsViewController.swift in Sources */,
 				8A35882F1B33EC7A00D4D32C /* FiltersViewController.swift in Sources */,
 				8A81FCF21BA90D8000F8A4F8 /* StringTransformViewController.swift in Sources */,
+				8A2AC8741BB91ACD00C05128 /* QuickActionsViewController.swift in Sources */,
 				8A3A32151B35DAD10016C4CE /* AudioUnitComponentManagerViewController.swift in Sources */,
 				8A0714B31BA46CF300A1CC22 /* SearchAPIsViewController.swift in Sources */,
+				8A2AC86D1BB91A3800C05128 /* ForceTouchViewController.swift in Sources */,
 				8AD5D7571B295E8C001924F0 /* AppDelegate.swift in Sources */,
 				8AF73FAA1BA051E100E3783E /* PhotosViewController.swift in Sources */,
 				8AF73FA71BA03C9600E3783E /* LowPowerModeViewController.swift in Sources */,
@@ -808,7 +934,7 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				INFOPLIST_FILE = TwitterHeaderBlocker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Shuichi-Tsutsumi.iOS9Sampler.TwitterHeaderBlocker";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9Sampler.TwitterHeaderBlocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -820,7 +946,7 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				INFOPLIST_FILE = TwitterHeaderBlocker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Shuichi-Tsutsumi.iOS9Sampler.TwitterHeaderBlocker";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9Sampler.TwitterHeaderBlocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -832,7 +958,7 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				INFOPLIST_FILE = TwitterImageBlocker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Shuichi-Tsutsumi.iOS9Sampler.TwitterImageBlocker";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9Sampler.TwitterImageBlocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -844,7 +970,7 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				INFOPLIST_FILE = TwitterImageBlocker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Shuichi-Tsutsumi.iOS9Sampler.TwitterImageBlocker";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9Sampler.TwitterImageBlocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -939,7 +1065,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = iOS9Sampler/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Shuichi-Tsutsumi.iOS9Sampler";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9Sampler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iOS9Sampler/SampleViewControllers/iOS9Sampler-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -954,7 +1080,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = iOS9Sampler/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Shuichi-Tsutsumi.iOS9Sampler";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9Sampler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iOS9Sampler/SampleViewControllers/iOS9Sampler-Bridging-Header.h";
 			};
@@ -966,7 +1092,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = iOS9SamplerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Shuichi-Tsutsumi.iOS9SamplerTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9SamplerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS9Sampler.app/iOS9Sampler";
 			};
@@ -978,7 +1104,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = iOS9SamplerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Shuichi-Tsutsumi.iOS9SamplerTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9SamplerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS9Sampler.app/iOS9Sampler";
 			};
@@ -989,7 +1115,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = iOS9SamplerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Shuichi-Tsutsumi.iOS9SamplerUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9SamplerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = iOS9Sampler;
 				USES_XCTRUNNER = YES;
@@ -1001,7 +1127,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = iOS9SamplerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Shuichi-Tsutsumi.iOS9SamplerUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9SamplerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = iOS9Sampler;
 				USES_XCTRUNNER = YES;

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class FilterHelper: NSObject {
 
     class func filterNamesFor_iOS9(category: String?) -> [String]! {
@@ -47,4 +48,22 @@ class FilterHelper: NSObject {
         }
         return filterNames
     }
+    
 }
+
+extension CIFilter {
+    
+    func categoriesStringForFilter() -> String {
+        
+        var categories = self.attributes[kCIAttributeFilterCategories]!.description
+        
+        categories = categories.stringByReplacingOccurrencesOfString("(", withString: "")
+        categories = categories.stringByReplacingOccurrencesOfString(")", withString: "")
+        categories = categories.stringByReplacingOccurrencesOfString("\n", withString: "")
+        categories = categories.stringByReplacingOccurrencesOfString("   ", withString: "")
+        categories = categories.stringByReplacingOccurrencesOfString("CICategory", withString: "")
+        
+        return categories
+    }
+}
+
