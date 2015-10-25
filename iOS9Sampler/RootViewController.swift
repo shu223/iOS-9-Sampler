@@ -110,6 +110,11 @@ class RootViewController: UITableViewController {
                 kItemKeyClassPrefix: "Contacts"
             ],
             [
+                kItemKeyTitle: "ReplayKit",
+                kItemKeyDetail: "ReplayKit framework sample.",
+                kItemKeyClassPrefix: "ReplayKit"
+            ],
+            [
                 kItemKeyTitle: "Quick Actions",
                 kItemKeyDetail: "Access the shortcut menu on the Home screen using 3D Touch.",
                 kItemKeyClassPrefix: "QuickActions"
