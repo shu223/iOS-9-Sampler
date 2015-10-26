@@ -136,6 +136,13 @@ Contacts framework sample.
 <img src="ResourcesForREADME/contacts.jpg" width="200">
 
 
+###ReplayKit (Created by [manhattan918](https://github.com/manhattan918))
+
+ReplayKit framework sample.
+
+<img src="ResourcesForREADME/replaykit.jpg" width="200">
+
+
 ###Quick Actions (3D Touch)  
 
 Press the Icon on Home screen deeply, so you can access to the shortcut menu.

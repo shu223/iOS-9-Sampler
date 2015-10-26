@@ -136,4 +136,32 @@ class ReplayKitViewController: UIViewController, RPScreenRecorderDelegate, RPPre
             self.stopRecordingButton.backgroundColor = isRecording ? enebledColor : disabledColor
         }
     }
+    
+    private func createHaloAt(location: CGPoint, withRadius radius: CGFloat) {
+        
+        let halo = PulsingHaloLayer()
+        halo.repeatCount = 1
+        halo.position = location
+        halo.radius = radius * 2.0
+        halo.fromValueForRadius = 0.5
+        halo.keyTimeForHalfOpacity = 0.7
+        halo.animationDuration = 0.8
+        self.view.layer.addSublayer(halo)
+    }
+
+    
+    // =========================================================================
+    // MARK: - Touch Handler
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        for obj: AnyObject in touches {
+            
+            let touch = obj as! UITouch
+            let location = touch.locationInView(self.view)
+            let radius = touch.majorRadius
+            
+            self.createHaloAt(location, withRadius: radius)
+        }
+    }
 }
