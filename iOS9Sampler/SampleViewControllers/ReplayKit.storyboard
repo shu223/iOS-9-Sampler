@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oGz-ZE-rwH">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--Replay Kit View Controller-->
+        <scene sceneID="aX4-sj-Gv5">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F4c-8q-Gdv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="oGz-ZE-rwH" customClass="ReplayKitViewController" customModule="iOS9Sampler" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="57K-ot-AtL"/>
+                        <viewControllerLayoutGuide type="bottom" id="j9S-6V-9Hk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tZ1-ki-60x">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEd-D3-Tq8">
+                                <rect key="frame" x="153" y="241" width="135" height="53"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="9DM-ez-3zZ"/>
+                                    <constraint firstAttribute="height" constant="53" id="TZi-1S-4Hh"/>
+                                </constraints>
+                                <state key="normal" title="Start Recording">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="startRecordingButtonTapped:" destination="oGz-ZE-rwH" eventType="touchUpInside" id="HkW-Br-fya"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bi-cn-r5A">
+                                <rect key="frame" x="312" y="241" width="135" height="53"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="VWQ-eO-cqg"/>
+                                    <constraint firstAttribute="height" constant="53" id="Yqf-mu-N5r"/>
+                                </constraints>
+                                <state key="normal" title="Stop Recording">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="stopRecordingButtonTapped:" destination="oGz-ZE-rwH" eventType="touchUpInside" id="y2u-Vn-Dds"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="0Nv-sI-Ysc">
+                                <rect key="frame" x="282" y="327" width="37" height="37"/>
+                                <animations/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="KEd-D3-Tq8" firstAttribute="centerY" secondItem="tZ1-ki-60x" secondAttribute="centerY" id="2ep-ae-P93"/>
+                            <constraint firstItem="4Bi-cn-r5A" firstAttribute="centerY" secondItem="tZ1-ki-60x" secondAttribute="centerY" id="868-vS-bHo"/>
+                            <constraint firstItem="4Bi-cn-r5A" firstAttribute="centerX" secondItem="tZ1-ki-60x" secondAttribute="centerX" constant="79.5" id="Myq-Nx-tCw"/>
+                            <constraint firstItem="0Nv-sI-Ysc" firstAttribute="centerX" secondItem="tZ1-ki-60x" secondAttribute="centerX" id="aLz-BE-aKM"/>
+                            <constraint firstItem="0Nv-sI-Ysc" firstAttribute="top" secondItem="4Bi-cn-r5A" secondAttribute="bottom" constant="33" id="dJq-zV-smd"/>
+                            <constraint firstItem="KEd-D3-Tq8" firstAttribute="centerX" secondItem="tZ1-ki-60x" secondAttribute="centerX" constant="-79.5" id="ffr-M8-TkA"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="processingView" destination="0Nv-sI-Ysc" id="pxR-c9-kgO"/>
+                        <outlet property="startRecordingButton" destination="KEd-D3-Tq8" id="EoN-Mn-ViO"/>
+                        <outlet property="stopRecordingButton" destination="4Bi-cn-r5A" id="8AW-F6-iG9"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="82" y="-1014"/>
+        </scene>
+    </scenes>
+</document>
