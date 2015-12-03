@@ -21,6 +21,8 @@
 		8A3588331B33F3B500D4D32C /* FilterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3588321B33F3B500D4D32C /* FilterDetailViewController.swift */; };
 		8A3588351B3424E100D4D32C /* StillImageFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3588341B3424E100D4D32C /* StillImageFiltersViewController.swift */; };
 		8A3588371B342BF200D4D32C /* StillImageFilters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3588361B342BF200D4D32C /* StillImageFilters.storyboard */; };
+		8A36CE611C1103670068804D /* LivePhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A36CE5F1C1103670068804D /* LivePhoto.storyboard */; };
+		8A36CE621C1103670068804D /* LivePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A36CE601C1103670068804D /* LivePhotoViewController.swift */; };
 		8A3A32151B35DAD10016C4CE /* AudioUnitComponentManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3A32141B35DAD10016C4CE /* AudioUnitComponentManagerViewController.swift */; };
 		8A3A32171B35DAE10016C4CE /* AudioUnitComponentManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3A32161B35DAE10016C4CE /* AudioUnitComponentManager.storyboard */; };
 		8A3A321E1B35F0740016C4CE /* drumLoop.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8A3A321C1B35F0740016C4CE /* drumLoop.caf */; };
@@ -136,6 +138,8 @@
 		8A3588321B33F3B500D4D32C /* FilterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterDetailViewController.swift; sourceTree = "<group>"; };
 		8A3588341B3424E100D4D32C /* StillImageFiltersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StillImageFiltersViewController.swift; sourceTree = "<group>"; };
 		8A3588361B342BF200D4D32C /* StillImageFilters.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StillImageFilters.storyboard; sourceTree = "<group>"; };
+		8A36CE5F1C1103670068804D /* LivePhoto.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LivePhoto.storyboard; sourceTree = "<group>"; };
+		8A36CE601C1103670068804D /* LivePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivePhotoViewController.swift; sourceTree = "<group>"; };
 		8A3A32141B35DAD10016C4CE /* AudioUnitComponentManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioUnitComponentManagerViewController.swift; sourceTree = "<group>"; };
 		8A3A32161B35DAE10016C4CE /* AudioUnitComponentManager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AudioUnitComponentManager.storyboard; sourceTree = "<group>"; };
 		8A3A321C1B35F0740016C4CE /* drumLoop.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = drumLoop.caf; sourceTree = "<group>"; };
@@ -317,8 +321,18 @@
 				8A2AC8771BB91ADF00C05128 /* QuickActions */,
 				8A2AC8721BB91A6F00C05128 /* ForceTouch */,
 				8A76D7781BD4B74E00C3881D /* CoreImageTransitions */,
+				8A36CE631C1104850068804D /* LivePhoto */,
 			);
 			path = SampleViewControllers;
+			sourceTree = "<group>";
+		};
+		8A36CE631C1104850068804D /* LivePhoto */ = {
+			isa = PBXGroup;
+			children = (
+				8A36CE601C1103670068804D /* LivePhotoViewController.swift */,
+				8A36CE5F1C1103670068804D /* LivePhoto.storyboard */,
+			);
+			name = LivePhoto;
 			sourceTree = "<group>";
 		};
 		8A3A32181B35F0740016C4CE /* Resources */ = {
@@ -724,12 +738,15 @@
 				TargetAttributes = {
 					8A9078CB1B949A5F000518C3 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 9Z86A4AWDE;
 					};
 					8A9078E11B949BCC000518C3 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 9Z86A4AWDE;
 					};
 					8AD5D7521B295E8C001924F0 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 9Z86A4AWDE;
 					};
 					8AD5D7661B295E8C001924F0 = {
 						CreatedOnToolsVersion = 7.0;
@@ -794,6 +811,7 @@
 				8A9078DC1B949B72000518C3 /* ContentBlocker.storyboard in Resources */,
 				8A7AC62E1BA9BE46005CC482 /* AddedFonts9.plist in Resources */,
 				8A6FC3931BA53238007942FE /* Safari.storyboard in Resources */,
+				8A36CE611C1103670068804D /* LivePhoto.storyboard in Resources */,
 				8A7AC6321BA9BFD8005CC482 /* Fonts.storyboard in Resources */,
 				8A3A321E1B35F0740016C4CE /* drumLoop.caf in Resources */,
 				8AF73FAC1BA051EC00E3783E /* Photos.storyboard in Resources */,
@@ -855,6 +873,7 @@
 				8A7AC6301BA9BFCE005CC482 /* FontsViewController.swift in Sources */,
 				8AD5D7591B295E8C001924F0 /* RootViewController.swift in Sources */,
 				8A76D7941BD4B8C400C3881D /* CoreImageTransitionView.m in Sources */,
+				8A36CE621C1103670068804D /* LivePhotoViewController.swift in Sources */,
 				8A9078DA1B949B64000518C3 /* ContentBlockerViewController.swift in Sources */,
 				8A3588331B33F3B500D4D32C /* FilterDetailViewController.swift in Sources */,
 				8A76D7921BD4B8C400C3881D /* CoreImageTransition.m in Sources */,
@@ -948,6 +967,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TwitterHeaderBlocker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9Sampler.TwitterHeaderBlocker;
@@ -960,6 +980,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TwitterHeaderBlocker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9Sampler.TwitterHeaderBlocker;
@@ -972,6 +993,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TwitterImageBlocker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9Sampler.TwitterImageBlocker;
@@ -984,6 +1006,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TwitterImageBlocker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9Sampler.TwitterImageBlocker;
@@ -1078,8 +1101,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = iOS9Sampler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9Sampler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1093,8 +1118,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = iOS9Sampler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9Sampler;
 				PRODUCT_NAME = "$(TARGET_NAME)";

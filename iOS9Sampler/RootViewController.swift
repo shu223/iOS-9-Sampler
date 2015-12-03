@@ -124,6 +124,11 @@ class RootViewController: UITableViewController {
                 kItemKeyDetail: "Visualize the forces of touches using new properties of UITouch.",
                 kItemKeyClassPrefix: "ForceTouch"
             ],
+            [
+                kItemKeyTitle: "Live Photos",
+                kItemKeyDetail: "Show a Live Photo using \"PHLivePhotoView\"",
+                kItemKeyClassPrefix: "LivePhoto"
+            ],
         ]
     }
 

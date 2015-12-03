@@ -161,6 +161,13 @@ Visualize the forces of touches using new properties of UITouch `force` and `max
 
 **NOTE:** Your device have to support 3D Touch.
 
+###Live Photos
+
+Show a Live Photo using `PHLivePhoto` and `PHLivePhotoView` which are added in iOS 9.1.
+
+![](ResourcesForREADME/livephoto.gif)
+
+
 ##watchOS-2-Sampler
 
 You can check the **examples for watchOS 2** features on [watchOS-2-Sampler](https://github.com/shu223/watchOS-2-Sampler)!!
