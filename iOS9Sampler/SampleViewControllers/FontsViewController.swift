@@ -11,7 +11,7 @@ import UIKit
 class FontsViewController: UITableViewController {
 
     
-    var items: [String] = []
+    private var items: [String] = []
     
     
     override func viewDidLoad() {

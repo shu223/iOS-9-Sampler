@@ -11,7 +11,7 @@ import UIKit
 class QuickActionsViewController: UIViewController {
 
     
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak private var label: UILabel!
     
     
     override func viewDidLoad() {

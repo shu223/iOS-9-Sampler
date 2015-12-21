@@ -11,9 +11,9 @@ import ReplayKit
 
 class ReplayKitViewController: UIViewController, RPScreenRecorderDelegate, RPPreviewViewControllerDelegate {
 
-    @IBOutlet weak var startRecordingButton: UIButton!
-    @IBOutlet weak var stopRecordingButton: UIButton!
-    @IBOutlet weak var processingView: UIActivityIndicatorView!
+    @IBOutlet weak private var startRecordingButton: UIButton!
+    @IBOutlet weak private var stopRecordingButton: UIButton!
+    @IBOutlet weak private var processingView: UIActivityIndicatorView!
     private let recorder = RPScreenRecorder.sharedRecorder()
     
     
@@ -155,9 +155,8 @@ class ReplayKitViewController: UIViewController, RPScreenRecorderDelegate, RPPre
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        for obj: AnyObject in touches {
+        for touch in touches {
             
-            let touch = obj as! UITouch
             let location = touch.locationInView(self.view)
             let radius = touch.majorRadius
             

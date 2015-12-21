@@ -9,7 +9,7 @@
 import UIKit
 
 
-let kMaxRadius: CGFloat = 100.0
+private let kMaxRadius: CGFloat = 100.0
 
 
 class ForceTouchViewController: UIViewController {

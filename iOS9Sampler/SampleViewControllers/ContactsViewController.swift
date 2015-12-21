@@ -11,8 +11,8 @@ import Contacts
 
 class ContactsViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak private var tableView: UITableView!
+    @IBOutlet weak private var searchBar: UISearchBar!
     private var contacts = [CNContact]()
     private var authStatus: CNAuthorizationStatus = .Denied {
         didSet { // switch enabled search bar, depending contacts permission

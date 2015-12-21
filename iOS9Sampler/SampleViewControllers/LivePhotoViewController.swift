@@ -15,7 +15,7 @@ import MobileCoreServices
 class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PHLivePhotoViewDelegate {
 
     
-    @IBOutlet weak var livePhotoView: PHLivePhotoView!
+    @IBOutlet weak private var livePhotoView: PHLivePhotoView!
     
     
     override func viewDidLoad() {

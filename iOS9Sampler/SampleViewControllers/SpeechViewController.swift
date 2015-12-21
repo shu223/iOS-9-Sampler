@@ -13,10 +13,10 @@ import AVFoundation
 class SpeechViewController: UITableViewController {
 
     
-    @IBOutlet weak var qualitySegmentedCtl: UISegmentedControl!
+    @IBOutlet weak private var qualitySegmentedCtl: UISegmentedControl!
     
-    let synthesizer = AVSpeechSynthesizer()
-    var speechVoices = AVSpeechSynthesisVoice.speechVoices()
+    private let synthesizer = AVSpeechSynthesizer()
+    private var speechVoices = AVSpeechSynthesisVoice.speechVoices()
     
 
     override func viewDidLoad() {
@@ -75,13 +75,13 @@ class SpeechViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        if synthesizer.speaking == false {
+        if !synthesizer.speaking {
             
             let voice = speechVoices[indexPath.row]
             
             // [note]Welcome pull requests for your languages!
             let utteranceStr: String
-            switch (voice.language) {
+            switch voice.language {
             case "ja-JP":
                 utteranceStr = "私は寿司が好きです。"
             default:

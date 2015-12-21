@@ -9,15 +9,15 @@
 import UIKit
 
 
-let kItemKeyTitle       = "title"
-let kItemKeyDetail      = "detail"
-let kItemKeyClassPrefix = "prefix"
+private let kItemKeyTitle       = "title"
+private let kItemKeyDetail      = "detail"
+private let kItemKeyClassPrefix = "prefix"
 
 
 class RootViewController: UITableViewController {
     
     
-    var items: [Dictionary<String, String>]!
+    private var items: [Dictionary<String, String>]!
     
     
     override func viewDidLoad() {
@@ -155,8 +155,8 @@ class RootViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! RootViewCell
         
         let item = items[indexPath.row]
-        cell.titleLabel!.text  = item[kItemKeyTitle]
-        cell.detailLabel!.text = item[kItemKeyDetail]
+        cell.titleLabel.text  = item[kItemKeyTitle]
+        cell.detailLabel.text = item[kItemKeyDetail]
         
         return cell
     }

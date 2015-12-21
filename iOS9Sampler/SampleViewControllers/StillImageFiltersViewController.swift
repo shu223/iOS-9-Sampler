@@ -12,11 +12,11 @@ import UIKit
 class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var picker: UIPickerView!
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
-    var items: [String] = []
-    var orgImage: UIImage!
+    @IBOutlet weak private var imageView: UIImageView!
+    @IBOutlet weak private var picker: UIPickerView!
+    @IBOutlet weak private var indicator: UIActivityIndicatorView!
+    private var items: [String] = []
+    private var orgImage: UIImage!
     
     
     override func viewDidLoad() {
@@ -98,39 +98,35 @@ class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource,
             
             // Apply filter
             let context = CIContext(options: nil)
-            let outputImage = filter.outputImage
-            
-            if outputImage == nil {
-                
+            guard let outputImage = filter.outputImage else {
                 dispatch_async(dispatch_get_main_queue()) {
                     self.imageView.image = nil
                     self.indicator.stopAnimating()
                 }
+                return
+            }
+
+            var extent = outputImage.extent
+            // let scale = UIScreen.mainScreen().scale
+            let scale: CGFloat!
+            
+            // some outputImage have infinite extents. e.g. CIDroste
+            if extent.isInfinite {
+                let size = self.imageView.frame.size
+                scale = UIScreen.mainScreen().scale
+                extent = CGRectMake(0, 0, size.width * scale, size.height * scale)
             }
             else {
-                
-                var extent = outputImage!.extent
-//                let scale = UIScreen.mainScreen().scale
-                var scale: CGFloat!
-                
-                // some outputImage have infinite extents. e.g. CIDroste
-                if extent.isInfinite == true {
-                    let size = self.imageView.frame.size
-                    scale = UIScreen.mainScreen().scale
-                    extent = CGRectMake(0, 0, size.width * scale, size.height * scale)
-                }
-                else {
-                    scale = extent.size.width / self.orgImage.size.width
-                }
-                
-                let cgImage = context.createCGImage(outputImage!, fromRect: extent)
-                let image = UIImage(CGImage: cgImage, scale: scale, orientation: UIImageOrientation.Up)
-                print("extent:\(extent), image:\(image), org:\(self.orgImage), scale:\(scale)\n")
-                
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.imageView.image = image
-                    self.indicator.stopAnimating()
-                }
+                scale = extent.size.width / self.orgImage.size.width
+            }
+            
+            let cgImage = context.createCGImage(outputImage, fromRect: extent)
+            let image = UIImage(CGImage: cgImage, scale: scale, orientation: UIImageOrientation.Up)
+            print("extent:\(extent), image:\(image), org:\(self.orgImage), scale:\(scale)\n")
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.imageView.image = image
+                self.indicator.stopAnimating()
             }
         }
     }

@@ -11,12 +11,7 @@ import UIKit
 
 class FilterHelper: NSObject {
 
-    class func filterNamesFor_iOS9(category: String?) -> [String]! {
-
-        return FilterHelper.filterNamesFor_iOS9(category, exceptCategories: nil)
-    }
-
-    class func filterNamesFor_iOS9(category: String?, exceptCategories: [String]?) -> [String]! {
+    class func filterNamesFor_iOS9(category: String?, exceptCategories: [String]? = nil) -> [String]! {
         
         var filterNames:[String] = []
         let all = CIFilter.filterNamesInCategory(category)
@@ -28,7 +23,7 @@ class FilterHelper: NSObject {
                 var needExcept = false
                 let categories = attributes[kCIAttributeFilterCategories] as! [String]
                 for aCategory in categories {
-                    if (exceptCategories?.contains(aCategory) == true) {
+                    if exceptCategories?.contains(aCategory) == true {
                         needExcept = true
                         break
                     }
@@ -41,9 +36,8 @@ class FilterHelper: NSObject {
             let availability = attributes[kCIAttributeFilterAvailable_iOS]
 //            print("filtername:\(aFilterName), availability:\(availability)")
             
-            if availability != nil &&
-                availability as! String == "9" {
-                    filterNames.append(aFilterName)
+            if availability != nil && availability as! String == "9" {
+                filterNames.append(aFilterName)
             }
         }
         return filterNames
