@@ -15,18 +15,18 @@ import UIKit
 class SpringViewController: UIViewController {
 
     
-    @IBOutlet weak var massSlider: UISlider!
-    @IBOutlet weak var massLabel: UILabel!
-    @IBOutlet weak var stiffnessSlider: UISlider!
-    @IBOutlet weak var stiffnessLabel: UILabel!
-    @IBOutlet weak var dampingSlider: UISlider!
-    @IBOutlet weak var dampingLabel: UILabel!
-    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak private var massSlider: UISlider!
+    @IBOutlet weak private var massLabel: UILabel!
+    @IBOutlet weak private var stiffnessSlider: UISlider!
+    @IBOutlet weak private var stiffnessLabel: UILabel!
+    @IBOutlet weak private var dampingSlider: UISlider!
+    @IBOutlet weak private var dampingLabel: UILabel!
+    @IBOutlet weak private var durationLabel: UILabel!
 
-    @IBOutlet weak var animateBtn: UIButton!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak private var animateBtn: UIButton!
+    @IBOutlet weak private var imageView: UIImageView!
 
-    let animation = CASpringAnimation(keyPath: "position")
+    private let animation = CASpringAnimation(keyPath: "position")
     
     
     override func viewDidLoad() {

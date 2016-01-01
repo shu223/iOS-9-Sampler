@@ -15,12 +15,12 @@ import UIKit
 class StringTransformViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     
-    @IBOutlet weak var kanaLabel: UILabel!
-    @IBOutlet weak var widthSwitch: UISwitch!
-    @IBOutlet weak var transformedLabel: UILabel!
-    @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak private var kanaLabel: UILabel!
+    @IBOutlet weak private var widthSwitch: UISwitch!
+    @IBOutlet weak private var transformedLabel: UILabel!
+    @IBOutlet weak private var picker: UIPickerView!
     
-    var items: [String] = [
+    private var items: [String] = [
         NSStringTransformToLatin,
         NSStringTransformLatinToKatakana,
         NSStringTransformLatinToHiragana,
@@ -29,10 +29,10 @@ class StringTransformViewController: UIViewController, UIPickerViewDataSource, U
         NSStringTransformLatinToHebrew,
         NSStringTransformLatinToThai,
         NSStringTransformLatinToCyrillic,
-        NSStringTransformLatinToGreek
+        NSStringTransformLatinToGreek,
     ]
     
-    var orgKana = ""
+    private var orgKana = ""
 
     
     override func viewDidLoad() {
@@ -72,7 +72,7 @@ class StringTransformViewController: UIViewController, UIPickerViewDataSource, U
         let item = items[row]
 
         // strip the prefix
-        var title: String
+        let title: String
         let toIndex = item.rangeOfString("To")?.endIndex
         if toIndex != nil {
             // example: ")kCFStringTransformToLatin"

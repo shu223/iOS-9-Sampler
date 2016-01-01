@@ -11,10 +11,10 @@ import UIKit
 class StackViewViewController: UIViewController {
 
     
-    @IBOutlet weak var holizontalStackView: UIStackView!
-    @IBOutlet weak var verticalStackView: UIStackView!
+    @IBOutlet weak private var holizontalStackView: UIStackView!
+    @IBOutlet weak private var verticalStackView: UIStackView!
     
-    var prevCnt: UInt = 0
+    private var prevCnt: UInt = 0
 
     
     override func viewDidLoad() {
@@ -59,7 +59,7 @@ class StackViewViewController: UIViewController {
             })
         }
         // remove arranged subviews
-        else if (prevCnt >= 1) {
+        else if prevCnt >= 1 {
             
             holizontalStackView.removeArrangedSubview(holizontalStackView.arrangedSubviews.first!)
             holizontalStackView.subviews.last?.removeFromSuperview()

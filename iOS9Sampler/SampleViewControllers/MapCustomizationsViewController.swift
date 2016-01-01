@@ -13,8 +13,8 @@ import MapKit
 class MapCustomizationsViewController: UIViewController, MKMapViewDelegate {
 
     
-    @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var compassBtn: UIButton!
+    @IBOutlet weak private var mapView: MKMapView!
+    @IBOutlet weak private var compassBtn: UIButton!
     
     
     override func viewDidLoad() {
@@ -45,7 +45,7 @@ class MapCustomizationsViewController: UIViewController, MKMapViewDelegate {
     private func updateCompassBtn() {
         
         // shown
-        if mapView.showsCompass == true {
+        if mapView.showsCompass {
             compassBtn.setTitle("Hide Compass", forState: UIControlState.Normal)
         }
         // hidden
@@ -82,7 +82,7 @@ class MapCustomizationsViewController: UIViewController, MKMapViewDelegate {
         mapView.showsTraffic = !mapView.showsTraffic
 
         // shown
-        if mapView.showsTraffic == true {
+        if mapView.showsTraffic {
             sender.setTitle("Hide Traffic", forState: UIControlState.Normal)
         }
         // hidden
@@ -96,7 +96,7 @@ class MapCustomizationsViewController: UIViewController, MKMapViewDelegate {
         mapView.showsScale = !mapView.showsScale
 
         // shown
-        if mapView.showsScale == true {
+        if mapView.showsScale {
             sender.setTitle("Hide Scale", forState: UIControlState.Normal)
         }
         // hidden
@@ -115,7 +115,7 @@ class MapCustomizationsViewController: UIViewController, MKMapViewDelegate {
     @IBAction func flyoverBtnTapped(sender: UIButton) {
         
         // shown
-        if mapView.showsCompass == true {
+        if mapView.showsCompass {
             sender.setTitle("Hide Compass", forState: UIControlState.Normal)
         }
             // hidden

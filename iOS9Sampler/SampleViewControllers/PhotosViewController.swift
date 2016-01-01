@@ -17,11 +17,11 @@ import Photos
 class PhotosViewController: UICollectionViewController {
 
 
-    @IBOutlet weak var segmentedCtl: UISegmentedControl!
+    @IBOutlet weak private var segmentedCtl: UISegmentedControl!
     
     
-    var images: [PHAsset]! = []
-    let imageManager = PHCachingImageManager()
+    private var images: [PHAsset]! = []
+    private let imageManager = PHCachingImageManager()
 
     
     override func viewDidLoad() {
@@ -56,7 +56,7 @@ class PhotosViewController: UICollectionViewController {
         }
         // Retrieve only Self Portraits
         //   reference: http://koze.hatenablog.jp/entry/2015/07/23/090000
-        else if (segmentedCtl.selectedSegmentIndex == 1) {
+        else if segmentedCtl.selectedSegmentIndex == 1 {
             
             // Fetch asset collections of Self Portraits.
             let resultCollections = PHAssetCollection.fetchAssetCollectionsWithType(
@@ -111,7 +111,7 @@ class PhotosViewController: UICollectionViewController {
             asset,
             targetSize: cell.imageView.frame.size,
             contentMode: .AspectFill,
-            options: nil) {(image, info) in
+            options: nil) { image, _ in
                 
                 if image != nil {
                     cell.imageView.image = image!

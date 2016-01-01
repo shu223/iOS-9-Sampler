@@ -11,7 +11,7 @@ import UIKit
 class FilterDetailViewController: UIViewController {
 
     
-    @IBOutlet var textView: UITextView!
+    @IBOutlet private var textView: UITextView!
     var filterName: String!
     
     

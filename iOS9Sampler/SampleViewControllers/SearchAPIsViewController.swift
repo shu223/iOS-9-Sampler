@@ -11,14 +11,14 @@ import CoreSpotlight
 import MobileCoreServices
 
 
-let uniqueIdentifier = "com.shu223.ios9sampler"
-let domainIdentifier = "searchapis"
+private let uniqueIdentifier = "com.shu223.ios9sampler"
+private let domainIdentifier = "searchapis"
 
 
 class SearchAPIsViewController: UIViewController {
 
     
-    var activity: NSUserActivity!
+    private var activity: NSUserActivity!
     
     
     override func viewDidLoad() {

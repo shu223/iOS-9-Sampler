@@ -11,8 +11,8 @@ import UIKit
 class TextDetectViewController: UIViewController {
 
     
-    @IBOutlet var imageView1: UIImageView!
-    @IBOutlet var imageView2: UIImageView!
+    @IBOutlet private var imageView1: UIImageView!
+    @IBOutlet private var imageView2: UIImageView!
     
     
     override func viewDidLoad() {

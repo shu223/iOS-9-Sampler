@@ -12,8 +12,8 @@ import UIKit
 class CoreImageTransitionsViewController: UIViewController, UINavigationControllerDelegate {
 
     
-    @IBOutlet weak var segmentedCtl: UISegmentedControl!
-    var transition: CoreImageTransition?
+    @IBOutlet weak private var segmentedCtl: UISegmentedControl!
+    private var transition: CoreImageTransition?
     
     
     override func viewDidLoad() {

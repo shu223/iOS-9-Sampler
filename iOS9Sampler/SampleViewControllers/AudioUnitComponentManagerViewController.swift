@@ -14,8 +14,8 @@ import CoreAudioKit
 class AudioUnitComponentManagerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
 
-    @IBOutlet weak var tableView: UITableView!
-    var viewBtn: UIBarButtonItem!
+    @IBOutlet weak private var tableView: UITableView!
+    private var viewBtn: UIBarButtonItem!
     
     private var items = [AVAudioUnitComponent]()
 
@@ -24,9 +24,9 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
     private var file: AVAudioFile?
 
     /// The currently selected `AUAudioUnit` effect, if any.
-    var audioUnit: AUAudioUnit?
+    private var audioUnit: AUAudioUnit?
     /// The audio unit's presets.
-    var presetList = [AUAudioUnitPreset]()
+    private var presetList = [AUAudioUnitPreset]()
     /// Engine's effect node.
     private var effect: AVAudioUnit?
 

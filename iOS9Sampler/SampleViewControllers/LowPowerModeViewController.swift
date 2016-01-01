@@ -11,7 +11,7 @@ import UIKit
 class LowPowerModeViewController: UIViewController {
 
     
-    @IBOutlet weak var stateLabel: UILabel!
+    @IBOutlet weak private var stateLabel: UILabel!
     
     
     override func viewDidLoad() {

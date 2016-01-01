@@ -11,7 +11,7 @@ import UIKit
 class FiltersViewController: UITableViewController {
 
     
-    var items: [String]!
+    private var items: [String]!
     
     
     override func viewDidLoad() {
