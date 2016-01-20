@@ -73,10 +73,9 @@ class StringTransformViewController: UIViewController, UIPickerViewDataSource, U
 
         // strip the prefix
         let title: String
-        let toIndex = item.rangeOfString("To")?.endIndex
-        if toIndex != nil {
+        if let toIndex = item.rangeOfString("To")?.endIndex {
             // example: ")kCFStringTransformToLatin"
-            title = item.substringFromIndex(toIndex!)
+            title = item.substringFromIndex(toIndex)
         }
         else {
             // example: ")kCFStringTransformLatinKatakana"

@@ -92,19 +92,8 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     private func scheduleLoop() {
         guard let file = file else {
@@ -131,18 +120,18 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
         player.pause()
         
         // Destroy any pre-existing effect.
-        if effect != nil {
+        if let effect = effect {
             // We have player -> effect -> mixer. Break both connections.
-            engine.disconnectNodeInput(effect!)
+            engine.disconnectNodeInput(effect)
             engine.disconnectNodeInput(engine.mainMixerNode)
             
             // Connect player -> mixer.
             engine.connect(player, to: engine.mainMixerNode, format: file!.processingFormat)
             
             // We're done with the effect; release all references.
-            engine.detachNode(effect!)
+            engine.detachNode(effect)
             
-            effect = nil
+            self.effect = nil
             audioUnit = nil
             presetList = [AUAudioUnitPreset]()
         }

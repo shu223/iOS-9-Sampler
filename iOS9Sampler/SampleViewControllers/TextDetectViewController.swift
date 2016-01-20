@@ -25,20 +25,10 @@ class TextDetectViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     private func rectForFeature(feature: CITextFeature, bounds: CGRect, scale: CGFloat) -> CGRect {
         
         return CGRectMake(
@@ -74,9 +64,8 @@ class TextDetectViewController: UIViewController {
             imageView.addSubview(featureView)
             
             // draw subFeature rects
-            for item in feature.subFeatures {
+            for subFeature in feature.subFeatures as! [CITextFeature] {
 
-                let subFeature = item as! CITextFeature
                 let subFeatureRect = self.rectForFeature(subFeature, bounds: imageView.bounds, scale: scale)
                 let subFeatureView = UIView(frame: subFeatureRect)
                 subFeatureView.backgroundColor = UIColor.clearColor()

@@ -27,7 +27,6 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
@@ -39,9 +38,8 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
         self.dismissViewControllerAnimated(true, completion: nil)
         
         print("\(info)")
-        let livePhoto = info[UIImagePickerControllerLivePhoto] as? PHLivePhoto
 
-        if let livePhoto = livePhoto {
+        if let livePhoto = info[UIImagePickerControllerLivePhoto] as? PHLivePhoto {
 
             livePhotoView.livePhoto = livePhoto
             livePhotoView.startPlaybackWithStyle(.Full)

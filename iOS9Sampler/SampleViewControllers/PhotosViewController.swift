@@ -32,7 +32,6 @@ class PhotosViewController: UICollectionViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
@@ -113,8 +112,8 @@ class PhotosViewController: UICollectionViewController {
             contentMode: .AspectFill,
             options: nil) { image, _ in
                 
-                if image != nil {
-                    cell.imageView.image = image!
+                if let image = image {
+                    cell.imageView.image = image
                 }
         }
 

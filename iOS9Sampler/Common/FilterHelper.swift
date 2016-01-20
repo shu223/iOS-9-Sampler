@@ -19,14 +19,12 @@ class FilterHelper: NSObject {
         for aFilterName in all {
             
             let attributes = CIFilter(name: aFilterName)!.attributes
-            if exceptCategories?.count > 0 {
+            if let exceptCategories = exceptCategories {
                 var needExcept = false
                 let categories = attributes[kCIAttributeFilterCategories] as! [String]
-                for aCategory in categories {
-                    if exceptCategories?.contains(aCategory) == true {
-                        needExcept = true
-                        break
-                    }
+                for aCategory in categories where exceptCategories.contains(aCategory) == true {
+                    needExcept = true
+                    break
                 }
                 if needExcept {
                     continue
@@ -34,9 +32,8 @@ class FilterHelper: NSObject {
             }
             
             let availability = attributes[kCIAttributeFilterAvailable_iOS]
-//            print("filtername:\(aFilterName), availability:\(availability)")
-            
-            if availability != nil && availability as! String == "9" {
+//            print("filtername:\(aFilterName), availability:\(availability)")            
+            if let availability = availability as? String where availability == "9" {
                 filterNames.append(aFilterName)
             }
         }

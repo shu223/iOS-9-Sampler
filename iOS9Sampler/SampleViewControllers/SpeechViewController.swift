@@ -23,8 +23,8 @@ class SpeechViewController: UITableViewController {
         super.viewDidLoad()
         
         let alexVoice = AVSpeechSynthesisVoice(identifier: AVSpeechSynthesisVoiceIdentifierAlex)
-        if alexVoice != nil {
-            speechVoices.insert(alexVoice!, atIndex: 0)
+        if let alexVoice = alexVoice {
+            speechVoices.insert(alexVoice, atIndex: 0)
         }
         else {
             print("\"AVSpeechSynthesisVoiceIdentifierAlex\" couldn't be instantiated.")
@@ -33,19 +33,8 @@ class SpeechViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // =========================================================================
     // MARK: - UITableViewDataSource
