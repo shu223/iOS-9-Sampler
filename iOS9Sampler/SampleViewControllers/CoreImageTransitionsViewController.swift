@@ -36,8 +36,6 @@ class CoreImageTransitionsViewController: UIViewController, UINavigationControll
         fromViewController fromVC: UIViewController,
         toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning?
     {
-        print(__FUNCTION__+"\n")
-
         transition = CoreImageTransition()
         
         switch segmentedCtl.selectedSegmentIndex {

@@ -35,7 +35,7 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
         
         print("\(info)")
 
@@ -54,7 +54,7 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
                 style: UIAlertActionStyle.Cancel,
                 handler: nil)
             alert.addAction(okAction)
-            self.presentViewController(alert, animated: true, completion: nil)
+            presentViewController(alert, animated: true, completion: nil)
         }
     }
 
@@ -63,7 +63,6 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
     // MARK: - PHLivePhotoViewDelegate
     
     func livePhotoView(livePhotoView: PHLivePhotoView, didEndPlaybackWithStyle playbackStyle: PHLivePhotoViewPlaybackStyle) {
-        print(__FUNCTION__+"\n")
         
         livePhotoView.startPlaybackWithStyle(.Full)
     }

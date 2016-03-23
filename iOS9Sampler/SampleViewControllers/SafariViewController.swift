@@ -25,11 +25,11 @@ class SafariViewController: UIViewController, SFSafariViewControllerDelegate {
     // MARK: - SFSafariViewControllerDelegate
     
     func safariViewController(controller: SFSafariViewController, didCompleteInitialLoad didLoadSuccessfully: Bool) {
-        print(__FUNCTION__+"\n")
+        print(#function)
     }
     
     func safariViewControllerDidFinish(controller: SFSafariViewController) {
-        print(__FUNCTION__+"\n")
+        print(#function)
     }
     
     

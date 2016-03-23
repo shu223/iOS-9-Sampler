@@ -37,7 +37,7 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
         viewBtn = UIBarButtonItem(
             title: "ShowAUVC",
             style: UIBarButtonItemStyle.Plain,
-            target: self, action: "viewBtnTapped:")
+            target: self, action: #selector(AudioUnitComponentManagerViewController.viewBtnTapped(_:)))
         self.navigationItem.setRightBarButtonItem(viewBtn, animated: false)
         viewBtn.enabled = false
         
@@ -97,7 +97,7 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
 
     private func scheduleLoop() {
         guard let file = file else {
-            fatalError("`file` must not be nil in \(__FUNCTION__).")
+            fatalError("`file` must not be nil in \(#function).")
         }
         
         player.scheduleFile(file, atTime: nil) {
