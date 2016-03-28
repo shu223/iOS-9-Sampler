@@ -43,9 +43,9 @@ class SpringViewController: UIViewController {
 
 
         // update labels
-        self.massChanged(massSlider)
-        self.stiffnessChanged(stiffnessSlider)
-        self.dampingChanged(dampingSlider)
+        massChanged(massSlider)
+        stiffnessChanged(stiffnessSlider)
+        dampingChanged(dampingSlider)
     }
         
     override func viewDidLayoutSubviews() {
@@ -82,19 +82,19 @@ class SpringViewController: UIViewController {
     @IBAction func massChanged(sender: UISlider) {
         massLabel.text = String(format: "%.1f", sender.value)
         animation.mass = CGFloat(sender.value)
-        self.updateDurationLabel()
+        updateDurationLabel()
     }
 
     @IBAction func stiffnessChanged(sender: UISlider) {
         stiffnessLabel.text = String(format: "%.1f", sender.value)
         animation.stiffness = CGFloat(sender.value)
-        self.updateDurationLabel()
+        updateDurationLabel()
     }
 
     @IBAction func dampingChanged(sender: UISlider) {
         dampingLabel.text = String(format: "%.1f", sender.value)
         animation.damping = CGFloat(sender.value)
-        self.updateDurationLabel()
+        updateDurationLabel()
     }
 
     @IBAction func animateBtnTapped(sender: UIButton) {

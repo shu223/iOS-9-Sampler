@@ -145,7 +145,7 @@ class ReplayKitViewController: UIViewController, RPScreenRecorderDelegate, RPPre
         halo.fromValueForRadius = 0.5
         halo.keyTimeForHalfOpacity = 0.7
         halo.animationDuration = 0.8
-        self.view.layer.addSublayer(halo)
+        view.layer.addSublayer(halo)
     }
 
     
@@ -156,10 +156,10 @@ class ReplayKitViewController: UIViewController, RPScreenRecorderDelegate, RPPre
         
         for touch in touches {
             
-            let location = touch.locationInView(self.view)
+            let location = touch.locationInView(view)
             let radius = touch.majorRadius
             
-            self.createHaloAt(location, withRadius: radius)
+            createHaloAt(location, withRadius: radius)
         }
     }
 }

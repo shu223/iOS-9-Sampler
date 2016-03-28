@@ -40,7 +40,7 @@ class StringTransformViewController: UIViewController, UIPickerViewDataSource, U
 
         orgKana = kanaLabel.text!
         
-        self.pickerView(picker, didSelectRow: 0, inComponent: 0)
+        pickerView(picker, didSelectRow: 0, inComponent: 0)
     }
     
     override func viewDidAppear(animated: Bool) {

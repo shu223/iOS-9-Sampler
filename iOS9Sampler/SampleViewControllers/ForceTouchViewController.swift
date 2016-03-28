@@ -34,11 +34,11 @@ class ForceTouchViewController: UIViewController {
             let okAction = UIAlertAction(
                 title: "OK",
                 style: UIAlertActionStyle.Cancel,
-                handler: { (action) -> Void in
+                handler: { [unowned self] (action) -> Void in
                     self.navigationController?.popViewControllerAnimated(true)
             })
             alert.addAction(okAction)
-            self.presentViewController(alert, animated: true, completion:nil)
+            presentViewController(alert, animated: true, completion:nil)
         }
     }
 
@@ -59,18 +59,18 @@ class ForceTouchViewController: UIViewController {
         halo.fromValueForRadius = 0.5
         halo.keyTimeForHalfOpacity = 0.7
         halo.animationDuration = 0.8
-        self.view.layer.addSublayer(halo)
+        view.layer.addSublayer(halo)
     }
     
     private func showTouches(touches: Set<UITouch>) {
         
         for touch in touches {
             
-            let location = touch.locationInView(self.view)
+            let location = touch.locationInView(view)
             
             let radius = kMaxRadius * touch.force / touch.maximumPossibleForce
             
-            self.createHaloAt(location, withRadius: radius)
+            createHaloAt(location, withRadius: radius)
         }
     }
     
@@ -80,11 +80,11 @@ class ForceTouchViewController: UIViewController {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
 
-        self.showTouches(touches)
+        showTouches(touches)
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
 
-        self.showTouches(touches)
+        showTouches(touches)
     }
 }

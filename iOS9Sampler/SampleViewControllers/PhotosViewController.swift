@@ -27,7 +27,7 @@ class PhotosViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.reloadData()
+        reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +44,7 @@ class PhotosViewController: UICollectionViewController {
         if segmentedCtl.selectedSegmentIndex == 0 {
             
             let result = PHAsset.fetchAssetsWithMediaType(.Image, options: nil)
-            result.enumerateObjectsUsingBlock({ (object, index, stop) -> Void in
+            result.enumerateObjectsUsingBlock({ [unowned self] (object, index, stop) -> Void in
                 
                 // Append only screenshots
                 let asset = object as! PHAsset
@@ -67,7 +67,7 @@ class PhotosViewController: UICollectionViewController {
                 let collection = object as! PHAssetCollection
                 let result = PHAsset.fetchAssetsInAssetCollection(collection, options: nil)
 
-                result.enumerateObjectsUsingBlock({ (object, index, stop) -> Void in
+                result.enumerateObjectsUsingBlock({ [unowned self] (object, index, stop) -> Void in
                     
                     let asset = object as! PHAsset
                     self.images.append(asset)
@@ -76,7 +76,7 @@ class PhotosViewController: UICollectionViewController {
         }
         
         if images.count > 0 {
-            self.collectionView?.reloadData()
+            collectionView?.reloadData()
         }
         else {
             let alert = UIAlertController(
@@ -88,7 +88,7 @@ class PhotosViewController: UICollectionViewController {
                 style: UIAlertActionStyle.Cancel,
                 handler: nil)
             alert.addAction(okAction)
-            self.presentViewController(alert, animated: true, completion: nil)
+            presentViewController(alert, animated: true, completion: nil)
         }
     }
     
@@ -133,6 +133,6 @@ class PhotosViewController: UICollectionViewController {
     
     @IBAction func segmentChanged(sender: UISegmentedControl) {
         
-        self.reloadData()
+        reloadData()
     }
 }

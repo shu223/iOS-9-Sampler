@@ -18,13 +18,13 @@ class LowPowerModeViewController: UIViewController {
         super.viewDidLoad()
 
         
-        self.updateStateLabel()
+        updateStateLabel()
         
         
         NSNotificationCenter.defaultCenter().addObserverForName(
             NSProcessInfoPowerStateDidChangeNotification,
             object: nil,
-            queue: nil) { (notification: NSNotification) -> Void in
+            queue: nil) { [unowned self] (notification: NSNotification) -> Void in
                 
                 // A NSProcessInfo object can be retrieved from `object` property.
                 let processInfo = notification.object as! NSProcessInfo

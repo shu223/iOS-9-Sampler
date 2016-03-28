@@ -27,8 +27,8 @@ class MapCustomizationsViewController: UIViewController, MKMapViewDelegate {
             MKCoordinateSpanMake(0.176615416273734, 0.153035815736018))
         mapView.setRegion(berlinRegion, animated: true)
 
-        self.setupMapCamera()
-        self.updateCompassBtn()
+        setupMapCamera()
+        updateCompassBtn()
     }
 
     override func didReceiveMemoryWarning() {
@@ -99,7 +99,7 @@ class MapCustomizationsViewController: UIViewController, MKMapViewDelegate {
         
         mapView.showsCompass = !mapView.showsCompass
         
-        self.updateCompassBtn()
+        updateCompassBtn()
     }
 
     @IBAction func flyoverBtnTapped(sender: UIButton) {
@@ -125,6 +125,6 @@ class MapCustomizationsViewController: UIViewController, MKMapViewDelegate {
             mapView.mapType = MKMapType.Standard
         }
         
-        self.setupMapCamera()
+        setupMapCamera()
     }
 }

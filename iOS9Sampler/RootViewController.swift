@@ -180,7 +180,7 @@ class RootViewController: UITableViewController {
         
         let storyboard = UIStoryboard(name: prefix!, bundle: nil)
         let controller = storyboard.instantiateInitialViewController()
-        self.navigationController?.pushViewController(controller!, animated: true)
+        navigationController?.pushViewController(controller!, animated: true)
         
         controller!.title = item[kItemKeyTitle]
         

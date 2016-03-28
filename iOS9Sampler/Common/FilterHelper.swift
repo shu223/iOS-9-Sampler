@@ -45,16 +45,16 @@ class FilterHelper: NSObject {
 extension CIFilter {
     
     func categoriesStringForFilter() -> String {
+        guard let categories = attributes[kCIAttributeFilterCategories] as? [String] else {fatalError()}
+        var description = categories.description
         
-        var categories = self.attributes[kCIAttributeFilterCategories]!.description
+        description = description.stringByReplacingOccurrencesOfString("(", withString: "")
+        description = description.stringByReplacingOccurrencesOfString(")", withString: "")
+        description = description.stringByReplacingOccurrencesOfString("\n", withString: "")
+        description = description.stringByReplacingOccurrencesOfString("   ", withString: "")
+        description = description.stringByReplacingOccurrencesOfString("CICategory", withString: "")
         
-        categories = categories.stringByReplacingOccurrencesOfString("(", withString: "")
-        categories = categories.stringByReplacingOccurrencesOfString(")", withString: "")
-        categories = categories.stringByReplacingOccurrencesOfString("\n", withString: "")
-        categories = categories.stringByReplacingOccurrencesOfString("   ", withString: "")
-        categories = categories.stringByReplacingOccurrencesOfString("CICategory", withString: "")
-        
-        return categories
+        return description
     }
 }
 

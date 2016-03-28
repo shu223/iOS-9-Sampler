@@ -78,7 +78,7 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
         picker.delegate = self
         picker.mediaTypes = [kUTTypeImage as String, kUTTypeLivePhoto as String]
         
-        self.presentViewController(picker, animated: true, completion: nil)
+        presentViewController(picker, animated: true, completion: nil)
     }
 }
 

@@ -22,7 +22,7 @@ class FilterDetailViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.title = filterName
+        title = filterName
         
         let attributes = CIFilter(name: filterName)!.attributes
         print("attributes:\(attributes)\n")

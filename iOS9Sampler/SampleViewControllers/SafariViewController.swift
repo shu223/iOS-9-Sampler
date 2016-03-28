@@ -41,7 +41,7 @@ class SafariViewController: UIViewController, SFSafariViewControllerDelegate {
         let url = NSURL(string: "https://github.com/shu223/")!
         let safariVC = SFSafariViewController(URL: url)
         
-        self.presentViewController(
+        presentViewController(
             safariVC,
             animated: true,
             completion: nil)

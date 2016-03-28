@@ -46,11 +46,11 @@ class StackViewViewController: UIViewController {
             
             let image = UIImage(named: String(format: "m%d", Int(sender.value)))!
 
-            self.holizontalStackView.insertArrangedSubview(self.imageViewWithImage(image), atIndex: 0)
-            self.verticalStackView.insertArrangedSubview(self.imageViewWithImage(image), atIndex: 0)
+            holizontalStackView.insertArrangedSubview(imageViewWithImage(image), atIndex: 0)
+            verticalStackView.insertArrangedSubview(imageViewWithImage(image), atIndex: 0)
             
             // animate
-            UIView.animateWithDuration(0.5, animations: { () -> Void in
+            UIView.animateWithDuration(0.5, animations: { [unowned self] () -> Void in
                 self.holizontalStackView.layoutIfNeeded()
                 self.verticalStackView.layoutIfNeeded()
             })

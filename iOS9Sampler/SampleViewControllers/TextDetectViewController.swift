@@ -56,7 +56,7 @@ class TextDetectViewController: UIViewController {
             print("bounds:\(feature.bounds), topLeft:\(feature.topLeft), bottomRight:\(feature.bottomRight)")
             
             // draw feature rects
-            let featureRect = self.rectForFeature(feature, bounds: imageView.bounds, scale: scale)
+            let featureRect = rectForFeature(feature, bounds: imageView.bounds, scale: scale)
             let featureView = UIView(frame: featureRect)
             featureView.backgroundColor = UIColor.clearColor()
             featureView.layer.borderColor = UIColor.greenColor().colorWithAlphaComponent(0.8).CGColor
@@ -66,7 +66,7 @@ class TextDetectViewController: UIViewController {
             // draw subFeature rects
             for subFeature in feature.subFeatures as! [CITextFeature] {
 
-                let subFeatureRect = self.rectForFeature(subFeature, bounds: imageView.bounds, scale: scale)
+                let subFeatureRect = rectForFeature(subFeature, bounds: imageView.bounds, scale: scale)
                 let subFeatureView = UIView(frame: subFeatureRect)
                 subFeatureView.backgroundColor = UIColor.clearColor()
                 subFeatureView.layer.borderColor = UIColor.yellowColor().colorWithAlphaComponent(0.8).CGColor
@@ -84,7 +84,7 @@ class TextDetectViewController: UIViewController {
 
         sender.hidden = true
         
-        self.detect(imageView1)
-        self.detect(imageView2)
+        detect(imageView1)
+        detect(imageView2)
     }
 }

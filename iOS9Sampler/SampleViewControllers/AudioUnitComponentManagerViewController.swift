@@ -38,7 +38,7 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
             title: "ShowAUVC",
             style: UIBarButtonItemStyle.Plain,
             target: self, action: #selector(AudioUnitComponentManagerViewController.viewBtnTapped(_:)))
-        self.navigationItem.setRightBarButtonItem(viewBtn, animated: false)
+        navigationItem.setRightBarButtonItem(viewBtn, animated: false)
         viewBtn.enabled = false
         
         // setup engine and player
@@ -71,23 +71,23 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
         super.viewWillAppear(animated)
 
         // Schedule buffers on the player.
-        self.scheduleLoop()
+        scheduleLoop()
         
         // Start the engine.
         do {
-            try self.engine.start()
+            try engine.start()
         }
         catch {
             fatalError("Could not start engine. error: \(error).")
         }
 
-        self.player.play()
+        player.play()
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.player.stop()
-        self.engine.stop()
+        player.stop()
+        engine.stop()
     }
     
     override func didReceiveMemoryWarning() {
@@ -138,7 +138,7 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
         
         // Insert the new effect, if any.
         if let componentDescription = componentDescription {
-            AVAudioUnit.instantiateWithComponentDescription(componentDescription, options: []) { avAudioUnit, error in
+            AVAudioUnit.instantiateWithComponentDescription(componentDescription, options: []) { [unowned self] avAudioUnit, error in
                 guard let avAudioUnitEffect = avAudioUnit else { return }
                 
                 self.effect = avAudioUnitEffect
@@ -210,7 +210,7 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
             auComponent = items[indexPath.row - 1]
         }
         
-        self.selectEffectWithComponentDescription(
+        selectEffectWithComponentDescription(
             auComponent?.audioComponentDescription) { () -> Void in
         }
 
@@ -224,7 +224,7 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
     func viewBtnTapped(sender: AnyObject) {
 
         // close
-        if self.childViewControllers.count > 0 {
+        if childViewControllers.count > 0 {
             let childViewController = childViewControllers.first!
             childViewController.willMoveToParentViewController(nil)
             childViewController.view.removeFromSuperview()
@@ -235,7 +235,7 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
         }
 
         // open
-        self.audioUnit?.requestViewControllerWithCompletionHandler { [weak self] viewController in
+        audioUnit?.requestViewControllerWithCompletionHandler { [weak self] viewController in
             guard let strongSelf = self else { return }
             guard let viewController = viewController, view = viewController.view else { return }
 

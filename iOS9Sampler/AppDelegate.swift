@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let activityVC = UIActivityViewController(
                 activityItems: items,
                 applicationActivities: nil)
-            self.window?.rootViewController?.presentViewController(activityVC, animated: true, completion: { () -> Void in
+            window?.rootViewController?.presentViewController(activityVC, animated: true, completion: { () -> Void in
                 //
             })
         default:
