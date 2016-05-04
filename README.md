@@ -6,6 +6,7 @@
 )](https://developer.apple.com/swift)
 [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat
 )](http://mit-license.org)
+[![Twitter](https://img.shields.io/badge/twitter-@shu223-blue.svg?style=flat)](http://twitter.com/shu223)
 
 
 Code examples for the new features of iOS 9.
@@ -189,19 +190,12 @@ You can check the **examples for watchOS 2** features on [watchOS-2-Sampler](htt
 
 **Shuichi Tsutsumi**
 
-I'm an iOS freelancer in Japan, welcome works from abroad.
+iOS freelancer in Japan. Welcome works from abroad!
 
-You can check my past works here: 
-
-- [My Profile Summary — Medium](https://medium.com/@shu223/my-profile-summary-f14bfc1e7099#.vdh0i7clr)
-
-Other contacts:
-
-- [Twitter](https://twitter.com/shu223)
-- [Facebook](https://www.facebook.com/shuichi.tsutsumi)
-- [LinkedIn](https://www.linkedin.com/profile/view?id=214896557)
-- [Blog (Japanese)](http://d.hatena.ne.jp/shu223/)
-
+- PAST WORKS:  [My Profile Summary](https://medium.com/@shu223/my-profile-summary-f14bfc1e7099#.vdh0i7clr)
+- PROFILES: [LinkedIn](https://www.linkedin.com/profile/view?id=214896557)
+- BLOGS: [English](https://medium.com/@shu223/) / [Japanese](http://d.hatena.ne.jp/shu223/)
+- CONTACTS: [Twitter](https://twitter.com/shu223) / [Facebook](https://www.facebook.com/shuichi.tsutsumi)
 
 
 ##Special Thanks
