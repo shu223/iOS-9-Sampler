@@ -9,11 +9,9 @@
 import UIKit
 
 class FilterDetailViewController: UIViewController {
-
     
     @IBOutlet private var textView: UITextView!
     var filterName: String!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

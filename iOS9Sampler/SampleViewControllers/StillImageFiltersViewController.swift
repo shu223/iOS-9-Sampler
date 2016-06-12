@@ -8,16 +8,14 @@
 
 import UIKit
 
-
 class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-
     
     @IBOutlet weak private var imageView: UIImageView!
     @IBOutlet weak private var picker: UIPickerView!
     @IBOutlet weak private var indicator: UIActivityIndicatorView!
+    
     private var items: [String] = []
     private var orgImage: UIImage!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +36,6 @@ class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource,
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
 
     // =========================================================================
     // MARK: - UIPickerViewDataSource
@@ -50,7 +47,6 @@ class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource,
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return items.count
     }
-    
     
     // =========================================================================
     // MARK: - UIPickerViewDelegate
@@ -74,7 +70,7 @@ class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource,
             
             // Create CIFilter object
             let params = [kCIInputImageKey: inputImage]
-            let filter = CIFilter(name: self.items[row], withInputParameters: params)!
+            guard let filter = CIFilter(name: self.items[row], withInputParameters: params) else {fatalError()}
             filter.setDefaults()
             
             let attributes = filter.attributes
@@ -103,8 +99,7 @@ class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource,
                 let size = self.imageView.frame.size
                 scale = UIScreen.mainScreen().scale
                 extent = CGRectMake(0, 0, size.width * scale, size.height * scale)
-            }
-            else {
+            } else {
                 scale = extent.size.width / self.orgImage.size.width
             }
             
