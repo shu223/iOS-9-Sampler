@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8A0714B31BA46CF300A1CC22 /* SearchAPIsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0714B21BA46CF300A1CC22 /* SearchAPIsViewController.swift */; };
 		8A0714B51BA46D0500A1CC22 /* SearchAPIs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0714B41BA46D0500A1CC22 /* SearchAPIs.storyboard */; };
+		8A2793801D0CDD12007D3DE0 /* SampleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A27937F1D0CDD12007D3DE0 /* SampleDataSource.swift */; };
 		8A2AC86C1BB91A3800C05128 /* ForceTouch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A2AC86A1BB91A3800C05128 /* ForceTouch.storyboard */; };
 		8A2AC86D1BB91A3800C05128 /* ForceTouchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2AC86B1BB91A3800C05128 /* ForceTouchViewController.swift */; };
 		8A2AC8741BB91ACD00C05128 /* QuickActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2AC8731BB91ACD00C05128 /* QuickActionsViewController.swift */; };
@@ -124,6 +125,7 @@
 /* Begin PBXFileReference section */
 		8A0714B21BA46CF300A1CC22 /* SearchAPIsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAPIsViewController.swift; sourceTree = "<group>"; };
 		8A0714B41BA46D0500A1CC22 /* SearchAPIs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchAPIs.storyboard; sourceTree = "<group>"; };
+		8A27937F1D0CDD12007D3DE0 /* SampleDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleDataSource.swift; sourceTree = "<group>"; };
 		8A2AC86A1BB91A3800C05128 /* ForceTouch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ForceTouch.storyboard; sourceTree = "<group>"; };
 		8A2AC86B1BB91A3800C05128 /* ForceTouchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceTouchViewController.swift; sourceTree = "<group>"; };
 		8A2AC8731BB91ACD00C05128 /* QuickActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickActionsViewController.swift; sourceTree = "<group>"; };
@@ -571,6 +573,7 @@
 				8AD5D75A1B295E8C001924F0 /* Main.storyboard */,
 				8AD5D75F1B295E8C001924F0 /* LaunchScreen.storyboard */,
 				8AD5D7561B295E8C001924F0 /* AppDelegate.swift */,
+				8A27937F1D0CDD12007D3DE0 /* SampleDataSource.swift */,
 				8AD5D7581B295E8C001924F0 /* RootViewController.swift */,
 				8ADBD9F91B8F675E00BB46D8 /* RootViewCell.swift */,
 				8A7C19C81B8B63AF00F75F88 /* Common */,
@@ -877,6 +880,7 @@
 				8A9078DA1B949B64000518C3 /* ContentBlockerViewController.swift in Sources */,
 				8A3588331B33F3B500D4D32C /* FilterDetailViewController.swift in Sources */,
 				8A76D7921BD4B8C400C3881D /* CoreImageTransition.m in Sources */,
+				8A2793801D0CDD12007D3DE0 /* SampleDataSource.swift in Sources */,
 				8A76D7931BD4B8C400C3881D /* CoreImageTransitionHelper.m in Sources */,
 				8A2AC87C1BB91E2200C05128 /* PulsingHaloLayer.m in Sources */,
 				8A3588241B33CCC000D4D32C /* TextDetectViewController.swift in Sources */,
