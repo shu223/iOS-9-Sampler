@@ -17,7 +17,7 @@ class FiltersViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        items = FilterHelper.filterNamesFor_iOS9(kCICategoryBuiltIn)
+        items = Filter.names(9, category: kCICategoryBuiltIn)
         print("num:\(items.count)\n")
     }
 
@@ -58,7 +58,7 @@ class FiltersViewController: UITableViewController {
         cell.textLabel?.text = name
         
         let filter = CIFilter(name: name)!
-        cell.detailTextLabel?.text = filter.categoriesStringForFilter()
+        cell.detailTextLabel?.text = filter.categoriesDescription()
 
         return cell
     }

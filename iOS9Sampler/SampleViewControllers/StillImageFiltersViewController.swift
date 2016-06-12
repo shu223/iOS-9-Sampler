@@ -30,7 +30,7 @@ class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource,
             kCICategoryGenerator,
             kCICategoryReduction,
         ]
-        items = FilterHelper.filterNamesFor_iOS9(kCICategoryBuiltIn, exceptCategories: exceptCategories)
+        items = Filter.names(9, category: kCICategoryBuiltIn, exceptCategories: exceptCategories)
         items.insert("Original", atIndex: 0)
         print("num:\(items.count)\n")
     }
