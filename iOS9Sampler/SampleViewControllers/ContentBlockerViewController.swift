@@ -21,7 +21,6 @@ class ContentBlockerViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    
     @IBAction func safariBtnTapped(sender: UIButton) {
         
         let url = NSURL(string: "https://mobile.twitter.com/shu223")!

@@ -11,12 +11,9 @@ import Photos
 import PhotosUI
 import MobileCoreServices
 
-
 class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PHLivePhotoViewDelegate {
-
     
     @IBOutlet weak private var livePhotoView: PHLivePhotoView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,22 +26,19 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
         super.didReceiveMemoryWarning()
     }
 
-
     // =========================================================================
     // MARK: - UIImagePickerControllerDelegate
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        
+
         dismissViewControllerAnimated(true, completion: nil)
         
         print("\(info)")
 
         if let livePhoto = info[UIImagePickerControllerLivePhoto] as? PHLivePhoto {
-
             livePhotoView.livePhoto = livePhoto
             livePhotoView.startPlaybackWithStyle(.Full)
-        }
-        else {
+        } else {
             let alert = UIAlertController(
                 title: "Failed",
                 message: "This is not a Live Photo.",
@@ -57,22 +51,18 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
             presentViewController(alert, animated: true, completion: nil)
         }
     }
-
     
     // =========================================================================
     // MARK: - PHLivePhotoViewDelegate
     
     func livePhotoView(livePhotoView: PHLivePhotoView, didEndPlaybackWithStyle playbackStyle: PHLivePhotoViewPlaybackStyle) {
-        
         livePhotoView.startPlaybackWithStyle(.Full)
     }
-    
     
     // =========================================================================
     // MARK: - Actions
     
     @IBAction func pickerBtnTapped(sender: UIButton) {
-        
         let picker = UIImagePickerController()
         picker.sourceType = .PhotoLibrary
         picker.delegate = self

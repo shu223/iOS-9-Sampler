@@ -9,17 +9,13 @@
 import UIKit
 
 class LowPowerModeViewController: UIViewController {
-
     
     @IBOutlet weak private var stateLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         updateStateLabel()
-        
         
         NSNotificationCenter.defaultCenter().addObserverForName(
             NSProcessInfoPowerStateDidChangeNotification,
@@ -51,9 +47,7 @@ class LowPowerModeViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-
     private func updateStateLabel() {
-        
         stateLabel.text = "lowPowerModeEnabled: \(NSProcessInfo().lowPowerModeEnabled)"
     }
 }

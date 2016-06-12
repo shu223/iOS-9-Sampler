@@ -9,7 +9,6 @@
 import UIKit
 import SafariServices
 
-
 class SafariViewController: UIViewController, SFSafariViewControllerDelegate {
 
     override func viewDidLoad() {
@@ -19,7 +18,6 @@ class SafariViewController: UIViewController, SFSafariViewControllerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
     
     // =========================================================================
     // MARK: - SFSafariViewControllerDelegate
@@ -31,7 +29,6 @@ class SafariViewController: UIViewController, SFSafariViewControllerDelegate {
     func safariViewControllerDidFinish(controller: SFSafariViewController) {
         print(#function)
     }
-    
     
     // =========================================================================
     // MARK: - Actions
