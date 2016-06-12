@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A00468F1D0E1A3000591840 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A00468E1D0E1A3000591840 /* AudioEngine.swift */; };
 		8A0714B31BA46CF300A1CC22 /* SearchAPIsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0714B21BA46CF300A1CC22 /* SearchAPIsViewController.swift */; };
 		8A0714B51BA46D0500A1CC22 /* SearchAPIs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0714B41BA46D0500A1CC22 /* SearchAPIs.storyboard */; };
 		8A2793801D0CDD12007D3DE0 /* SampleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A27937F1D0CDD12007D3DE0 /* SampleDataSource.swift */; };
@@ -123,6 +124,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8A00468E1D0E1A3000591840 /* AudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
 		8A0714B21BA46CF300A1CC22 /* SearchAPIsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAPIsViewController.swift; sourceTree = "<group>"; };
 		8A0714B41BA46D0500A1CC22 /* SearchAPIs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchAPIs.storyboard; sourceTree = "<group>"; };
 		8A27937F1D0CDD12007D3DE0 /* SampleDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleDataSource.swift; sourceTree = "<group>"; };
@@ -469,6 +471,7 @@
 		8A7C19CC1B8B63C700F75F88 /* AudioUnitComponentManager */ = {
 			isa = PBXGroup;
 			children = (
+				8A00468E1D0E1A3000591840 /* AudioEngine.swift */,
 				8A3A32141B35DAD10016C4CE /* AudioUnitComponentManagerViewController.swift */,
 				8A3A32161B35DAE10016C4CE /* AudioUnitComponentManager.storyboard */,
 			);
@@ -871,6 +874,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A00468F1D0E1A3000591840 /* AudioEngine.swift in Sources */,
 				8ADC74881BA5792D00FA178A /* StackViewViewController.swift in Sources */,
 				BDD0D4A81BB2E6FF00995959 /* ContactsViewController.swift in Sources */,
 				8A7AC6301BA9BFCE005CC482 /* FontsViewController.swift in Sources */,
