@@ -13,16 +13,12 @@
 import UIKit
 import Photos
 
-
 class PhotosViewController: UICollectionViewController {
-
 
     @IBOutlet weak private var segmentedCtl: UISegmentedControl!
     
-    
     private var images: [PHAsset]! = []
     private let imageManager = PHCachingImageManager()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,51 +30,50 @@ class PhotosViewController: UICollectionViewController {
         super.didReceiveMemoryWarning()
     }
     
-
+    // Retrieve only screenshots
+    //   reference: http://koze.hatenablog.jp/entry/2015/06/24/230000
+    private func fetchScreenshots() {
+        let result = PHAsset.fetchAssetsWithMediaType(.Image, options: nil)
+        result.enumerateObjectsUsingBlock({ [unowned self] (object, index, stop) -> Void in
+            guard let asset = object as? PHAsset else {fatalError()}
+            // Append only screenshots
+            if Bool(asset.mediaSubtypes.rawValue & PHAssetMediaSubtype.PhotoScreenshot.rawValue) {
+                self.images.append(asset)
+            }
+            })
+    }
+    
+    // Retrieve only Self Portraits
+    //   reference: http://koze.hatenablog.jp/entry/2015/07/23/090000
+    private func fetchSelfies() {
+        // Fetch asset collections of Self Portraits.
+        let resultCollections = PHAssetCollection.fetchAssetCollectionsWithType(
+            .SmartAlbum,
+            subtype: .SmartAlbumSelfPortraits,
+            options: nil)
+        resultCollections.enumerateObjectsUsingBlock({ (object, index, stop) -> Void in
+            guard let collection = object as? PHAssetCollection else {fatalError()}
+            let result = PHAsset.fetchAssetsInAssetCollection(collection, options: nil)
+            result.enumerateObjectsUsingBlock({ [unowned self] (object, index, stop) -> Void in
+                let asset = object as! PHAsset
+                self.images.append(asset)
+                })
+        })
+    }
+    
     private func reloadData() {
-
+        
         images.removeAll()
         
-        // Retrieve only screenshots
-        //   reference: http://koze.hatenablog.jp/entry/2015/06/24/230000
         if segmentedCtl.selectedSegmentIndex == 0 {
-            
-            let result = PHAsset.fetchAssetsWithMediaType(.Image, options: nil)
-            result.enumerateObjectsUsingBlock({ [unowned self] (object, index, stop) -> Void in
-                
-                // Append only screenshots
-                let asset = object as! PHAsset
-                if Bool(asset.mediaSubtypes.rawValue & PHAssetMediaSubtype.PhotoScreenshot.rawValue) {
-                    self.images.append(asset)
-                }
-            })
-        }
-        // Retrieve only Self Portraits
-        //   reference: http://koze.hatenablog.jp/entry/2015/07/23/090000
-        else if segmentedCtl.selectedSegmentIndex == 1 {
-            
-            // Fetch asset collections of Self Portraits.
-            let resultCollections = PHAssetCollection.fetchAssetCollectionsWithType(
-                .SmartAlbum,
-                subtype: .SmartAlbumSelfPortraits,
-                options: nil)
-            resultCollections.enumerateObjectsUsingBlock({ (object, index, stop) -> Void in
-                
-                let collection = object as! PHAssetCollection
-                let result = PHAsset.fetchAssetsInAssetCollection(collection, options: nil)
-
-                result.enumerateObjectsUsingBlock({ [unowned self] (object, index, stop) -> Void in
-                    
-                    let asset = object as! PHAsset
-                    self.images.append(asset)
-                })
-            })
+            fetchScreenshots()
+        } else if segmentedCtl.selectedSegmentIndex == 1 {
+            fetchSelfies()
         }
         
-        if images.count > 0 {
-            collectionView?.reloadData()
-        }
-        else {
+        collectionView?.reloadData()
+        
+        if images.count == 0 {
             let alert = UIAlertController(
                 title: "NO DATA",
                 message: "Couldn't fetch any photos for the selected subtype.",
@@ -91,8 +86,7 @@ class PhotosViewController: UICollectionViewController {
             presentViewController(alert, animated: true, completion: nil)
         }
     }
-    
-    
+
     // =========================================================================
     // MARK: - UICollectionViewataSource
     
@@ -111,22 +105,11 @@ class PhotosViewController: UICollectionViewController {
             targetSize: cell.imageView.frame.size,
             contentMode: .AspectFill,
             options: nil) { image, _ in
-                
-                if let image = image {
-                    cell.imageView.image = image
-                }
+                cell.imageView.image = image
         }
 
         return cell
     }
-    
-    
-    // =========================================================================
-    // MARK: - UICollectionViewDelegate
-    
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-    }
-    
     
     // =========================================================================
     // MARK: - Actions
