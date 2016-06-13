@@ -9,13 +9,10 @@
 import UIKit
 import MapKit
 
-
 class MapCustomizationsViewController: UIViewController, MKMapViewDelegate {
-
     
     @IBOutlet weak private var mapView: MKMapView!
     @IBOutlet weak private var compassBtn: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +40,6 @@ class MapCustomizationsViewController: UIViewController, MKMapViewDelegate {
     }
 
     private func updateCompassBtn() {
-        
         // shown
         if mapView.showsCompass {
             compassBtn.setTitle("Hide Compass", forState: UIControlState.Normal)
@@ -54,15 +50,12 @@ class MapCustomizationsViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
-    
     // =========================================================================
     // MARK: - MKMapViewDelegate
     
     func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
 //        print(__FUNCTION__+"\n")
     }
-    
-    
     
     // =========================================================================
     // MARK: - Actions
@@ -71,12 +64,9 @@ class MapCustomizationsViewController: UIViewController, MKMapViewDelegate {
 
         mapView.showsTraffic = !mapView.showsTraffic
 
-        // shown
         if mapView.showsTraffic {
             sender.setTitle("Hide Traffic", forState: UIControlState.Normal)
-        }
-        // hidden
-        else {
+        } else {
             sender.setTitle("Show Traffic", forState: UIControlState.Normal)
         }
     }
@@ -85,12 +75,9 @@ class MapCustomizationsViewController: UIViewController, MKMapViewDelegate {
 
         mapView.showsScale = !mapView.showsScale
 
-        // shown
         if mapView.showsScale {
             sender.setTitle("Hide Scale", forState: UIControlState.Normal)
-        }
-        // hidden
-        else {
+        } else {
             sender.setTitle("Show Scale", forState: UIControlState.Normal)
         }
     }
@@ -104,12 +91,9 @@ class MapCustomizationsViewController: UIViewController, MKMapViewDelegate {
 
     @IBAction func flyoverBtnTapped(sender: UIButton) {
         
-        // shown
         if mapView.showsCompass {
             sender.setTitle("Hide Compass", forState: UIControlState.Normal)
-        }
-            // hidden
-        else {
+        } else {
             sender.setTitle("Show Compass", forState: UIControlState.Normal)
         }
     }
@@ -118,11 +102,11 @@ class MapCustomizationsViewController: UIViewController, MKMapViewDelegate {
         
         switch sender.selectedSegmentIndex {
         case 1:
-            mapView.mapType = MKMapType.SatelliteFlyover
+            mapView.mapType = .SatelliteFlyover
         case 2:
-            mapView.mapType = MKMapType.HybridFlyover
+            mapView.mapType = .HybridFlyover
         default:
-            mapView.mapType = MKMapType.Standard
+            mapView.mapType = .Standard
         }
         
         setupMapCamera()

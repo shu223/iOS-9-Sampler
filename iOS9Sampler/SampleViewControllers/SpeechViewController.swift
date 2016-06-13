@@ -9,15 +9,12 @@
 import UIKit
 import AVFoundation
 
-
 class SpeechViewController: UITableViewController {
-
     
     @IBOutlet weak private var qualitySegmentedCtl: UISegmentedControl!
     
     private let synthesizer = AVSpeechSynthesizer()
     private var speechVoices = AVSpeechSynthesisVoice.speechVoices()
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +22,7 @@ class SpeechViewController: UITableViewController {
         let alexVoice = AVSpeechSynthesisVoice(identifier: AVSpeechSynthesisVoiceIdentifierAlex)
         if let alexVoice = alexVoice {
             speechVoices.insert(alexVoice, atIndex: 0)
-        }
-        else {
+        } else {
             print("\"AVSpeechSynthesisVoiceIdentifierAlex\" couldn't be instantiated.")
         }
     }
@@ -34,18 +30,15 @@ class SpeechViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
 
     // =========================================================================
     // MARK: - UITableViewDataSource
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return speechVoices.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         
         let voice = speechVoices[indexPath.row]
@@ -57,7 +50,6 @@ class SpeechViewController: UITableViewController {
         
         return cell
     }
-    
     
     // =========================================================================
     // MARK: - UITableViewDelegate

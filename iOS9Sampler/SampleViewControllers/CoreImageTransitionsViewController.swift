@@ -8,13 +8,10 @@
 
 import UIKit
 
-
 class CoreImageTransitionsViewController: UIViewController, UINavigationControllerDelegate {
-
     
     @IBOutlet weak private var segmentedCtl: UISegmentedControl!
-    private var transition: CoreImageTransition?
-    
+    private let transition = CoreImageTransition()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +23,6 @@ class CoreImageTransitionsViewController: UIViewController, UINavigationControll
         super.didReceiveMemoryWarning()
     }
     
-    
     // =========================================================================
     // MARK: - UINavigationControllerDelegate
     
@@ -36,17 +32,15 @@ class CoreImageTransitionsViewController: UIViewController, UINavigationControll
         fromViewController fromVC: UIViewController,
         toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning?
     {
-        transition = CoreImageTransition()
-        
         switch segmentedCtl.selectedSegmentIndex {
         case 1:
-            transition?.type = CoreImageTransitionType.PageCurl
+            transition.type = CoreImageTransitionType.PageCurl
         case 2:
-            transition?.type = CoreImageTransitionType.PageCurlWithShadow
+            transition.type = CoreImageTransitionType.PageCurlWithShadow
         default:
-            transition?.type = CoreImageTransitionType.Ripple
+            transition.type = CoreImageTransitionType.Ripple
         }
-        transition?.presenting = false
+        transition.presenting = false
         return transition
     }
 }

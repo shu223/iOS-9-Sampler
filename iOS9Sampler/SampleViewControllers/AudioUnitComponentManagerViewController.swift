@@ -10,26 +10,26 @@ import UIKit
 import AVFoundation
 import CoreAudioKit
 
+extension AudioComponent {
+    static func anyEffectDescription() -> AudioComponentDescription {
+        var anyEffectDescription = AudioComponentDescription()
+        anyEffectDescription.componentType = kAudioUnitType_Effect
+        anyEffectDescription.componentSubType = 0
+        anyEffectDescription.componentManufacturer = 0
+        anyEffectDescription.componentFlags = 0
+        anyEffectDescription.componentFlagsMask = 0
+        return anyEffectDescription
+    }
+}
 
 class AudioUnitComponentManagerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
 
     @IBOutlet weak private var tableView: UITableView!
     private var viewBtn: UIBarButtonItem!
     
     private var items = [AVAudioUnitComponent]()
 
-    private let engine = AVAudioEngine()
-    private let player = AVAudioPlayerNode()
-    private var file: AVAudioFile?
-
-    /// The currently selected `AUAudioUnit` effect, if any.
-    private var audioUnit: AUAudioUnit?
-    /// The audio unit's presets.
-    private var presetList = [AUAudioUnitPreset]()
-    /// Engine's effect node.
-    private var effect: AVAudioUnit?
-
+    private var engine = AudioEngine()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,52 +41,20 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
         navigationItem.setRightBarButtonItem(viewBtn, animated: false)
         viewBtn.enabled = false
         
-        // setup engine and player
-        engine.attachNode(player)
-        guard let fileURL = NSBundle.mainBundle().URLForResource("drumLoop", withExtension: "caf") else {
-            fatalError("\"drumLoop.caf\" file not found.")
-        }
-        do {
-            let file = try AVAudioFile(forReading: fileURL)
-            self.file = file
-            engine.connect(player, to: engine.mainMixerNode, format: file.processingFormat)
-        }
-        catch {
-            fatalError("Could not create AVAudioFile instance. error: \(error).")
-        }
-
         // extract available effects
-        var anyEffectDescription = AudioComponentDescription()
-        anyEffectDescription.componentType = kAudioUnitType_Effect
-        anyEffectDescription.componentSubType = 0
-        anyEffectDescription.componentManufacturer = 0
-        anyEffectDescription.componentFlags = 0
-        anyEffectDescription.componentFlagsMask = 0
-        
         items = AVAudioUnitComponentManager.sharedAudioUnitComponentManager()
-            .componentsMatchingDescription(anyEffectDescription)
+            .componentsMatchingDescription(AudioComponent.anyEffectDescription())
     }
-
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        // Schedule buffers on the player.
-        scheduleLoop()
-        
-        // Start the engine.
-        do {
-            try engine.start()
-        }
-        catch {
-            fatalError("Could not start engine. error: \(error).")
-        }
-
-        player.play()
+        engine.start()
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        player.stop()
+        
         engine.stop()
     }
     
@@ -94,86 +62,10 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
         super.didReceiveMemoryWarning()
     }
     
-
-    private func scheduleLoop() {
-        guard let file = file else {
-            fatalError("`file` must not be nil in \(#function).")
-        }
-        
-        player.scheduleFile(file, atTime: nil) {
-            self.scheduleLoop()
-        }
-    }
-
-    private func selectEffectWithComponentDescription(componentDescription: AudioComponentDescription?, completionHandler: (Void -> Void) = {}) {
-        
-        // Internal function to resume playing and call the completion handler.
-        func done() {
-            player.play()
-            completionHandler()
-        }
-        
-        /*
-        Pause the player before re-wiring it. (It is not simple to keep it
-        playing across an effect insertion or deletion.)
-        */
-        player.pause()
-        
-        // Destroy any pre-existing effect.
-        if let effect = effect {
-            // We have player -> effect -> mixer. Break both connections.
-            engine.disconnectNodeInput(effect)
-            engine.disconnectNodeInput(engine.mainMixerNode)
-            
-            // Connect player -> mixer.
-            engine.connect(player, to: engine.mainMixerNode, format: file!.processingFormat)
-            
-            // We're done with the effect; release all references.
-            engine.detachNode(effect)
-            
-            self.effect = nil
-            audioUnit = nil
-            presetList = [AUAudioUnitPreset]()
-        }
-        
-        // Insert the new effect, if any.
-        if let componentDescription = componentDescription {
-            AVAudioUnit.instantiateWithComponentDescription(componentDescription, options: []) { [unowned self] avAudioUnit, error in
-                guard let avAudioUnitEffect = avAudioUnit else { return }
-                
-                self.effect = avAudioUnitEffect
-                self.engine.attachNode(avAudioUnitEffect)
-                
-                // Disconnect player -> mixer.
-                self.engine.disconnectNodeInput(self.engine.mainMixerNode)
-                
-                // Connect player -> effect -> mixer.
-                self.engine.connect(self.player, to: avAudioUnitEffect, format: self.file!.processingFormat)
-                self.engine.connect(avAudioUnitEffect, to: self.engine.mainMixerNode, format: self.file!.processingFormat)
-                
-                self.audioUnit = avAudioUnitEffect.AUAudioUnit
-                self.presetList = avAudioUnitEffect.AUAudioUnit.factoryPresets ?? []
-                
-                self.audioUnit?.requestViewControllerWithCompletionHandler { [weak self] viewController in
-                    guard let strongSelf = self else { return }
-
-                    strongSelf.viewBtn.enabled = viewController != nil ? true : false
-                }
-
-                done()
-            }
-        }
-        else {
-            done()
-        }
-    }
-
-    
     // =========================================================================
     // MARK: - UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return items.count + 1
     }
     
@@ -184,8 +76,7 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
         if indexPath.row == 0 {
             cell.textLabel!.text = "No Effect"
             cell.detailTextLabel!.text = ""
-        }
-        else {
+        } else {
             let auComponent = items[indexPath.row - 1]
             cell.textLabel!.text = auComponent.name
             cell.detailTextLabel!.text = auComponent.manufacturerName
@@ -205,18 +96,18 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
         if indexPath.row == 0 {
             // no effect
             auComponent = nil
-        }
-        else {
+        } else {
             auComponent = items[indexPath.row - 1]
         }
         
-        selectEffectWithComponentDescription(
-            auComponent?.audioComponentDescription) { () -> Void in
+        engine.selectEffectWithComponentDescription(auComponent?.audioComponentDescription) { [unowned self] () -> Void in
+            self.engine.requestViewControllerWithCompletionHandler { viewController in
+                self.viewBtn.enabled = viewController != nil ? true : false
+            }
         }
 
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-    
     
     // =========================================================================
     // MARK: - Actions
@@ -235,7 +126,7 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
         }
 
         // open
-        audioUnit?.requestViewControllerWithCompletionHandler { [weak self] viewController in
+        engine.requestViewControllerWithCompletionHandler { [weak self] viewController in
             guard let strongSelf = self else { return }
             guard let viewController = viewController, view = viewController.view else { return }
 

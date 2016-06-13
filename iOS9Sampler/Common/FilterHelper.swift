@@ -8,45 +8,42 @@
 
 import UIKit
 
-
-class FilterHelper: NSObject {
-
-    class func filterNamesFor_iOS9(category: String?, exceptCategories: [String]? = nil) -> [String]! {
-        
-        var filterNames:[String] = []
-        let all = CIFilter.filterNamesInCategory(category)
-        
-        for aFilterName in all {
+struct Filter {
+    static func names(available_iOS: Int, category: String?, exceptCategories: [String]? = nil) -> [String] {
+        let names = CIFilter.filterNamesInCategory(category).filter { (name) -> Bool in
+            guard let filter = CIFilter(name: name) else {fatalError()}
             
-            let attributes = CIFilter(name: aFilterName)!.attributes
             if let exceptCategories = exceptCategories {
-                var needExcept = false
-                let categories = attributes[kCIAttributeFilterCategories] as! [String]
-                for aCategory in categories where exceptCategories.contains(aCategory) == true {
-                    needExcept = true
-                    break
-                }
-                if needExcept {
-                    continue
+                for aCategory in filter.categories() where exceptCategories.contains(aCategory) == true {
+                    return false
                 }
             }
             
-            let availability = attributes[kCIAttributeFilterAvailable_iOS]
-//            print("filtername:\(aFilterName), availability:\(availability)")            
-            if let availability = availability as? String where availability == "9" {
-                filterNames.append(aFilterName)
+            if filter.available_iOS() == available_iOS {
+                return true
+            } else {
+                return false
             }
         }
-        return filterNames
+        return names
     }
-    
 }
 
 extension CIFilter {
     
-    func categoriesStringForFilter() -> String {
+    func categories() -> [String] {
         guard let categories = attributes[kCIAttributeFilterCategories] as? [String] else {fatalError()}
-        var description = categories.description
+        return categories
+    }
+    
+    func available_iOS() -> Int {
+        guard let versionStr = attributes[kCIAttributeFilterAvailable_iOS] as? String else {return 0}
+        guard let versionInt = Int(versionStr) else {return 0}
+        return versionInt
+    }
+    
+    func categoriesDescription() -> String {
+        var description = categories().description
         
         description = description.stringByReplacingOccurrencesOfString("(", withString: "")
         description = description.stringByReplacingOccurrencesOfString(")", withString: "")

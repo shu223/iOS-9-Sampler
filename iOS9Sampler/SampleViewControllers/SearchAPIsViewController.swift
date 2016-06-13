@@ -10,23 +10,16 @@ import UIKit
 import CoreSpotlight
 import MobileCoreServices
 
-
-private let uniqueIdentifier = "com.shu223.ios9sampler"
-private let domainIdentifier = "searchapis"
-
-
 class SearchAPIsViewController: UIViewController {
 
-    
+    private let uniqueIdentifier = "com.shu223.ios9sampler"
+    private let domainIdentifier = "searchapis"
     private var activity: NSUserActivity!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         // NSUserActivity
-        
         let activityType = String(format: "%@.%@", uniqueIdentifier, domainIdentifier)
         activity = NSUserActivity(activityType: activityType)
         activity.title = "iOS-9-Sampler_NSUserActivity"
@@ -34,9 +27,7 @@ class SearchAPIsViewController: UIViewController {
         activity.eligibleForSearch = true
         activity.becomeCurrent()
         
-        
         // Core Spotlight
-        
         let attributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeImage as String)
         attributeSet.title = "iOS-9-Sampler_CoreSpotlight"
         attributeSet.contentDescription = "iOS-9-Sampler is a code example collection for new features of iOS 9."

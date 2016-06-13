@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A00468F1D0E1A3000591840 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A00468E1D0E1A3000591840 /* AudioEngine.swift */; };
 		8A0714B31BA46CF300A1CC22 /* SearchAPIsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0714B21BA46CF300A1CC22 /* SearchAPIsViewController.swift */; };
 		8A0714B51BA46D0500A1CC22 /* SearchAPIs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0714B41BA46D0500A1CC22 /* SearchAPIs.storyboard */; };
+		8A2793801D0CDD12007D3DE0 /* SampleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A27937F1D0CDD12007D3DE0 /* SampleDataSource.swift */; };
 		8A2AC86C1BB91A3800C05128 /* ForceTouch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A2AC86A1BB91A3800C05128 /* ForceTouch.storyboard */; };
 		8A2AC86D1BB91A3800C05128 /* ForceTouchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2AC86B1BB91A3800C05128 /* ForceTouchViewController.swift */; };
 		8A2AC8741BB91ACD00C05128 /* QuickActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2AC8731BB91ACD00C05128 /* QuickActionsViewController.swift */; };
@@ -122,8 +124,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8A00468E1D0E1A3000591840 /* AudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
 		8A0714B21BA46CF300A1CC22 /* SearchAPIsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAPIsViewController.swift; sourceTree = "<group>"; };
 		8A0714B41BA46D0500A1CC22 /* SearchAPIs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchAPIs.storyboard; sourceTree = "<group>"; };
+		8A27937F1D0CDD12007D3DE0 /* SampleDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleDataSource.swift; sourceTree = "<group>"; };
 		8A2AC86A1BB91A3800C05128 /* ForceTouch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ForceTouch.storyboard; sourceTree = "<group>"; };
 		8A2AC86B1BB91A3800C05128 /* ForceTouchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceTouchViewController.swift; sourceTree = "<group>"; };
 		8A2AC8731BB91ACD00C05128 /* QuickActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickActionsViewController.swift; sourceTree = "<group>"; };
@@ -467,6 +471,7 @@
 		8A7C19CC1B8B63C700F75F88 /* AudioUnitComponentManager */ = {
 			isa = PBXGroup;
 			children = (
+				8A00468E1D0E1A3000591840 /* AudioEngine.swift */,
 				8A3A32141B35DAD10016C4CE /* AudioUnitComponentManagerViewController.swift */,
 				8A3A32161B35DAE10016C4CE /* AudioUnitComponentManager.storyboard */,
 			);
@@ -571,6 +576,7 @@
 				8AD5D75A1B295E8C001924F0 /* Main.storyboard */,
 				8AD5D75F1B295E8C001924F0 /* LaunchScreen.storyboard */,
 				8AD5D7561B295E8C001924F0 /* AppDelegate.swift */,
+				8A27937F1D0CDD12007D3DE0 /* SampleDataSource.swift */,
 				8AD5D7581B295E8C001924F0 /* RootViewController.swift */,
 				8ADBD9F91B8F675E00BB46D8 /* RootViewCell.swift */,
 				8A7C19C81B8B63AF00F75F88 /* Common */,
@@ -868,6 +874,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A00468F1D0E1A3000591840 /* AudioEngine.swift in Sources */,
 				8ADC74881BA5792D00FA178A /* StackViewViewController.swift in Sources */,
 				BDD0D4A81BB2E6FF00995959 /* ContactsViewController.swift in Sources */,
 				8A7AC6301BA9BFCE005CC482 /* FontsViewController.swift in Sources */,
@@ -877,6 +884,7 @@
 				8A9078DA1B949B64000518C3 /* ContentBlockerViewController.swift in Sources */,
 				8A3588331B33F3B500D4D32C /* FilterDetailViewController.swift in Sources */,
 				8A76D7921BD4B8C400C3881D /* CoreImageTransition.m in Sources */,
+				8A2793801D0CDD12007D3DE0 /* SampleDataSource.swift in Sources */,
 				8A76D7931BD4B8C400C3881D /* CoreImageTransitionHelper.m in Sources */,
 				8A2AC87C1BB91E2200C05128 /* PulsingHaloLayer.m in Sources */,
 				8A3588241B33CCC000D4D32C /* TextDetectViewController.swift in Sources */,

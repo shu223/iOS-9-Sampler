@@ -11,9 +11,7 @@
 
 import UIKit
 
-
 class SpringViewController: UIViewController {
-
     
     @IBOutlet weak private var massSlider: UISlider!
     @IBOutlet weak private var massLabel: UILabel!
@@ -28,7 +26,6 @@ class SpringViewController: UIViewController {
 
     private let animation = CASpringAnimation(keyPath: "position")
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -40,7 +37,6 @@ class SpringViewController: UIViewController {
         animation.removedOnCompletion = false
         animation.fillMode = kCAFillModeForwards
         animation.delegate = self
-
 
         // update labels
         massChanged(massSlider)
@@ -66,7 +62,6 @@ class SpringViewController: UIViewController {
     private func updateDurationLabel() {
         durationLabel.text = String(format: "settlingDuration:%.1f", animation.settlingDuration)
     }
-
     
     // =========================================================================
     // MARK: - CAAnimation Delegate
@@ -74,7 +69,6 @@ class SpringViewController: UIViewController {
     override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
         animateBtn.enabled = true
     }
-    
     
     // =========================================================================
     // MARK: - Actions
@@ -98,9 +92,7 @@ class SpringViewController: UIViewController {
     }
 
     @IBAction func animateBtnTapped(sender: UIButton) {
-
         animateBtn.enabled = false
-        
         animation.duration = animation.settlingDuration
         imageView.layer.addAnimation(animation, forKey: nil)
     }

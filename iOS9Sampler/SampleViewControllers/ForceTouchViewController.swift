@@ -8,12 +8,10 @@
 
 import UIKit
 
-
-private let kMaxRadius: CGFloat = 100.0
-
-
 class ForceTouchViewController: UIViewController {
 
+    private let kMaxRadius: CGFloat = 100.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -26,7 +24,6 @@ class ForceTouchViewController: UIViewController {
         super.viewDidAppear(animated)
 
         if traitCollection.forceTouchCapability != UIForceTouchCapability.Available {
-            
             let alert = UIAlertController(
                 title: "Unavailable",
                 message: "Force touch is not available on this device.",
@@ -45,7 +42,6 @@ class ForceTouchViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
     
     // =========================================================================
     // MARK: Private
@@ -63,28 +59,21 @@ class ForceTouchViewController: UIViewController {
     }
     
     private func showTouches(touches: Set<UITouch>) {
-        
         for touch in touches {
-            
             let location = touch.locationInView(view)
-            
             let radius = kMaxRadius * touch.force / touch.maximumPossibleForce
-            
             createHaloAt(location, withRadius: radius)
         }
     }
-    
     
     // =========================================================================
     // MARK: Touch Handlers
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-
         showTouches(touches)
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-
         showTouches(touches)
     }
 }
