@@ -29,10 +29,10 @@ class TextDetectViewController: UIViewController {
         guard let cgimage = imageView.image?.CGImage else {fatalError()}
         let image = CIImage(CGImage: cgimage)
 
-        let detector = CIDetector(
+        guard let detector = CIDetector(
             ofType: CIDetectorTypeText,
             context: nil,
-            options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])
+            options: [CIDetectorAccuracy: CIDetectorAccuracyHigh]) else {fatalError()}
 
         let options = [CIDetectorReturnSubFeatures: true]
         guard let features = detector.featuresInImage(image, options: options) as? [CITextFeature] else {fatalError()}
