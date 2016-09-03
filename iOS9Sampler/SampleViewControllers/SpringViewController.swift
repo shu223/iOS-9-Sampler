@@ -11,7 +11,7 @@
 
 import UIKit
 
-class SpringViewController: UIViewController {
+class SpringViewController: UIViewController, CAAnimationDelegate {
     
     @IBOutlet weak private var massSlider: UISlider!
     @IBOutlet weak private var massLabel: UILabel!
@@ -66,7 +66,7 @@ class SpringViewController: UIViewController {
     // =========================================================================
     // MARK: - CAAnimation Delegate
     
-    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+    func animationDidStop(anim: CAAnimation, finished flag: Bool) {
         animateBtn.enabled = true
     }
     

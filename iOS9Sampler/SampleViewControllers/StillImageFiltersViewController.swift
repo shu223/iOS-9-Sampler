@@ -103,7 +103,7 @@ class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource,
                 scale = extent.size.width / self.orgImage.size.width
             }
             
-            let cgImage = context.createCGImage(outputImage, fromRect: extent)
+            guard let cgImage = context.createCGImage(outputImage, fromRect: extent) else {fatalError()}
             let image = UIImage(CGImage: cgImage, scale: scale, orientation: UIImageOrientation.Up)
             print("extent:\(extent), image:\(image), org:\(self.orgImage), scale:\(scale)\n")
             
