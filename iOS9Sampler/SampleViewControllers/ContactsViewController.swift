@@ -112,7 +112,7 @@ class ContactsViewController: UIViewController, UISearchBarDelegate, UITableView
             self.showAlert(title: "Delete Contact", message: "OK？", actions: [okAction, cancelAction])
         }
 
-        return [UITableViewRowAction(style: UITableViewRowActionStyle(), title: "Delete", handler: deleteActionHandler)]
+        return [UITableViewRowAction(style: .default, title: "Delete", handler: deleteActionHandler)]
     }
 
 
