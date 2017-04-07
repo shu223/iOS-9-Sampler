@@ -18,7 +18,7 @@ class StringTransformViewController: UIViewController, UIPickerViewDataSource, U
     @IBOutlet weak fileprivate var transformedLabel: UILabel!
     @IBOutlet weak fileprivate var picker: UIPickerView!
     
-    fileprivate var items: [String] = [
+    fileprivate var items: [StringTransform] = [
         StringTransform.toLatin,
         StringTransform.latinToKatakana,
         StringTransform.latinToHiragana,
@@ -60,7 +60,7 @@ class StringTransformViewController: UIViewController, UIPickerViewDataSource, U
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
 
-        let item = items[row]
+        let item = items[row].rawValue
 
         // strip the prefix
         let title: String
@@ -78,8 +78,7 @@ class StringTransformViewController: UIViewController, UIPickerViewDataSource, U
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-
-        transformedLabel.text = "Hello, world!".stringByApplyingTransform(items[row], reverse: false)
+        transformedLabel.text = "Hello, world!".applyingTransform(items[row], reverse: false)
     }
     
     // =========================================================================
@@ -89,12 +88,12 @@ class StringTransformViewController: UIViewController, UIPickerViewDataSource, U
         guard let orgKana = kanaLabel.text else {fatalError()}
         widthSwitch.isEnabled = sender.isOn
         
-        kanaLabel.text = orgKana.stringByApplyingTransform(StringTransform.hiraganaToKatakana, reverse: !sender.isOn)
+        kanaLabel.text = orgKana.applyingTransform(StringTransform.hiraganaToKatakana, reverse: !sender.isOn)
     }
 
     @IBAction func widthSwitchChanged(_ sender: UISwitch) {
         guard let orgKana = kanaLabel.text else {fatalError()}
         
-        kanaLabel.text = orgKana.stringByApplyingTransform(StringTransform.fullwidthToHalfwidth, reverse: !sender.isOn)
+        kanaLabel.text = orgKana.applyingTransform(StringTransform.fullwidthToHalfwidth, reverse: !sender.isOn)
     }
 }
