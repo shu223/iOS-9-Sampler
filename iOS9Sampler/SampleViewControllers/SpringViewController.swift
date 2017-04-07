@@ -66,7 +66,7 @@ class SpringViewController: UIViewController, CAAnimationDelegate {
     // =========================================================================
     // MARK: - CAAnimation Delegate
     
-    override func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         animateBtn.isEnabled = true
     }
     
