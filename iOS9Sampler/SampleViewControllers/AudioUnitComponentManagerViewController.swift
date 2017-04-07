@@ -128,7 +128,7 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
         // open
         engine.requestViewControllerWithCompletionHandler { [weak self] viewController in
             guard let strongSelf = self else { return }
-            guard let viewController = viewController, view = viewController.view else { return }
+            guard let viewController = viewController, let view = viewController.view else { return }
 
             strongSelf.addChildViewController(viewController)
             let parentRect = strongSelf.view.bounds

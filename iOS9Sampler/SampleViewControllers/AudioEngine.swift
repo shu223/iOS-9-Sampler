@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 
-struct AudioEngine {
+class AudioEngine {
     fileprivate let engine = AVAudioEngine()
     fileprivate let player = AVAudioPlayerNode()
     fileprivate var file: AVAudioFile?
@@ -25,7 +25,7 @@ struct AudioEngine {
         setup()
     }
     
-    fileprivate mutating func setup() {
+    fileprivate func setup() {
         // setup engine and player
         engine.attach(player)
         guard let fileURL = Bundle.main.url(forResource: "drumLoop", withExtension: "caf") else {
@@ -74,7 +74,7 @@ struct AudioEngine {
         engine.stop()        
     }
 
-    mutating func selectEffectWithComponentDescription(_ componentDescription: AudioComponentDescription?, completionHandler: ((Void) -> Void) = {}) {
+    func selectEffectWithComponentDescription(_ componentDescription: AudioComponentDescription?, completionHandler: @escaping ((Void) -> Void) = {}) {
         
         // Internal function to resume playing and call the completion handler.
         func done() {
@@ -131,7 +131,7 @@ struct AudioEngine {
         }
     }
     
-    func requestViewControllerWithCompletionHandler(_ completionHandler: (UIViewController?) -> Void) {
+    func requestViewControllerWithCompletionHandler(_ completionHandler: @escaping (UIViewController?) -> Void) {
         audioUnit?.requestViewController { viewController in
             completionHandler(viewController)
         }
