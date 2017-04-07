@@ -9,8 +9,8 @@
 import UIKit
 
 struct Filter {
-    static func names(available_iOS: Int, category: String?, exceptCategories: [String]? = nil) -> [String] {
-        let names = CIFilter.filterNamesInCategory(category).filter { (name) -> Bool in
+    static func names(_ available_iOS: Int, category: String?, exceptCategories: [String]? = nil) -> [String] {
+        let names = CIFilter.filterNames(inCategory: category).filter { (name) -> Bool in
             guard let filter = CIFilter(name: name) else {fatalError()}
             
             if let exceptCategories = exceptCategories {
@@ -45,11 +45,11 @@ extension CIFilter {
     func categoriesDescription() -> String {
         var description = categories().description
         
-        description = description.stringByReplacingOccurrencesOfString("(", withString: "")
-        description = description.stringByReplacingOccurrencesOfString(")", withString: "")
-        description = description.stringByReplacingOccurrencesOfString("\n", withString: "")
-        description = description.stringByReplacingOccurrencesOfString("   ", withString: "")
-        description = description.stringByReplacingOccurrencesOfString("CICategory", withString: "")
+        description = description.replacingOccurrences(of: "(", with: "")
+        description = description.replacingOccurrences(of: ")", with: "")
+        description = description.replacingOccurrences(of: "\n", with: "")
+        description = description.replacingOccurrences(of: "   ", with: "")
+        description = description.replacingOccurrences(of: "CICategory", with: "")
         
         return description
     }

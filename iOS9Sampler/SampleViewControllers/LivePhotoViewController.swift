@@ -13,12 +13,12 @@ import MobileCoreServices
 
 class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PHLivePhotoViewDelegate {
     
-    @IBOutlet weak private var livePhotoView: PHLivePhotoView!
+    @IBOutlet weak fileprivate var livePhotoView: PHLivePhotoView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        livePhotoView.contentMode = UIViewContentMode.ScaleAspectFit
+        livePhotoView.contentMode = UIViewContentMode.scaleAspectFit
         livePhotoView.delegate = self        
     }
 
@@ -29,46 +29,46 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
     // =========================================================================
     // MARK: - UIImagePickerControllerDelegate
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
 
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
         
         print("\(info)")
 
         if let livePhoto = info[UIImagePickerControllerLivePhoto] as? PHLivePhoto {
             livePhotoView.livePhoto = livePhoto
-            livePhotoView.startPlaybackWithStyle(.Full)
+            livePhotoView.startPlayback(with: .full)
         } else {
             let alert = UIAlertController(
                 title: "Failed",
                 message: "This is not a Live Photo.",
-                preferredStyle: UIAlertControllerStyle.Alert)
+                preferredStyle: UIAlertControllerStyle.alert)
             let okAction = UIAlertAction(
                 title: "OK",
-                style: UIAlertActionStyle.Cancel,
+                style: UIAlertActionStyle.cancel,
                 handler: nil)
             alert.addAction(okAction)
-            presentViewController(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
         }
     }
     
     // =========================================================================
     // MARK: - PHLivePhotoViewDelegate
     
-    func livePhotoView(livePhotoView: PHLivePhotoView, didEndPlaybackWithStyle playbackStyle: PHLivePhotoViewPlaybackStyle) {
-        livePhotoView.startPlaybackWithStyle(.Full)
+    func livePhotoView(_ livePhotoView: PHLivePhotoView, didEndPlaybackWith playbackStyle: PHLivePhotoViewPlaybackStyle) {
+        livePhotoView.startPlayback(with: .full)
     }
     
     // =========================================================================
     // MARK: - Actions
     
-    @IBAction func pickerBtnTapped(sender: UIButton) {
+    @IBAction func pickerBtnTapped(_ sender: UIButton) {
         let picker = UIImagePickerController()
-        picker.sourceType = .PhotoLibrary
+        picker.sourceType = .photoLibrary
         picker.delegate = self
         picker.mediaTypes = [kUTTypeImage as String, kUTTypeLivePhoto as String]
         
-        presentViewController(picker, animated: true, completion: nil)
+        present(picker, animated: true, completion: nil)
     }
 }
 

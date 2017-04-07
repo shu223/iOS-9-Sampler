@@ -13,21 +13,21 @@ import UIKit
 
 class StringTransformViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    @IBOutlet weak private var kanaLabel: UILabel!
-    @IBOutlet weak private var widthSwitch: UISwitch!
-    @IBOutlet weak private var transformedLabel: UILabel!
-    @IBOutlet weak private var picker: UIPickerView!
+    @IBOutlet weak fileprivate var kanaLabel: UILabel!
+    @IBOutlet weak fileprivate var widthSwitch: UISwitch!
+    @IBOutlet weak fileprivate var transformedLabel: UILabel!
+    @IBOutlet weak fileprivate var picker: UIPickerView!
     
-    private var items: [String] = [
-        NSStringTransformToLatin,
-        NSStringTransformLatinToKatakana,
-        NSStringTransformLatinToHiragana,
-        NSStringTransformLatinToHangul,
-        NSStringTransformLatinToArabic,
-        NSStringTransformLatinToHebrew,
-        NSStringTransformLatinToThai,
-        NSStringTransformLatinToCyrillic,
-        NSStringTransformLatinToGreek,
+    fileprivate var items: [String] = [
+        StringTransform.toLatin,
+        StringTransform.latinToKatakana,
+        StringTransform.latinToHiragana,
+        StringTransform.latinToHangul,
+        StringTransform.latinToArabic,
+        StringTransform.latinToHebrew,
+        StringTransform.latinToThai,
+        StringTransform.latinToCyrillic,
+        StringTransform.latinToGreek,
     ]
     
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ class StringTransformViewController: UIViewController, UIPickerViewDataSource, U
         pickerView(picker, didSelectRow: 0, inComponent: 0)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
@@ -47,37 +47,37 @@ class StringTransformViewController: UIViewController, UIPickerViewDataSource, U
     // =========================================================================
     // MARK: - UIPickerViewDataSource
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return items.count
     }
     
     // =========================================================================
     // MARK: - UIPickerViewDelegate
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
 
         let item = items[row]
 
         // strip the prefix
         let title: String
-        if let toIndex = item.rangeOfString("To")?.endIndex {
+        if let toIndex = item.range(of: "To")?.upperBound {
             // example: ")kCFStringTransformToLatin"
-            title = item.substringFromIndex(toIndex)
+            title = item.substring(from: toIndex)
         }
         else {
             // example: ")kCFStringTransformLatinKatakana"
-            let latinIndex = item.rangeOfString("Latin")!.endIndex
-            title = item.substringFromIndex(latinIndex)
+            let latinIndex = item.range(of: "Latin")!.upperBound
+            title = item.substring(from: latinIndex)
         }
         
         return title
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 
         transformedLabel.text = "Hello, world!".stringByApplyingTransform(items[row], reverse: false)
     }
@@ -85,16 +85,16 @@ class StringTransformViewController: UIViewController, UIPickerViewDataSource, U
     // =========================================================================
     // MARK: - Actions
     
-    @IBAction func hiraganaToKatakanaSwitchChanged(sender: UISwitch) {
+    @IBAction func hiraganaToKatakanaSwitchChanged(_ sender: UISwitch) {
         guard let orgKana = kanaLabel.text else {fatalError()}
-        widthSwitch.enabled = sender.on
+        widthSwitch.isEnabled = sender.isOn
         
-        kanaLabel.text = orgKana.stringByApplyingTransform(NSStringTransformHiraganaToKatakana, reverse: !sender.on)
+        kanaLabel.text = orgKana.stringByApplyingTransform(StringTransform.hiraganaToKatakana, reverse: !sender.isOn)
     }
 
-    @IBAction func widthSwitchChanged(sender: UISwitch) {
+    @IBAction func widthSwitchChanged(_ sender: UISwitch) {
         guard let orgKana = kanaLabel.text else {fatalError()}
         
-        kanaLabel.text = orgKana.stringByApplyingTransform(NSStringTransformFullwidthToHalfwidth, reverse: !sender.on)
+        kanaLabel.text = orgKana.stringByApplyingTransform(StringTransform.fullwidthToHalfwidth, reverse: !sender.isOn)
     }
 }

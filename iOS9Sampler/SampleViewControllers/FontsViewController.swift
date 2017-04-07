@@ -10,12 +10,12 @@ import UIKit
 
 class FontsViewController: UITableViewController {
 
-    private var items: [String] = []
+    fileprivate var items: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard let path = NSBundle.mainBundle().pathForResource("AddedFonts9", ofType: "plist") else {fatalError()}
+        guard let path = Bundle.main.path(forResource: "AddedFonts9", ofType: "plist") else {fatalError()}
         guard let names = NSArray(contentsOfFile: path) as? [String] else {fatalError()}
         items = names
     }
@@ -27,12 +27,12 @@ class FontsViewController: UITableViewController {
     // =========================================================================
     // MARK: - UITableViewDataSource
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         let fontName = items[indexPath.row]
 
@@ -45,7 +45,7 @@ class FontsViewController: UITableViewController {
     // =========================================================================
     // MARK: - UITableViewDelegate
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

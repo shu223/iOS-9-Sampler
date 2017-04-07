@@ -10,25 +10,25 @@ import Foundation
 import AVFoundation
 
 struct AudioEngine {
-    private let engine = AVAudioEngine()
-    private let player = AVAudioPlayerNode()
-    private var file: AVAudioFile?
+    fileprivate let engine = AVAudioEngine()
+    fileprivate let player = AVAudioPlayerNode()
+    fileprivate var file: AVAudioFile?
 
     /// The currently selected `AUAudioUnit` effect, if any.
-    private var audioUnit: AUAudioUnit?
+    fileprivate var audioUnit: AUAudioUnit?
     /// The audio unit's presets.
-    private var presetList = [AUAudioUnitPreset]()
+    fileprivate var presetList = [AUAudioUnitPreset]()
     /// Engine's effect node.
-    private var effect: AVAudioUnit?
+    fileprivate var effect: AVAudioUnit?
 
     init() {
         setup()
     }
     
-    private mutating func setup() {
+    fileprivate mutating func setup() {
         // setup engine and player
-        engine.attachNode(player)
-        guard let fileURL = NSBundle.mainBundle().URLForResource("drumLoop", withExtension: "caf") else {
+        engine.attach(player)
+        guard let fileURL = Bundle.main.url(forResource: "drumLoop", withExtension: "caf") else {
             fatalError("\"drumLoop.caf\" file not found.")
         }
         do {
@@ -41,12 +41,12 @@ struct AudioEngine {
         }
     }
     
-    private func scheduleLoop() {
+    fileprivate func scheduleLoop() {
         guard let file = file else {
             fatalError("`file` must not be nil in \(#function).")
         }
         
-        player.scheduleFile(file, atTime: nil) {
+        player.scheduleFile(file, at: nil) {
             self.scheduleLoop()
         }
     }
@@ -74,7 +74,7 @@ struct AudioEngine {
         engine.stop()        
     }
 
-    mutating func selectEffectWithComponentDescription(componentDescription: AudioComponentDescription?, completionHandler: (Void -> Void) = {}) {
+    mutating func selectEffectWithComponentDescription(_ componentDescription: AudioComponentDescription?, completionHandler: ((Void) -> Void) = {}) {
         
         // Internal function to resume playing and call the completion handler.
         func done() {
@@ -98,7 +98,7 @@ struct AudioEngine {
             engine.connect(player, to: engine.mainMixerNode, format: file!.processingFormat)
             
             // We're done with the effect; release all references.
-            engine.detachNode(effect)
+            engine.detach(effect)
             
             self.effect = nil
             audioUnit = nil
@@ -107,11 +107,11 @@ struct AudioEngine {
         
         // Insert the new effect, if any.
         if let componentDescription = componentDescription {
-            AVAudioUnit.instantiateWithComponentDescription(componentDescription, options: []) { avAudioUnit, error in
+            AVAudioUnit.instantiate(with: componentDescription, options: []) { avAudioUnit, error in
                 guard let avAudioUnitEffect = avAudioUnit else { return }
                 
                 self.effect = avAudioUnitEffect
-                self.engine.attachNode(avAudioUnitEffect)
+                self.engine.attach(avAudioUnitEffect)
                 
                 // Disconnect player -> mixer.
                 self.engine.disconnectNodeInput(self.engine.mainMixerNode)
@@ -120,8 +120,8 @@ struct AudioEngine {
                 self.engine.connect(self.player, to: avAudioUnitEffect, format: self.file!.processingFormat)
                 self.engine.connect(avAudioUnitEffect, to: self.engine.mainMixerNode, format: self.file!.processingFormat)
                 
-                self.audioUnit = avAudioUnitEffect.AUAudioUnit
-                self.presetList = avAudioUnitEffect.AUAudioUnit.factoryPresets ?? []
+                self.audioUnit = avAudioUnitEffect.auAudioUnit
+                self.presetList = avAudioUnitEffect.auAudioUnit.factoryPresets ?? []
                 
                 done()
             }
@@ -131,8 +131,8 @@ struct AudioEngine {
         }
     }
     
-    func requestViewControllerWithCompletionHandler(completionHandler: (UIViewController?) -> Void) {
-        audioUnit?.requestViewControllerWithCompletionHandler { viewController in
+    func requestViewControllerWithCompletionHandler(_ completionHandler: (UIViewController?) -> Void) {
+        audioUnit?.requestViewController { viewController in
             completionHandler(viewController)
         }
     }

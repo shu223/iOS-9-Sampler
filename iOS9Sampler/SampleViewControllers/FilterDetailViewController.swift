@@ -10,14 +10,14 @@ import UIKit
 
 class FilterDetailViewController: UIViewController {
     
-    @IBOutlet private var textView: UITextView!
+    @IBOutlet fileprivate var textView: UITextView!
     var filterName: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         title = filterName

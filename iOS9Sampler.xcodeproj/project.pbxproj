@@ -745,21 +745,26 @@
 					8A9078CB1B949A5F000518C3 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = 9Z86A4AWDE;
+						LastSwiftMigration = 0830;
 					};
 					8A9078E11B949BCC000518C3 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = 9Z86A4AWDE;
+						LastSwiftMigration = 0830;
 					};
 					8AD5D7521B295E8C001924F0 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = 9Z86A4AWDE;
+						LastSwiftMigration = 0830;
 					};
 					8AD5D7661B295E8C001924F0 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0830;
 						TestTargetID = 8AD5D7521B295E8C001924F0;
 					};
 					8AD5D7711B295E8C001924F0 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0830;
 						TestTargetID = 8AD5D7521B295E8C001924F0;
 					};
 				};
@@ -980,6 +985,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9Sampler.TwitterHeaderBlocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -992,6 +998,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9Sampler.TwitterHeaderBlocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1004,6 +1011,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9Sampler.TwitterImageBlocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1016,6 +1024,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9Sampler.TwitterImageBlocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1114,6 +1123,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iOS9Sampler/SampleViewControllers/iOS9Sampler-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1130,6 +1140,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9Sampler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iOS9Sampler/SampleViewControllers/iOS9Sampler-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1141,6 +1152,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9SamplerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS9Sampler.app/iOS9Sampler";
 			};
 			name = Debug;
@@ -1153,6 +1165,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9SamplerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS9Sampler.app/iOS9Sampler";
 			};
 			name = Release;
@@ -1164,6 +1177,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9SamplerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = iOS9Sampler;
 				USES_XCTRUNNER = YES;
 			};
@@ -1176,6 +1190,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shu223.iOS9SamplerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = iOS9Sampler;
 				USES_XCTRUNNER = YES;
 			};

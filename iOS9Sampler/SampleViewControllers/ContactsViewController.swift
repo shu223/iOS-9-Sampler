@@ -11,21 +11,21 @@ import Contacts
 
 class ContactsViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak private var tableView: UITableView!
-    @IBOutlet weak private var searchBar: UISearchBar!
-    private var contacts = [CNContact]()
-    private var authStatus: CNAuthorizationStatus = .Denied {
+    @IBOutlet weak fileprivate var tableView: UITableView!
+    @IBOutlet weak fileprivate var searchBar: UISearchBar!
+    fileprivate var contacts = [CNContact]()
+    fileprivate var authStatus: CNAuthorizationStatus = .denied {
         didSet { // switch enabled search bar, depending contacts permission
-            searchBar.userInteractionEnabled = authStatus == .Authorized
+            searchBar.isUserInteractionEnabled = authStatus == .authorized
 
-            if authStatus == .Authorized { // all search
+            if authStatus == .authorized { // all search
                 contacts = fetchContacts("")
                 tableView.reloadData()
             }
         }
     }
 
-    private let kCellID = "Cell"
+    fileprivate let kCellID = "Cell"
 
 
     // =========================================================================
@@ -36,7 +36,7 @@ class ContactsViewController: UIViewController, UISearchBarDelegate, UITableView
 
         checkAuthorization()
 
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: kCellID)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: kCellID)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +47,7 @@ class ContactsViewController: UIViewController, UISearchBarDelegate, UITableView
     // =========================================================================
     // MARK: - UISearchBarDelegate
 
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         contacts = fetchContacts(searchText)
         tableView.reloadData()
     }
@@ -56,20 +56,20 @@ class ContactsViewController: UIViewController, UISearchBarDelegate, UITableView
     // =========================================================================
     //MARK: - UITableViewDataSource
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contacts.count
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(kCellID, forIndexPath: indexPath)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: kCellID, for: indexPath)
         let contact = contacts[indexPath.row]
 
         // get the full name
-        let fullName = CNContactFormatter.stringFromContact(contact, style: .FullName) ?? "NO NAME"
+        let fullName = CNContactFormatter.string(from: contact, style: .fullName) ?? "NO NAME"
         cell.textLabel?.text = fullName
 
         return cell
@@ -79,47 +79,47 @@ class ContactsViewController: UIViewController, UISearchBarDelegate, UITableView
     // =========================================================================
     //MARK: - UITableViewDelegate
 
-    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        let deleteActionHandler = { (action: UITableViewRowAction, index: NSIndexPath) in
-            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { [unowned self] (action: UIAlertAction) in
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteActionHandler = { (action: UITableViewRowAction, index: IndexPath) in
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { [unowned self] (action: UIAlertAction) in
                 // set the data to be deleted
                 let request = CNSaveRequest()
                 let contact = self.contacts[index.row].mutableCopy() as! CNMutableContact
-                request.deleteContact(contact)
+                request.delete(contact)
 
                 do {
                     // save
-                    let fullName = CNContactFormatter.stringFromContact(contact, style: .FullName) ?? "NO NAME"
+                    let fullName = CNContactFormatter.string(from: contact, style: .fullName) ?? "NO NAME"
                     let store = CNContactStore()
-                    try store.executeSaveRequest(request)
+                    try store.execute(request)
                     NSLog("\(fullName) Deleted")
 
                     // update table
-                    self.contacts.removeAtIndex(index.row)
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.tableView.deleteRowsAtIndexPaths([index], withRowAnimation: .Fade)
+                    self.contacts.remove(at: index.row)
+                    DispatchQueue.main.async(execute: {
+                        self.tableView.deleteRows(at: [index], with: .fade)
                     })
                 } catch let error as NSError {
                     NSLog("Delete error \(error.localizedDescription)")
                 }
             })
 
-            let cancelAction = UIAlertAction(title: "CANCEL", style: UIAlertActionStyle.Default, handler: { [unowned self] (action: UIAlertAction) in
-                self.tableView.editing = false
+            let cancelAction = UIAlertAction(title: "CANCEL", style: UIAlertActionStyle.default, handler: { [unowned self] (action: UIAlertAction) in
+                self.tableView.isEditing = false
             })
 
             // show alert
             self.showAlert(title: "Delete Contact", message: "OK？", actions: [okAction, cancelAction])
         }
 
-        return [UITableViewRowAction(style: .Destructive, title: "Delete", handler: deleteActionHandler)]
+        return [UITableViewRowAction(style: UITableViewRowActionStyle(), title: "Delete", handler: deleteActionHandler)]
     }
 
 
     // =========================================================================
     // MARK: - IBAction
 
-    @IBAction func tapped(sender: AnyObject) {
+    @IBAction func tapped(_ sender: AnyObject) {
         view.endEditing(true)
     }
 
@@ -127,54 +127,54 @@ class ContactsViewController: UIViewController, UISearchBarDelegate, UITableView
     // =========================================================================
     // MARK: - Helpers
 
-    private func checkAuthorization() {
+    fileprivate func checkAuthorization() {
         // get current status
-        let status = CNContactStore.authorizationStatusForEntityType(.Contacts)
+        let status = CNContactStore.authorizationStatus(for: .contacts)
         authStatus = status
 
         switch status {
-        case .NotDetermined: // case of first access
-            CNContactStore().requestAccessForEntityType(.Contacts) { [unowned self] (granted, error) in
+        case .notDetermined: // case of first access
+            CNContactStore().requestAccess(for: .contacts) { [unowned self] (granted, error) in
                 if granted {
                     NSLog("Permission allowed")
-                    self.authStatus = .Authorized
+                    self.authStatus = .authorized
                 } else {
                     NSLog("Permission denied")
-                    self.authStatus = .Denied
+                    self.authStatus = .denied
                 }
             }
-        case .Restricted, .Denied:
+        case .restricted, .denied:
             NSLog("Unauthorized")
 
-            let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-            let settingsAction = UIAlertAction(title: "Settings", style: .Default, handler: { (action: UIAlertAction) in
-                let url = NSURL(string: UIApplicationOpenSettingsURLString)
-                UIApplication.sharedApplication().openURL(url!)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let settingsAction = UIAlertAction(title: "Settings", style: .default, handler: { (action: UIAlertAction) in
+                let url = URL(string: UIApplicationOpenSettingsURLString)
+                UIApplication.shared.openURL(url!)
             })
             showAlert(
                 title: "Permission Denied",
                 message: "You have not permission to access contacts. Please allow the access the Settings screen.",
                 actions: [okAction, settingsAction])
-        case .Authorized:
+        case .authorized:
             NSLog("Authorized")
         }
     }
 
 
     // fetch the contact of matching names
-    private func fetchContacts(name: String) -> [CNContact] {
+    fileprivate func fetchContacts(_ name: String) -> [CNContact] {
         let store = CNContactStore()
 
         do {
-            let request = CNContactFetchRequest(keysToFetch: [CNContactFormatter.descriptorForRequiredKeysForStyle(.FullName)])
+            let request = CNContactFetchRequest(keysToFetch: [CNContactFormatter.descriptorForRequiredKeys(for: .fullName)])
             if name.isEmpty { // all search
                 request.predicate = nil
             } else {
-                request.predicate = CNContact.predicateForContactsMatchingName(name)
+                request.predicate = CNContact.predicateForContacts(matchingName: name)
             }
 
             var contacts = [CNContact]()
-            try store.enumerateContactsWithFetchRequest(request, usingBlock: { (contact, error) in
+            try store.enumerateContacts(with: request, usingBlock: { (contact, error) in
                 contacts.append(contact)
             })
             
@@ -185,15 +185,15 @@ class ContactsViewController: UIViewController, UISearchBarDelegate, UITableView
         }
     }
 
-    private func showAlert(title title: String, message: String, actions: [UIAlertAction]) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+    fileprivate func showAlert(title: String, message: String, actions: [UIAlertAction]) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
         for action in actions {
             alert.addAction(action)
         }
 
-        dispatch_async(dispatch_get_main_queue(), { [unowned self] () in
-            self.presentViewController(alert, animated: true, completion: nil)
+        DispatchQueue.main.async(execute: { [unowned self] () in
+            self.present(alert, animated: true, completion: nil)
         })
     }
 }

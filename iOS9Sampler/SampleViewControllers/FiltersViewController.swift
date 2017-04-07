@@ -10,7 +10,7 @@ import UIKit
 
 class FiltersViewController: UITableViewController {
 
-    private var items: [String]!
+    fileprivate var items: [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,28 +25,28 @@ class FiltersViewController: UITableViewController {
 
     // MARK: - Navigation
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
-        if segue.destinationViewController.isKindOfClass(FilterDetailViewController) {
-            guard let detailCtr = segue.destinationViewController as? FilterDetailViewController else {fatalError()}
+        if segue.destination.isKind(of: FilterDetailViewController.self) {
+            guard let detailCtr = segue.destination as? FilterDetailViewController else {fatalError()}
             guard let indexPath = tableView.indexPathForSelectedRow else {fatalError()}
         
             let item = items[indexPath.row]
             detailCtr.filterName = item
             
-            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            tableView.deselectRow(at: indexPath, animated: true)
         }
     }
 
     // =========================================================================
     // MARK: - UITableViewDataSource
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         let name = items[indexPath.row]
         cell.textLabel?.text = name
@@ -60,6 +60,6 @@ class FiltersViewController: UITableViewController {
     // =========================================================================
     // MARK: - UITableViewDelegate
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
 }

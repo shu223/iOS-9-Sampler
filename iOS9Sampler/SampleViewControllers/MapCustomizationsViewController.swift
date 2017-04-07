@@ -11,8 +11,8 @@ import MapKit
 
 class MapCustomizationsViewController: UIViewController, MKMapViewDelegate {
     
-    @IBOutlet weak private var mapView: MKMapView!
-    @IBOutlet weak private var compassBtn: UIButton!
+    @IBOutlet weak fileprivate var mapView: MKMapView!
+    @IBOutlet weak fileprivate var compassBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,81 +32,81 @@ class MapCustomizationsViewController: UIViewController, MKMapViewDelegate {
         super.didReceiveMemoryWarning()
     }
     
-    private func setupMapCamera() {
+    fileprivate func setupMapCamera() {
         
         mapView.camera.altitude = 14000
         mapView.camera.pitch = 50
         mapView.camera.heading = 180
     }
 
-    private func updateCompassBtn() {
+    fileprivate func updateCompassBtn() {
         // shown
         if mapView.showsCompass {
-            compassBtn.setTitle("Hide Compass", forState: UIControlState.Normal)
+            compassBtn.setTitle("Hide Compass", for: UIControlState())
         }
         // hidden
         else {
-            compassBtn.setTitle("Show Compass", forState: UIControlState.Normal)
+            compassBtn.setTitle("Show Compass", for: UIControlState())
         }
     }
     
     // =========================================================================
     // MARK: - MKMapViewDelegate
     
-    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
 //        print(__FUNCTION__+"\n")
     }
     
     // =========================================================================
     // MARK: - Actions
     
-    @IBAction func trafficBtnTapped(sender: UIButton) {
+    @IBAction func trafficBtnTapped(_ sender: UIButton) {
 
         mapView.showsTraffic = !mapView.showsTraffic
 
         if mapView.showsTraffic {
-            sender.setTitle("Hide Traffic", forState: UIControlState.Normal)
+            sender.setTitle("Hide Traffic", for: UIControlState())
         } else {
-            sender.setTitle("Show Traffic", forState: UIControlState.Normal)
+            sender.setTitle("Show Traffic", for: UIControlState())
         }
     }
     
-    @IBAction func scaleBtnTapped(sender: UIButton) {
+    @IBAction func scaleBtnTapped(_ sender: UIButton) {
 
         mapView.showsScale = !mapView.showsScale
 
         if mapView.showsScale {
-            sender.setTitle("Hide Scale", forState: UIControlState.Normal)
+            sender.setTitle("Hide Scale", for: UIControlState())
         } else {
-            sender.setTitle("Show Scale", forState: UIControlState.Normal)
+            sender.setTitle("Show Scale", for: UIControlState())
         }
     }
 
-    @IBAction func compassBtnTapped(sender: UIButton) {
+    @IBAction func compassBtnTapped(_ sender: UIButton) {
         
         mapView.showsCompass = !mapView.showsCompass
         
         updateCompassBtn()
     }
 
-    @IBAction func flyoverBtnTapped(sender: UIButton) {
+    @IBAction func flyoverBtnTapped(_ sender: UIButton) {
         
         if mapView.showsCompass {
-            sender.setTitle("Hide Compass", forState: UIControlState.Normal)
+            sender.setTitle("Hide Compass", for: UIControlState())
         } else {
-            sender.setTitle("Show Compass", forState: UIControlState.Normal)
+            sender.setTitle("Show Compass", for: UIControlState())
         }
     }
     
-    @IBAction func segmentChanged(sender: UISegmentedControl) {
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         
         switch sender.selectedSegmentIndex {
         case 1:
-            mapView.mapType = .SatelliteFlyover
+            mapView.mapType = .satelliteFlyover
         case 2:
-            mapView.mapType = .HybridFlyover
+            mapView.mapType = .hybridFlyover
         default:
-            mapView.mapType = .Standard
+            mapView.mapType = .standard
         }
         
         setupMapCamera()

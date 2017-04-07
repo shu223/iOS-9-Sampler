@@ -10,32 +10,32 @@ import UIKit
 
 class ForceTouchViewController: UIViewController {
 
-    private let kMaxRadius: CGFloat = 100.0
+    fileprivate let kMaxRadius: CGFloat = 100.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        if traitCollection.forceTouchCapability != UIForceTouchCapability.Available {
+        if traitCollection.forceTouchCapability != UIForceTouchCapability.available {
             let alert = UIAlertController(
                 title: "Unavailable",
                 message: "Force touch is not available on this device.",
-                preferredStyle: UIAlertControllerStyle.Alert)
+                preferredStyle: UIAlertControllerStyle.alert)
             let okAction = UIAlertAction(
                 title: "OK",
-                style: UIAlertActionStyle.Cancel,
+                style: UIAlertActionStyle.cancel,
                 handler: { [unowned self] (action) -> Void in
-                    self.navigationController?.popViewControllerAnimated(true)
+                    self.navigationController?.popViewController(animated: true)
             })
             alert.addAction(okAction)
-            presentViewController(alert, animated: true, completion:nil)
+            present(alert, animated: true, completion:nil)
         }
     }
 
@@ -46,7 +46,7 @@ class ForceTouchViewController: UIViewController {
     // =========================================================================
     // MARK: Private
     
-    private func createHaloAt(location: CGPoint, withRadius radius: CGFloat) {
+    fileprivate func createHaloAt(_ location: CGPoint, withRadius radius: CGFloat) {
         
         let halo = PulsingHaloLayer()
         halo.repeatCount = 1
@@ -58,9 +58,9 @@ class ForceTouchViewController: UIViewController {
         view.layer.addSublayer(halo)
     }
     
-    private func showTouches(touches: Set<UITouch>) {
+    fileprivate func showTouches(_ touches: Set<UITouch>) {
         for touch in touches {
-            let location = touch.locationInView(view)
+            let location = touch.location(in: view)
             let radius = kMaxRadius * touch.force / touch.maximumPossibleForce
             createHaloAt(location, withRadius: radius)
         }
@@ -69,11 +69,11 @@ class ForceTouchViewController: UIViewController {
     // =========================================================================
     // MARK: Touch Handlers
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         showTouches(touches)
     }
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         showTouches(touches)
     }
 }

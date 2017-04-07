@@ -12,9 +12,9 @@ import MobileCoreServices
 
 class SearchAPIsViewController: UIViewController {
 
-    private let uniqueIdentifier = "com.shu223.ios9sampler"
-    private let domainIdentifier = "searchapis"
-    private var activity: NSUserActivity!
+    fileprivate let uniqueIdentifier = "com.shu223.ios9sampler"
+    fileprivate let domainIdentifier = "searchapis"
+    fileprivate var activity: NSUserActivity!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class SearchAPIsViewController: UIViewController {
         activity = NSUserActivity(activityType: activityType)
         activity.title = "iOS-9-Sampler_NSUserActivity"
         activity.keywords = Set<String>(arrayLiteral: "dog", "cat", "pig", "sheep")
-        activity.eligibleForSearch = true
+        activity.isEligibleForSearch = true
         activity.becomeCurrent()
         
         // Core Spotlight
@@ -41,7 +41,7 @@ class SearchAPIsViewController: UIViewController {
             domainIdentifier: domainIdentifier,
             attributeSet: attributeSet)
 
-        CSSearchableIndex.defaultSearchableIndex().indexSearchableItems([searchableItem]) { (error) -> Void in
+        CSSearchableIndex.default().indexSearchableItems([searchableItem]) { (error) -> Void in
             if let error = error {
                 print("failed with error:\(error)\n")
             }

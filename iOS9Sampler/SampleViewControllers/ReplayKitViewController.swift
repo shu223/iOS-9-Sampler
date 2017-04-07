@@ -11,10 +11,10 @@ import ReplayKit
 
 class ReplayKitViewController: UIViewController, RPScreenRecorderDelegate, RPPreviewViewControllerDelegate {
 
-    @IBOutlet weak private var startRecordingButton: UIButton!
-    @IBOutlet weak private var stopRecordingButton: UIButton!
-    @IBOutlet weak private var processingView: UIActivityIndicatorView!
-    private let recorder = RPScreenRecorder.sharedRecorder()
+    @IBOutlet weak fileprivate var startRecordingButton: UIButton!
+    @IBOutlet weak fileprivate var stopRecordingButton: UIButton!
+    @IBOutlet weak fileprivate var processingView: UIActivityIndicatorView!
+    fileprivate let recorder = RPScreenRecorder.shared()
     
     
     // =========================================================================
@@ -24,8 +24,8 @@ class ReplayKitViewController: UIViewController, RPScreenRecorderDelegate, RPPre
         super.viewDidLoad()
         
         recorder.delegate = self
-        processingView.hidden = true
-        buttonEnabledControl(recorder.recording)
+        processingView.isHidden = true
+        buttonEnabledControl(recorder.isRecording)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,13 +37,13 @@ class ReplayKitViewController: UIViewController, RPScreenRecorderDelegate, RPPre
     // MARK: - RPScreenRecorderDelegate
     
     // called after stopping the recording
-    func screenRecorder(screenRecorder: RPScreenRecorder, didStopRecordingWithError error: NSError, previewViewController: RPPreviewViewController?) {
+    func screenRecorder(_ screenRecorder: RPScreenRecorder, didStopRecordingWithError error: Error, previewViewController: RPPreviewViewController?) {
         NSLog("Stop recording")
     }
     
     // called when the recorder availability has changed
-    func screenRecorderDidChangeAvailability(screenRecorder: RPScreenRecorder) {
-        let availability = screenRecorder.available
+    func screenRecorderDidChangeAvailability(_ screenRecorder: RPScreenRecorder) {
+        let availability = screenRecorder.isAvailable
         NSLog("Availablility: \(availability)")
     }
     
@@ -52,12 +52,12 @@ class ReplayKitViewController: UIViewController, RPScreenRecorderDelegate, RPPre
     // MARK: - RPPreviewViewControllerDelegate
     
     // called when preview is finished
-    func previewControllerDidFinish(previewController: RPPreviewViewController) {
+    func previewControllerDidFinish(_ previewController: RPPreviewViewController) {
         NSLog("Preview finish")
         
-        dispatch_async(dispatch_get_main_queue()) { [unowned previewController] in
+        DispatchQueue.main.async { [unowned previewController] in
             // close preview window
-            previewController.dismissViewControllerAnimated(true, completion: nil)
+            previewController.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -65,13 +65,13 @@ class ReplayKitViewController: UIViewController, RPScreenRecorderDelegate, RPPre
     // =========================================================================
     // MARK: - IBAction
     
-    @IBAction func startRecordingButtonTapped(sender: AnyObject) {
-        processingView.hidden = false
+    @IBAction func startRecordingButtonTapped(_ sender: AnyObject) {
+        processingView.isHidden = false
         
         // start recording
-        recorder.startRecordingWithMicrophoneEnabled(true) { [unowned self] error in
-            dispatch_async(dispatch_get_main_queue()) { [unowned self] in
-                self.processingView.hidden = true
+        recorder.startRecording(withMicrophoneEnabled: true) { [unowned self] error in
+            DispatchQueue.main.async { [unowned self] in
+                self.processingView.isHidden = true
             }
             
             if let error = error {
@@ -84,13 +84,13 @@ class ReplayKitViewController: UIViewController, RPScreenRecorderDelegate, RPPre
         }
     }
     
-    @IBAction func stopRecordingButtonTapped(sender: AnyObject) {
-        processingView.hidden = false
+    @IBAction func stopRecordingButtonTapped(_ sender: AnyObject) {
+        processingView.isHidden = false
         
         // end recording
-        recorder.stopRecordingWithHandler({ [unowned self] (previewViewController, error) in
-            dispatch_async(dispatch_get_main_queue()) { [unowned self] in
-                self.processingView.hidden = true
+        recorder.stopRecording(handler: { [unowned self] (previewViewController, error) in
+            DispatchQueue.main.async { [unowned self] in
+                self.processingView.isHidden = true
             }
             
             self.buttonEnabledControl(false)
@@ -103,9 +103,9 @@ class ReplayKitViewController: UIViewController, RPScreenRecorderDelegate, RPPre
             NSLog("Stop recording")
             previewViewController?.previewControllerDelegate = self
             
-            dispatch_async(dispatch_get_main_queue()) { [unowned self] in
+            DispatchQueue.main.async { [unowned self] in
                 // show preview window
-                self.presentViewController(previewViewController!, animated: true, completion: nil)
+                self.present(previewViewController!, animated: true, completion: nil)
             }
         })
     }
@@ -115,28 +115,28 @@ class ReplayKitViewController: UIViewController, RPScreenRecorderDelegate, RPPre
     // MARK: - Helper
     
     // control the enabled of each button
-    private func buttonEnabledControl(isRecording: Bool) {
-        dispatch_async(dispatch_get_main_queue()) { [unowned self] in
+    fileprivate func buttonEnabledControl(_ isRecording: Bool) {
+        DispatchQueue.main.async { [unowned self] in
             let enebledColor = UIColor(red: 0.0, green: 122.0/255.0, blue:1.0, alpha: 1.0)
-            let disabledColor = UIColor.lightGrayColor()
+            let disabledColor = UIColor.lightGray
             
-            if !self.recorder.available {
-                self.startRecordingButton.enabled = false
+            if !self.recorder.isAvailable {
+                self.startRecordingButton.isEnabled = false
                 self.startRecordingButton.backgroundColor = disabledColor
-                self.stopRecordingButton.enabled = false
+                self.stopRecordingButton.isEnabled = false
                 self.stopRecordingButton.backgroundColor = disabledColor
                 
                 return
             }
             
-            self.startRecordingButton.enabled = !isRecording
+            self.startRecordingButton.isEnabled = !isRecording
             self.startRecordingButton.backgroundColor = isRecording ? disabledColor : enebledColor
-            self.stopRecordingButton.enabled = isRecording
+            self.stopRecordingButton.isEnabled = isRecording
             self.stopRecordingButton.backgroundColor = isRecording ? enebledColor : disabledColor
         }
     }
     
-    private func createHaloAt(location: CGPoint, withRadius radius: CGFloat) {
+    fileprivate func createHaloAt(_ location: CGPoint, withRadius radius: CGFloat) {
         
         let halo = PulsingHaloLayer()
         halo.repeatCount = 1
@@ -152,11 +152,11 @@ class ReplayKitViewController: UIViewController, RPScreenRecorderDelegate, RPPre
     // =========================================================================
     // MARK: - Touch Handler
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         for touch in touches {
             
-            let location = touch.locationInView(view)
+            let location = touch.location(in: view)
             let radius = touch.majorRadius
             
             createHaloAt(location, withRadius: radius)

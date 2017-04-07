@@ -10,8 +10,8 @@ import UIKit
 
 class CoreImageTransitionsViewController: UIViewController, UINavigationControllerDelegate {
     
-    @IBOutlet weak private var segmentedCtl: UISegmentedControl!
-    private let transition = CoreImageTransition()
+    @IBOutlet weak fileprivate var segmentedCtl: UISegmentedControl!
+    fileprivate let transition = CoreImageTransition()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,18 +27,18 @@ class CoreImageTransitionsViewController: UIViewController, UINavigationControll
     // MARK: - UINavigationControllerDelegate
     
     func navigationController(
-        navigationController: UINavigationController,
-        animationControllerForOperation operation: UINavigationControllerOperation,
-        fromViewController fromVC: UIViewController,
-        toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning?
+        _ navigationController: UINavigationController,
+        animationControllerFor operation: UINavigationControllerOperation,
+        from fromVC: UIViewController,
+        to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning?
     {
         switch segmentedCtl.selectedSegmentIndex {
         case 1:
-            transition.type = CoreImageTransitionType.PageCurl
+            transition.type = CoreImageTransitionType.pageCurl
         case 2:
-            transition.type = CoreImageTransitionType.PageCurlWithShadow
+            transition.type = CoreImageTransitionType.pageCurlWithShadow
         default:
-            transition.type = CoreImageTransitionType.Ripple
+            transition.type = CoreImageTransitionType.ripple
         }
         transition.presenting = false
         return transition
