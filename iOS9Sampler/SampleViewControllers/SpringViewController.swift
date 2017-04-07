@@ -11,7 +11,7 @@
 
 import UIKit
 
-class SpringViewController: UIViewController {
+class SpringViewController: UIViewController, CAAnimationDelegate {
     
     @IBOutlet weak fileprivate var massSlider: UISlider!
     @IBOutlet weak fileprivate var massLabel: UILabel!
