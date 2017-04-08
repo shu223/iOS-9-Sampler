@@ -146,6 +146,7 @@ class ReplayKitViewController: UIViewController, RPScreenRecorderDelegate, RPPre
         halo.keyTimeForHalfOpacity = 0.7
         halo.animationDuration = 0.8
         view.layer.addSublayer(halo)
+        halo.start()
     }
 
     

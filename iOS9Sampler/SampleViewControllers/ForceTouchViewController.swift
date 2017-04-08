@@ -56,6 +56,7 @@ class ForceTouchViewController: UIViewController {
         halo.keyTimeForHalfOpacity = 0.7
         halo.animationDuration = 0.8
         view.layer.addSublayer(halo)
+        halo.start()
     }
     
     fileprivate func showTouches(_ touches: Set<UITouch>) {
@@ -68,7 +69,7 @@ class ForceTouchViewController: UIViewController {
     
     // =========================================================================
     // MARK: Touch Handlers
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         showTouches(touches)
     }
