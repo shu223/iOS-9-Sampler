@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         switch shortcutItem.type {
         case "com.shu223.ios9sampler.share":
-            let items = ["iOS-9-Sampler is great!",
+            let items: [Any] = ["iOS-9-Sampler is great!",
                 URL(string: "https://github.com/shu223/iOS-9-Sampler")!
             ]
             let activityVC = UIActivityViewController(
