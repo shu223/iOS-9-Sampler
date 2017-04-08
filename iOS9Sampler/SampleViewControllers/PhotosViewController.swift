@@ -14,7 +14,7 @@ import UIKit
 import Photos
 
 class PhotosViewController: UICollectionViewController {
-
+    
     @IBOutlet weak fileprivate var segmentedCtl: UISegmentedControl!
     
     fileprivate var images: [PHAsset]! = []
@@ -25,7 +25,7 @@ class PhotosViewController: UICollectionViewController {
         
         reloadData()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -34,13 +34,12 @@ class PhotosViewController: UICollectionViewController {
     //   reference: http://koze.hatenablog.jp/entry/2015/06/24/230000
     fileprivate func fetchScreenshots() {
         let result = PHAsset.fetchAssets(with: .image, options: nil)
-        result.enumerateObjects({ [unowned self] (object, index, stop) -> Void in
-            guard let asset = object as? PHAsset else {fatalError()}
+        result.enumerateObjects({ [unowned self] (asset, index, stop) -> Void in
             // Append only screenshots
-            if Bool(asset.mediaSubtypes.rawValue & PHAssetMediaSubtype.photoScreenshot.rawValue) {
+            if asset.mediaSubtypes.contains(.photoScreenshot) {
                 self.images.append(asset)
             }
-            })
+        })
     }
     
     // Retrieve only Self Portraits
@@ -51,13 +50,11 @@ class PhotosViewController: UICollectionViewController {
             with: .smartAlbum,
             subtype: .smartAlbumSelfPortraits,
             options: nil)
-        resultCollections.enumerateObjects({ (object, index, stop) -> Void in
-            guard let collection = object as? PHAssetCollection else {fatalError()}
+        resultCollections.enumerateObjects({ (collection, index, stop) -> Void in
             let result = PHAsset.fetchAssets(in: collection, options: nil)
-            result.enumerateObjects({ [unowned self] (object, index, stop) -> Void in
-                let asset = object as! PHAsset
+            result.enumerateObjects({ [unowned self] (asset, index, stop) -> Void in
                 self.images.append(asset)
-                })
+            })
         })
     }
     
@@ -86,7 +83,7 @@ class PhotosViewController: UICollectionViewController {
             present(alert, animated: true, completion: nil)
         }
     }
-
+    
     // =========================================================================
     // MARK: - UICollectionViewataSource
     
@@ -107,7 +104,7 @@ class PhotosViewController: UICollectionViewController {
             options: nil) { image, _ in
                 cell.imageView.image = image
         }
-
+        
         return cell
     }
     
