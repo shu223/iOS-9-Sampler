@@ -20,9 +20,10 @@ class FilterDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        guard let filter = CIFilter(name: filterName) else {fatalError()}
         title = filterName
         
-        let attributes = CIFilter(name: filterName)!.attributes
+        let attributes = filter.attributes as [String: AnyObject]
         print("attributes:\(attributes)\n")
         
         var attrStr = ""
