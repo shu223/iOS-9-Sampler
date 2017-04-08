@@ -10,21 +10,21 @@ import UIKit
 
 class QuickActionsViewController: UIViewController {
     
-    @IBOutlet weak private var label: UILabel!
+    @IBOutlet weak fileprivate var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        if traitCollection.forceTouchCapability == UIForceTouchCapability.Available {
+        if traitCollection.forceTouchCapability == UIForceTouchCapability.available {
             label.text = "Your device supports 3D Touch!"
-            label.textColor = UIColor.greenColor()
+            label.textColor = UIColor.green
         } else {
             label.text = "Your device does NOT support 3D Touch!"
-            label.textColor = UIColor.redColor()
+            label.textColor = UIColor.red
         }
     }
     

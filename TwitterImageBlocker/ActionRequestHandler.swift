@@ -11,13 +11,13 @@ import MobileCoreServices
 
 class ActionRequestHandler: NSObject, NSExtensionRequestHandling {
 
-    func beginRequestWithExtensionContext(context: NSExtensionContext) {
-        let attachment = NSItemProvider(contentsOfURL: NSBundle.mainBundle().URLForResource("blockerList", withExtension: "json"))!
+    func beginRequest(with context: NSExtensionContext) {
+        let attachment = NSItemProvider(contentsOf: Bundle.main.url(forResource: "blockerList", withExtension: "json"))!
     
         let item = NSExtensionItem()
         item.attachments = [attachment]
     
-        context.completeRequestReturningItems([item], completionHandler: nil);
+        context.completeRequest(returningItems: [item], completionHandler: nil);
     }
     
 }

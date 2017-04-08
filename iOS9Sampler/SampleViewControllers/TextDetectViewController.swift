@@ -10,14 +10,18 @@ import UIKit
 
 class TextDetectViewController: UIViewController {
     
-    @IBOutlet private var imageView1: UIImageView!
-    @IBOutlet private var imageView2: UIImageView!
+    private let detector = CIDetector(ofType: CIDetectorTypeText,
+                                      context: nil,
+                                      options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])!
+    
+    @IBOutlet fileprivate var imageView1: UIImageView!
+    @IBOutlet fileprivate var imageView2: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
@@ -25,28 +29,23 @@ class TextDetectViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    private func detect(imageView: UIImageView) {
-        guard let cgimage = imageView.image?.CGImage else {fatalError()}
-        let image = CIImage(CGImage: cgimage)
-
-        let detector = CIDetector(
-            ofType: CIDetectorTypeText,
-            context: nil,
-            options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])
+    fileprivate func detect(_ imageView: UIImageView) {
+        guard let cgimage = imageView.image?.cgImage else {fatalError()}
+        let image = CIImage(cgImage: cgimage)
 
         let options = [CIDetectorReturnSubFeatures: true]
-        guard let features = detector.featuresInImage(image, options: options) as? [CITextFeature] else {fatalError()}
+        guard let features = detector.features(in: image, options: options) as? [CITextFeature] else {fatalError()}
         
         let scale = imageView.frame.size.width / image.extent.width
         for feature in features {
             print("bounds:\(feature.bounds), topLeft:\(feature.topLeft), bottomRight:\(feature.bottomRight)")
             // draw feature's rects
-            feature.drawRectOnView(imageView, color: UIColor.greenColor().colorWithAlphaComponent(0.8), borderWidth: 2.0, scale: scale)
+            feature.drawRectOnView(imageView, color: UIColor.green.withAlphaComponent(0.8), borderWidth: 2.0, scale: scale)
             
             // draw subFeature's rects
             guard let subFeatures = feature.subFeatures as? [CITextFeature] else {fatalError()}
             for subFeature in subFeatures {
-                subFeature.drawRectOnView(imageView, color: UIColor.yellowColor().colorWithAlphaComponent(0.8), borderWidth: 1.0, scale: scale)
+                subFeature.drawRectOnView(imageView, color: UIColor.yellow.withAlphaComponent(0.8), borderWidth: 1.0, scale: scale)
             }
         }
     }
@@ -54,8 +53,8 @@ class TextDetectViewController: UIViewController {
     // =========================================================================
     // MARK: - Actions
     
-    @IBAction func detactBtnTapped(sender: UIButton) {
-        sender.hidden = true
+    @IBAction func detactBtnTapped(_ sender: UIButton) {
+        sender.isHidden = true
         
         detect(imageView1)
         detect(imageView2)
@@ -63,19 +62,19 @@ class TextDetectViewController: UIViewController {
 }
 
 extension CITextFeature {
-    private func rectInBounds(inBounds: CGRect, scale: CGFloat) -> CGRect {
-        return CGRectMake(
-            topLeft.x * scale,
-            inBounds.height - topLeft.y * scale,
-            bounds.size.width * scale,
-            bounds.size.height * scale)
+    fileprivate func rectInBounds(_ inBounds: CGRect, scale: CGFloat) -> CGRect {
+        return CGRect(
+            x: topLeft.x * scale,
+            y: inBounds.height - topLeft.y * scale,
+            width: bounds.size.width * scale,
+            height: bounds.size.height * scale)
     }
     
-    private func drawRectOnView(view: UIView, color: UIColor, borderWidth: CGFloat, scale: CGFloat) {
+    fileprivate func drawRectOnView(_ view: UIView, color: UIColor, borderWidth: CGFloat, scale: CGFloat) {
         let featureRect = rectInBounds(view.bounds, scale: scale)
         let featureView = UIView(frame: featureRect)
-        featureView.backgroundColor = UIColor.clearColor()
-        featureView.layer.borderColor = color.CGColor
+        featureView.backgroundColor = UIColor.clear
+        featureView.layer.borderColor = color.cgColor
         featureView.layer.borderWidth = borderWidth
         view.addSubview(featureView)
     }

@@ -10,33 +10,33 @@ import UIKit
 
 class LowPowerModeViewController: UIViewController {
     
-    @IBOutlet weak private var stateLabel: UILabel!
+    @IBOutlet weak fileprivate var stateLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         updateStateLabel()
         
-        NSNotificationCenter.defaultCenter().addObserverForName(
-            NSProcessInfoPowerStateDidChangeNotification,
+        NotificationCenter.default.addObserver(
+            forName: NSNotification.Name.NSProcessInfoPowerStateDidChange,
             object: nil,
-            queue: nil) { [unowned self] (notification: NSNotification) -> Void in
+            queue: nil) { [unowned self] (notification: Notification) -> Void in
                 
                 // A NSProcessInfo object can be retrieved from `object` property.
-                let processInfo = notification.object as! NSProcessInfo
+                let processInfo = notification.object as! ProcessInfo
 
-                dispatch_async(dispatch_get_main_queue(), {
+                DispatchQueue.main.async(execute: {
                     
                     let alert = UIAlertController(
                         title: "Power State has been changed.",
-                        message: "Current \"Low Power Mode\" setting: \(processInfo.lowPowerModeEnabled)",
-                        preferredStyle: UIAlertControllerStyle.Alert)
+                        message: "Current \"Low Power Mode\" setting: \(processInfo.isLowPowerModeEnabled)",
+                        preferredStyle: UIAlertControllerStyle.alert)
                     let okAction = UIAlertAction(
                         title: "OK",
-                        style: UIAlertActionStyle.Cancel,
+                        style: UIAlertActionStyle.cancel,
                         handler: nil)
                     alert.addAction(okAction)
-                    self.presentViewController(alert, animated: true, completion: nil)
+                    self.present(alert, animated: true, completion: nil)
                     
                     self.updateStateLabel()
                 })
@@ -47,7 +47,7 @@ class LowPowerModeViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    private func updateStateLabel() {
-        stateLabel.text = "lowPowerModeEnabled: \(NSProcessInfo().lowPowerModeEnabled)"
+    fileprivate func updateStateLabel() {
+        stateLabel.text = "lowPowerModeEnabled: \(ProcessInfo().isLowPowerModeEnabled)"
     }
 }

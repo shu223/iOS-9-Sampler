@@ -10,76 +10,154 @@
 
 #import "PulsingHaloLayer.h"
 
-
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 100000
+@interface PulsingHaloLayer () <CAAnimationDelegate>
+#else
 @interface PulsingHaloLayer ()
+#endif
+@property (nonatomic, strong) CALayer *effect;
 @property (nonatomic, strong) CAAnimationGroup *animationGroup;
+
+// for resume
+@property (nonatomic, weak) CALayer *prevSuperlayer;
+@property (nonatomic, assign) unsigned int prevLayerIndex;
+@property (nonatomic, strong) CAAnimation *prevAnimation;
 @end
 
 
 @implementation PulsingHaloLayer
 @dynamic repeatCount;
 
-- (id)initWithRepeatCount:(float) repeatCount
+- (instancetype)init
 {
     self = [super init];
     if (self) {
-        self.contentsScale = [UIScreen mainScreen].scale;
-        self.opacity = 0;
+        self.effect = [CALayer new];
+        self.effect.contentsScale = [UIScreen mainScreen].scale;
+        self.effect.opacity = 0;
+        [self addSublayer:self.effect];
         
-        // default
-        self.radius = 60;
-        self.fromValueForRadius = 0.0;
-        self.fromValueForAlpha = 0.45;
-        self.keyTimeForHalfOpacity = 0.2;
-        self.animationDuration = 3;
-        self.pulseInterval = 0;
-        self.repeatCount = repeatCount;
-        self.backgroundColor = [[UIColor colorWithRed:0.000 green:0.478 blue:1.000 alpha:1] CGColor];
-        self.useTimingFunction = YES;
-        
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
-            
-            [self setupAnimationGroup];
-            
-            if(self.pulseInterval != INFINITY) {
-                
-                dispatch_async(dispatch_get_main_queue(), ^(void) {
-                    
-                    [self addAnimation:self.animationGroup forKey:@"pulse"];
-                });
-            }
-        });
+        [self _setupDefaults];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(onDidEnterBackground:)
+                                                     name:UIApplicationDidEnterBackgroundNotification object:nil];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(onWillEnterForeground:)
+                                                     name:UIApplicationWillEnterForegroundNotification object:nil];
     }
     return self;
-    
 }
 
-- (id)init {
-    return [self initWithRepeatCount:INFINITY];
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)onDidEnterBackground:(NSNotification *)notification {
+    self.prevSuperlayer = self.superlayer;
+    if (self.prevSuperlayer) {
+        unsigned int layerIndex = 0;
+        for (CALayer *aSublayer in self.superlayer.sublayers) {
+            if (aSublayer == self) {
+                self.prevLayerIndex = layerIndex;
+                break;
+            }
+            layerIndex++;
+        }
+    }
+    self.prevAnimation = [self.effect animationForKey:@"pulse"];
+}
+
+- (void)onWillEnterForeground:(NSNotification *)notification {
+    if (self.shouldResume) {
+        [self _resume];
+    }
+}
+
+// =============================================================================
+#pragma mark - Accessor
+
+- (void)start {
+    [self _setupAnimationGroup];
+    [self.effect addAnimation:self.animationGroup forKey:@"pulse"];
+}
+
+- (void)setFrame:(CGRect)frame {
+    [super setFrame:frame];
+    self.effect.frame = frame;
+}
+
+- (void)setBackgroundColor:(CGColorRef)backgroundColor {
+    [super setBackgroundColor:backgroundColor];
+    self.effect.backgroundColor = backgroundColor;
 }
 
 - (void)setRadius:(CGFloat)radius {
-    
     _radius = radius;
-    
-    CGPoint tempPos = self.position;
     
     CGFloat diameter = self.radius * 2;
     
-    self.bounds = CGRectMake(0, 0, diameter, diameter);
-    self.cornerRadius = self.radius;
-    self.position = tempPos;
+    self.effect.bounds = CGRectMake(0, 0, diameter, diameter);
+    self.effect.cornerRadius = self.radius;
 }
 
-- (void)setupAnimationGroup {
+- (void)setPulseInterval:(NSTimeInterval)pulseInterval {
+    _pulseInterval = pulseInterval;
     
-    self.animationGroup = [CAAnimationGroup animation];
-    self.animationGroup.duration = self.animationDuration + self.pulseInterval;
-    self.animationGroup.repeatCount = self.repeatCount;
-    self.animationGroup.removedOnCompletion = NO;
+    if (_pulseInterval == INFINITY) {
+        [self.effect removeAnimationForKey:@"pulse"];
+    }
+}
+
+- (void)setHaloLayerNumber:(NSInteger)haloLayerNumber {
+    _haloLayerNumber = haloLayerNumber;
+    self.instanceCount = haloLayerNumber;
+    self.instanceDelay = (self.animationDuration + self.pulseInterval) / haloLayerNumber;
+}
+
+- (void)setStartInterval:(NSTimeInterval)startInterval {
+    _startInterval = startInterval;
+    self.instanceDelay = startInterval;
+}
+
+- (void)setAnimationDuration:(NSTimeInterval)animationDuration {
+    _animationDuration = animationDuration;
+    
+    self.instanceDelay = (self.animationDuration + self.pulseInterval) / self.haloLayerNumber;
+}
+
+- (void)setRepeatCount:(float)repeatCount {
+    [super setRepeatCount:repeatCount];
+    self.animationGroup.repeatCount = repeatCount;
+}
+
+
+// =============================================================================
+#pragma mark - Private
+
+- (void)_setupDefaults {
+    _shouldResume = YES;
+    _fromValueForRadius = 0.0;
+    _keyTimeForHalfOpacity = 0.2;
+    _animationDuration = 3;
+    _pulseInterval = 0;
+    _useTimingFunction = YES;
+
+    self.repeatCount = INFINITY;
+    self.radius = 60;
+    self.haloLayerNumber = 1;
+    self.startInterval = 1;
+    self.backgroundColor = [[UIColor colorWithRed:0.000 green:0.455 blue:0.756 alpha:0.45] CGColor];
+}
+
+- (void)_setupAnimationGroup {
+    CAAnimationGroup *animationGroup = [CAAnimationGroup animation];
+    animationGroup.duration = self.animationDuration + self.pulseInterval;
+    animationGroup.repeatCount = self.repeatCount;
     if (self.useTimingFunction) {
         CAMediaTimingFunction *defaultCurve = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
-        self.animationGroup.timingFunction = defaultCurve;
+        animationGroup.timingFunction = defaultCurve;
     }
     
     CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale.xy"];
@@ -89,26 +167,36 @@
     
     CAKeyframeAnimation *opacityAnimation = [CAKeyframeAnimation animationWithKeyPath:@"opacity"];
     opacityAnimation.duration = self.animationDuration;
-    opacityAnimation.values = @[@(self.fromValueForAlpha), @0.45, @0];
+    CGFloat fromValueForAlpha = CGColorGetAlpha(self.backgroundColor);
+    opacityAnimation.values = @[@(fromValueForAlpha), @(fromValueForAlpha * 0.5), @0];
     opacityAnimation.keyTimes = @[@0, @(self.keyTimeForHalfOpacity), @1];
-    opacityAnimation.removedOnCompletion = NO;
     
     NSArray *animations = @[scaleAnimation, opacityAnimation];
     
-    self.animationGroup.animations = animations;
+    animationGroup.animations = animations;
+    
+    self.animationGroup = animationGroup;
     self.animationGroup.delegate = self;
+}
+
+- (void)_resume {
+    [self addSublayer:self.effect];
+    [self.prevSuperlayer insertSublayer:self atIndex:self.prevLayerIndex];
+    if (self.prevAnimation) {
+        [self.effect addAnimation:self.prevAnimation forKey:@"pulse"];
+    }
 }
 
 
 // =============================================================================
-#pragma mark - CAAnimation Delegate
+#pragma mark - CAAnimationDelegate
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
-
-	if (flag) {
-        [self removeAllAnimations];
-        [self removeFromSuperlayer];
-	}
+    if ([self.effect.animationKeys count]) {
+        [self.effect removeAllAnimations];
+    }
+    [self.effect removeFromSuperlayer];
+    [self removeFromSuperlayer];
 }
 
 @end

@@ -11,17 +11,17 @@ import AVFoundation
 
 class SpeechViewController: UITableViewController {
     
-    @IBOutlet weak private var qualitySegmentedCtl: UISegmentedControl!
+    @IBOutlet weak fileprivate var qualitySegmentedCtl: UISegmentedControl!
     
-    private let synthesizer = AVSpeechSynthesizer()
-    private var speechVoices = AVSpeechSynthesisVoice.speechVoices()
+    fileprivate let synthesizer = AVSpeechSynthesizer()
+    fileprivate var speechVoices = AVSpeechSynthesisVoice.speechVoices()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let alexVoice = AVSpeechSynthesisVoice(identifier: AVSpeechSynthesisVoiceIdentifierAlex)
         if let alexVoice = alexVoice {
-            speechVoices.insert(alexVoice, atIndex: 0)
+            speechVoices.insert(alexVoice, at: 0)
         } else {
             print("\"AVSpeechSynthesisVoiceIdentifierAlex\" couldn't be instantiated.")
         }
@@ -34,18 +34,18 @@ class SpeechViewController: UITableViewController {
     // =========================================================================
     // MARK: - UITableViewDataSource
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return speechVoices.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         let voice = speechVoices[indexPath.row]
         
         cell.textLabel?.text = voice.name
         
-        let qualityStr = voice.quality == .Enhanced ? "Enhanced" : "Default"
+        let qualityStr = voice.quality == .enhanced ? "Enhanced" : "Default"
         cell.detailTextLabel?.text = "lang:\(voice.language), quality:\(qualityStr)"
         
         return cell
@@ -54,9 +54,9 @@ class SpeechViewController: UITableViewController {
     // =========================================================================
     // MARK: - UITableViewDelegate
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if !synthesizer.speaking {
+        if !synthesizer.isSpeaking {
             
             let voice = speechVoices[indexPath.row]
             
@@ -72,9 +72,9 @@ class SpeechViewController: UITableViewController {
             let utterance = AVSpeechUtterance(string: utteranceStr)
             utterance.voice = voice
             
-            synthesizer.speakUtterance(utterance)
+            synthesizer.speak(utterance)
         }
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

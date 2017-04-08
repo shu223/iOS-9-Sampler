@@ -10,17 +10,17 @@ import UIKit
 
 class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    @IBOutlet weak private var imageView: UIImageView!
-    @IBOutlet weak private var picker: UIPickerView!
-    @IBOutlet weak private var indicator: UIActivityIndicatorView!
+    @IBOutlet weak fileprivate var imageView: UIImageView!
+    @IBOutlet weak fileprivate var picker: UIPickerView!
+    @IBOutlet weak fileprivate var indicator: UIActivityIndicatorView!
     
-    private var items: [String] = []
-    private var orgImage: UIImage!
+    fileprivate var items: [String] = []
+    fileprivate var orgImage: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        imageView.backgroundColor = UIColor.blackColor();
+        imageView.backgroundColor = UIColor.black;
         orgImage = imageView.image
 
         let exceptCategories = [
@@ -29,7 +29,7 @@ class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource,
             kCICategoryReduction,
         ]
         items = Filter.names(9, category: kCICategoryBuiltIn, exceptCategories: exceptCategories)
-        items.insert("Original", atIndex: 0)
+        items.insert("Original", at: 0)
         print("num:\(items.count)\n")
     }
 
@@ -40,22 +40,22 @@ class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource,
     // =========================================================================
     // MARK: - UIPickerViewDataSource
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return items.count
     }
     
     // =========================================================================
     // MARK: - UIPickerViewDelegate
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return items[row]
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if row == 0 {
             imageView.image = orgImage
@@ -64,8 +64,8 @@ class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource,
         
         indicator.startAnimating()
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-
+        DispatchQueue.global(qos: .default).async {
+            
             let inputImage = CIImage(image: self.orgImage)!
             
             // Create CIFilter object
@@ -83,7 +83,7 @@ class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource,
             // Apply filter
             let context = CIContext(options: nil)
             guard let outputImage = filter.outputImage else {
-                dispatch_async(dispatch_get_main_queue()) {
+                DispatchQueue.main.async {
                     self.imageView.image = nil
                     self.indicator.stopAnimating()
                 }
@@ -97,17 +97,17 @@ class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource,
             // some outputImage have infinite extents. e.g. CIDroste
             if extent.isInfinite {
                 let size = self.imageView.frame.size
-                scale = UIScreen.mainScreen().scale
-                extent = CGRectMake(0, 0, size.width * scale, size.height * scale)
+                scale = UIScreen.main.scale
+                extent = CGRect(x: 0, y: 0, width: size.width * scale, height: size.height * scale)
             } else {
                 scale = extent.size.width / self.orgImage.size.width
             }
             
-            let cgImage = context.createCGImage(outputImage, fromRect: extent)
-            let image = UIImage(CGImage: cgImage, scale: scale, orientation: UIImageOrientation.Up)
+            guard let cgImage = context.createCGImage(outputImage, from: extent) else {fatalError()}
+            let image = UIImage(cgImage: cgImage, scale: scale, orientation: UIImageOrientation.up)
             print("extent:\(extent), image:\(image), org:\(self.orgImage), scale:\(scale)\n")
             
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 self.imageView.image = image
                 self.indicator.stopAnimating()
             }

@@ -22,11 +22,11 @@ class SafariViewController: UIViewController, SFSafariViewControllerDelegate {
     // =========================================================================
     // MARK: - SFSafariViewControllerDelegate
     
-    func safariViewController(controller: SFSafariViewController, didCompleteInitialLoad didLoadSuccessfully: Bool) {
+    func safariViewController(_ controller: SFSafariViewController, didCompleteInitialLoad didLoadSuccessfully: Bool) {
         print(#function)
     }
     
-    func safariViewControllerDidFinish(controller: SFSafariViewController) {
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
         print(#function)
     }
     
@@ -35,10 +35,10 @@ class SafariViewController: UIViewController, SFSafariViewControllerDelegate {
     
     @IBAction func safariBtnTapped() {
         
-        let url = NSURL(string: "https://github.com/shu223/")!
-        let safariVC = SFSafariViewController(URL: url)
+        let url = URL(string: "https://github.com/shu223/")!
+        let safariVC = SFSafariViewController(url: url)
         
-        presentViewController(
+        present(
             safariVC,
             animated: true,
             completion: nil)

@@ -24,35 +24,35 @@ extension AudioComponent {
 
 class AudioUnitComponentManagerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak private var tableView: UITableView!
-    private var viewBtn: UIBarButtonItem!
+    @IBOutlet weak fileprivate var tableView: UITableView!
+    fileprivate var viewBtn: UIBarButtonItem!
     
-    private var items = [AVAudioUnitComponent]()
+    fileprivate var items = [AVAudioUnitComponent]()
 
-    private var engine = AudioEngine()
+    fileprivate var engine = AudioEngine()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         viewBtn = UIBarButtonItem(
             title: "ShowAUVC",
-            style: UIBarButtonItemStyle.Plain,
+            style: UIBarButtonItemStyle.plain,
             target: self, action: #selector(AudioUnitComponentManagerViewController.viewBtnTapped(_:)))
-        navigationItem.setRightBarButtonItem(viewBtn, animated: false)
-        viewBtn.enabled = false
+        navigationItem.setRightBarButton(viewBtn, animated: false)
+        viewBtn.isEnabled = false
         
         // extract available effects
-        items = AVAudioUnitComponentManager.sharedAudioUnitComponentManager()
-            .componentsMatchingDescription(AudioComponent.anyEffectDescription())
+        items = AVAudioUnitComponentManager.shared()
+            .components(matching: AudioComponent.anyEffectDescription())
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         engine.start()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         engine.stop()
@@ -65,13 +65,13 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
     // =========================================================================
     // MARK: - UITableViewDataSource
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count + 1
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         if indexPath.row == 0 {
             cell.textLabel!.text = "No Effect"
@@ -89,7 +89,7 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
     // =========================================================================
     // MARK: - UITableViewDelegate
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let auComponent: AVAudioUnitComponent?
 
@@ -102,22 +102,22 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
         
         engine.selectEffectWithComponentDescription(auComponent?.audioComponentDescription) { [unowned self] () -> Void in
             self.engine.requestViewControllerWithCompletionHandler { viewController in
-                self.viewBtn.enabled = viewController != nil ? true : false
+                self.viewBtn.isEnabled = viewController != nil ? true : false
             }
         }
 
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     // =========================================================================
     // MARK: - Actions
     
-    func viewBtnTapped(sender: AnyObject) {
+    func viewBtnTapped(_ sender: AnyObject) {
 
         // close
         if childViewControllers.count > 0 {
             let childViewController = childViewControllers.first!
-            childViewController.willMoveToParentViewController(nil)
+            childViewController.willMove(toParentViewController: nil)
             childViewController.view.removeFromSuperview()
             childViewController.removeFromParentViewController()
             
@@ -128,18 +128,18 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
         // open
         engine.requestViewControllerWithCompletionHandler { [weak self] viewController in
             guard let strongSelf = self else { return }
-            guard let viewController = viewController, view = viewController.view else { return }
+            guard let viewController = viewController, let view = viewController.view else { return }
 
             strongSelf.addChildViewController(viewController)
             let parentRect = strongSelf.view.bounds
-            view.frame = CGRectMake(
-                0,
-                parentRect.size.height / 2,
-                parentRect.size.width,
-                parentRect.size.height / 2)
+            view.frame = CGRect(
+                x: 0,
+                y: parentRect.size.height / 2,
+                width: parentRect.size.width,
+                height: parentRect.size.height / 2)
 
             strongSelf.view.addSubview(view)
-            viewController.didMoveToParentViewController(self)
+            viewController.didMove(toParentViewController: self)
             
             strongSelf.viewBtn.title = "CloseAUVC"
         }
