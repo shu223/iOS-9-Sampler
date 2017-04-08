@@ -10,6 +10,10 @@ import UIKit
 
 class TextDetectViewController: UIViewController {
     
+    private let detector = CIDetector(ofType: CIDetectorTypeText,
+                                      context: nil,
+                                      options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])!
+    
     @IBOutlet fileprivate var imageView1: UIImageView!
     @IBOutlet fileprivate var imageView2: UIImageView!
     
@@ -28,11 +32,6 @@ class TextDetectViewController: UIViewController {
     fileprivate func detect(_ imageView: UIImageView) {
         guard let cgimage = imageView.image?.cgImage else {fatalError()}
         let image = CIImage(cgImage: cgimage)
-
-        let detector = CIDetector(
-            ofType: CIDetectorTypeText,
-            context: nil,
-            options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])
 
         let options = [CIDetectorReturnSubFeatures: true]
         guard let features = detector.features(in: image, options: options) as? [CITextFeature] else {fatalError()}
