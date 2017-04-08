@@ -64,8 +64,8 @@ class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource,
         
         indicator.startAnimating()
         
-        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
-
+        DispatchQueue.global(qos: .default).async {
+            
             let inputImage = CIImage(image: self.orgImage)!
             
             // Create CIFilter object
@@ -103,7 +103,7 @@ class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource,
                 scale = extent.size.width / self.orgImage.size.width
             }
             
-            let cgImage = context.createCGImage(outputImage, from: extent)
+            guard let cgImage = context.createCGImage(outputImage, from: extent) else {fatalError()}
             let image = UIImage(cgImage: cgImage, scale: scale, orientation: UIImageOrientation.up)
             print("extent:\(extent), image:\(image), org:\(self.orgImage), scale:\(scale)\n")
             
