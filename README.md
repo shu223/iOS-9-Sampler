@@ -12,14 +12,14 @@
 Code examples for the new features of iOS 9.
 
 
-##How to build
+## How to build
 
 JUST BUILD with **Xcode 7**.
 
 
-##Contents
+## Contents
 
-###Map Customizations
+### Map Customizations
 
 **Flyover** can be selected with new map types, and **Traffic**, Scale and Compass can be shown.
 
@@ -28,14 +28,14 @@ JUST BUILD with **Xcode 7**.
 ![](ResourcesForREADME/map.gif)
 
 
-###Text Detector
+### Text Detector
 
 Text detection using new detector type "CIDetectorTypeText".
 
 <img src="ResourcesForREADME/textdetector.jpg" width="200">
 
 
-###New Image Filters
+### New Image Filters
 
 New filters of CIFilter which can be used for Still Images.
 
@@ -44,107 +44,107 @@ New filters of CIFilter which can be used for Still Images.
 **NOTE:** 29 filters are supported in this example, however **"CISpotLight" don't work correctly** with current code. I would much appreciated your pull request!
 
 
-###Audio Unit Component Manager
+### Audio Unit Component Manager
 
 Retrieve audio unit components using AudioUnitComponentManager and apply them to a sound using some new methods. If there are some Audio Unit Extensions, they will be also shown in the components list.
 
 <img src="ResourcesForREADME/aucomponents.jpg" width="200">
 
 
-###Speech Voices
+### Speech Voices
 
 Example for new properties which are added to AVSpeechSynthesisVoice such as language, name, quality...
 
 <img src="ResourcesForREADME/speech.jpg" width="200">
 
 
-###CASpringAnimation
+### CASpringAnimation
 
 Animation example using CASpringAnimation.
 
 ![](ResourcesForREADME/spring.gif)
 
-###UIStackView
+### UIStackView
 
 Auto Layout example using UIStackView.
 
 ![](ResourcesForREADME/uistackview.gif)
 
-###Selfies & Screenshots
+### Selfies & Screenshots
 
 Fetch photos filtered with new subtypes `PHAssetCollectionSubtype.SmartAlbumSelfPortraits` and `PHAssetMediaSubtype.PhotoScreenshot` which are added to Photos framework.
 
 <img src="ResourcesForREADME/screenshots.jpg" width="200">
 
 
-###String Transform
+### String Transform
 
 **String transliteration** examples using new APIs of Foundation framework.
 
 <img src="ResourcesForREADME/stringtransform.jpg" width="200">
 
 
-###Core Image Transitions
+### Core Image Transitions
 
 New transition effects which are added to `CITransitionCategory`.
 
 ![](ResourcesForREADME/ripple.gif)
 
-###Search APIs
+### Search APIs
 
 Example for Search APIs using NSUserActivity and **Core Spotlight**.
 
 <img src="ResourcesForREADME/searchapis.jpg" width="200">
 
 
-###Content Blockers
+### Content Blockers
 
 Example for Content Blocker Extensions.
 
 <img src="ResourcesForREADME/blocker.jpg" width="200">
 
 
-###SFSafariViewController
+### SFSafariViewController
 
 Open web pages with SFSafariViewController.
 
 <img src="ResourcesForREADME/safari.jpg" width="200">
 
 
-###Attributes of New Filters
+### Attributes of New Filters
 
 Extract new filters of CIFilter using `kCIAttributeFilterAvailable_iOS`. There are **41 new filters**.
 
 <img src="ResourcesForREADME/filterattributes.jpg" width="405">
 
 
-###Low Power Mode
+### Low Power Mode
 
 Detect changes of "Low Power Mode" setting.
 
 
-###New Fonts
+### New Fonts
 
 Gallery of **31 new fonts**.
 
 <img src="ResourcesForREADME/fonts.jpg" width="200">
 
 
-###Contacts (Created by [manhattan918](https://github.com/manhattan918))
+### Contacts (Created by [manhattan918](https://github.com/manhattan918))
 
 Contacts framework sample.
 
 <img src="ResourcesForREADME/contacts.jpg" width="200">
 
 
-###ReplayKit (Created by [manhattan918](https://github.com/manhattan918))
+### ReplayKit (Created by [manhattan918](https://github.com/manhattan918))
 
 ReplayKit framework sample.
 
 <img src="ResourcesForREADME/replaykit.jpg" width="200">
 
 
-###Quick Actions (3D Touch)  
+### Quick Actions (3D Touch)  
 
 Press the Icon on Home screen deeply, so you can access to the shortcut menu.
 
@@ -154,7 +154,7 @@ Please see `UIApplicationShortcutItems` key in Info.plist and `application:perfo
 
 **NOTE:** Your device have to support 3D Touch.
 
-###Force Touch (3D Touch)
+### Force Touch (3D Touch)
 
 Visualize the forces of touches using new properties of UITouch `force` and `maximumPossibleForce`.
 
@@ -162,14 +162,14 @@ Visualize the forces of touches using new properties of UITouch `force` and `max
 
 **NOTE:** Your device have to support 3D Touch.
 
-###Live Photos
+### Live Photos
 
 Show a Live Photo using `PHLivePhoto` and `PHLivePhotoView` which are added in iOS 9.1.
 
 ![](ResourcesForREADME/livephoto.gif)
 
 
-##watchOS-2-Sampler
+## watchOS-2-Sampler
 
 You can check the **examples for watchOS 2** features on [watchOS-2-Sampler](https://github.com/shu223/watchOS-2-Sampler)!!
 
@@ -186,7 +186,7 @@ You can check the **examples for watchOS 2** features on [watchOS-2-Sampler](htt
 - https://github.com/shu223/watchOS-2-Sampler
 
 
-##Author
+## Author
 
 **Shuichi Tsutsumi**
 
@@ -198,6 +198,6 @@ iOS freelancer in Japan. Welcome works from abroad!
 - CONTACTS: [Twitter](https://twitter.com/shu223) / [Facebook](https://www.facebook.com/shuichi.tsutsumi)
 
 
-##Special Thanks
+## Special Thanks
 
 The icon is designed by [Okazu](https://www.facebook.com/pashimo)
