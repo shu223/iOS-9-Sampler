@@ -74,7 +74,7 @@ class AudioEngine {
         engine.stop()        
     }
 
-    func selectEffectWithComponentDescription(_ componentDescription: AudioComponentDescription?, completionHandler: @escaping ((Void) -> Void) = {}) {
+    func selectEffectWithComponentDescription(_ componentDescription: AudioComponentDescription?, completionHandler: @escaping (() -> Void) = {}) {
         
         // Internal function to resume playing and call the completion handler.
         func done() {
