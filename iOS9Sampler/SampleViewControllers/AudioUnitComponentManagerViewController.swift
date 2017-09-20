@@ -112,7 +112,7 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
     // =========================================================================
     // MARK: - Actions
     
-    func viewBtnTapped(_ sender: AnyObject) {
+    @objc func viewBtnTapped(_ sender: AnyObject) {
 
         // close
         if childViewControllers.count > 0 {
