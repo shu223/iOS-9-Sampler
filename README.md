@@ -193,7 +193,7 @@ You can check the **examples for watchOS 2** features on [watchOS-2-Sampler](htt
 iOS freelancer in Japan. Welcome works from abroad!
 
 - PAST WORKS:  [My Profile Summary](https://medium.com/@shu223/my-profile-summary-f14bfc1e7099#.vdh0i7clr)
-- PROFILES: [LinkedIn](https://www.linkedin.com/profile/view?id=214896557)
+- PROFILES: [LinkedIn](https://www.linkedin.com/in/shuichi-tsutsumi-525b755b/)
 - BLOGS: [English](https://medium.com/@shu223/) / [Japanese](http://d.hatena.ne.jp/shu223/)
 - CONTACTS: [Twitter](https://twitter.com/shu223) / [Facebook](https://www.facebook.com/shuichi.tsutsumi)
 
