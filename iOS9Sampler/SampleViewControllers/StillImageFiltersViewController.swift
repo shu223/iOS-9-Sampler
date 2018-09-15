@@ -105,7 +105,7 @@ class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource,
             
             guard let cgImage = context.createCGImage(outputImage, from: extent) else {fatalError()}
             let image = UIImage(cgImage: cgImage, scale: scale, orientation: UIImageOrientation.up)
-            print("extent:\(extent), image:\(image), org:\(self.orgImage), scale:\(scale)\n")
+            print("extent:\(extent), image:\(image), org:\(String(describing: self.orgImage)), scale:\(String(describing: scale))\n")
             
             DispatchQueue.main.async {
                 self.imageView.image = image
