@@ -16,11 +16,13 @@ class ContactsViewController: UIViewController, UISearchBarDelegate, UITableView
     fileprivate var contacts = [CNContact]()
     fileprivate var authStatus: CNAuthorizationStatus = .denied {
         didSet { // switch enabled search bar, depending contacts permission
-            searchBar.isUserInteractionEnabled = authStatus == .authorized
-
-            if authStatus == .authorized { // all search
-                contacts = fetchContacts("")
-                tableView.reloadData()
+            DispatchQueue.main.async {
+                self.searchBar.isUserInteractionEnabled = self.authStatus == .authorized
+                
+                if self.authStatus == .authorized { // all search
+                    self.contacts = self.fetchContacts("")
+                    self.tableView.reloadData()
+                }
             }
         }
     }

@@ -61,7 +61,8 @@ class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource,
             imageView.image = orgImage
             return
         }
-        
+        let size = self.imageView.frame.size
+
         indicator.startAnimating()
         
         DispatchQueue.global(qos: .default).async {
@@ -96,7 +97,6 @@ class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource,
             
             // some outputImage have infinite extents. e.g. CIDroste
             if extent.isInfinite {
-                let size = self.imageView.frame.size
                 scale = UIScreen.main.scale
                 extent = CGRect(x: 0, y: 0, width: size.width * scale, height: size.height * scale)
             } else {
