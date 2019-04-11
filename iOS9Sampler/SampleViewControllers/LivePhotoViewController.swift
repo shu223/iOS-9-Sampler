@@ -18,7 +18,7 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        livePhotoView.contentMode = UIViewContentMode.scaleAspectFit
+        livePhotoView.contentMode = UIView.ContentMode.scaleAspectFit
         livePhotoView.delegate = self        
     }
 
@@ -29,23 +29,26 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
     // =========================================================================
     // MARK: - UIImagePickerControllerDelegate
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
 
         dismiss(animated: true, completion: nil)
         
         print("\(info)")
 
-        if let livePhoto = info[UIImagePickerControllerLivePhoto] as? PHLivePhoto {
+        if let livePhoto = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.livePhoto)] as? PHLivePhoto {
             livePhotoView.livePhoto = livePhoto
             livePhotoView.startPlayback(with: .full)
         } else {
             let alert = UIAlertController(
                 title: "Failed",
                 message: "This is not a Live Photo.",
-                preferredStyle: UIAlertControllerStyle.alert)
+                preferredStyle: UIAlertController.Style.alert)
             let okAction = UIAlertAction(
                 title: "OK",
-                style: UIAlertActionStyle.cancel,
+                style: UIAlertAction.Style.cancel,
                 handler: nil)
             alert.addAction(okAction)
             present(alert, animated: true, completion: nil)
@@ -72,3 +75,13 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
     }
 }
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
+}

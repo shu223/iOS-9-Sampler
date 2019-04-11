@@ -26,7 +26,7 @@ class StackViewViewController: UIViewController {
     fileprivate func imageViewWithImage(_ image: UIImage) -> UIImageView {
         let imageView = UIImageView(image: image)
         imageView.backgroundColor = UIColor(white: 0.8, alpha: 1.0)
-        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        imageView.contentMode = UIView.ContentMode.scaleAspectFit
         return imageView
     }
     

@@ -30,10 +30,10 @@ class LowPowerModeViewController: UIViewController {
                     let alert = UIAlertController(
                         title: "Power State has been changed.",
                         message: "Current \"Low Power Mode\" setting: \(processInfo.isLowPowerModeEnabled)",
-                        preferredStyle: UIAlertControllerStyle.alert)
+                        preferredStyle: UIAlertController.Style.alert)
                     let okAction = UIAlertAction(
                         title: "OK",
-                        style: UIAlertActionStyle.cancel,
+                        style: UIAlertAction.Style.cancel,
                         handler: nil)
                     alert.addAction(okAction)
                     self.present(alert, animated: true, completion: nil)

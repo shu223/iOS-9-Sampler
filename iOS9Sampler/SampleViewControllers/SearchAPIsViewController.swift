@@ -33,7 +33,7 @@ class SearchAPIsViewController: UIViewController {
         attributeSet.contentDescription = "iOS-9-Sampler is a code example collection for new features of iOS 9."
         attributeSet.keywords = ["dog", "cat", "bird", "fish"]
         let image = UIImage(named: "m7")!
-        let data = UIImagePNGRepresentation(image)
+        let data = image.pngData()
         attributeSet.thumbnailData = data
         
         let searchableItem = CSSearchableItem(

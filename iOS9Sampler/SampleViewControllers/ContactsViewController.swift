@@ -81,7 +81,7 @@ class ContactsViewController: UIViewController, UISearchBarDelegate, UITableView
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteActionHandler = { (action: UITableViewRowAction, index: IndexPath) in
-            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { [unowned self] (action: UIAlertAction) in
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { [unowned self] (action: UIAlertAction) in
                 // set the data to be deleted
                 let request = CNSaveRequest()
                 let contact = self.contacts[index.row].mutableCopy() as! CNMutableContact
@@ -104,7 +104,7 @@ class ContactsViewController: UIViewController, UISearchBarDelegate, UITableView
                 }
             })
 
-            let cancelAction = UIAlertAction(title: "CANCEL", style: UIAlertActionStyle.default, handler: { [unowned self] (action: UIAlertAction) in
+            let cancelAction = UIAlertAction(title: "CANCEL", style: UIAlertAction.Style.default, handler: { [unowned self] (action: UIAlertAction) in
                 self.tableView.isEditing = false
             })
 
@@ -148,7 +148,7 @@ class ContactsViewController: UIViewController, UISearchBarDelegate, UITableView
 
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             let settingsAction = UIAlertAction(title: "Settings", style: .default, handler: { (action: UIAlertAction) in
-                let url = URL(string: UIApplicationOpenSettingsURLString)
+                let url = URL(string: UIApplication.openSettingsURLString)
                 UIApplication.shared.openURL(url!)
             })
             showAlert(

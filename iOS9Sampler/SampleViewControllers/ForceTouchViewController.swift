@@ -27,10 +27,10 @@ class ForceTouchViewController: UIViewController {
             let alert = UIAlertController(
                 title: "Unavailable",
                 message: "Force touch is not available on this device.",
-                preferredStyle: UIAlertControllerStyle.alert)
+                preferredStyle: UIAlertController.Style.alert)
             let okAction = UIAlertAction(
                 title: "OK",
-                style: UIAlertActionStyle.cancel,
+                style: UIAlertAction.Style.cancel,
                 handler: { [unowned self] (action) -> Void in
                     self.navigationController?.popViewController(animated: true)
             })

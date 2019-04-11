@@ -35,7 +35,7 @@ class SpringViewController: UIViewController, CAAnimationDelegate {
      
         animation.initialVelocity = -5.0
         animation.isRemovedOnCompletion = false
-        animation.fillMode = kCAFillModeForwards
+        animation.fillMode = CAMediaTimingFillMode.forwards
         animation.delegate = self
 
         // update labels

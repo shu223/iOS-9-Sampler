@@ -19,9 +19,9 @@ class MapCustomizationsViewController: UIViewController, MKMapViewDelegate {
 
         mapView.delegate = self
 
-        let berlinRegion = MKCoordinateRegionMake(
-            CLLocationCoordinate2DMake(52.5325233701713, 13.4107786547116),
-            MKCoordinateSpanMake(0.176615416273734, 0.153035815736018))
+        let berlinRegion = MKCoordinateRegion.init(
+            center: CLLocationCoordinate2DMake(52.5325233701713, 13.4107786547116),
+            span: MKCoordinateSpan.init(latitudeDelta: 0.176615416273734, longitudeDelta: 0.153035815736018))
         mapView.setRegion(berlinRegion, animated: true)
 
         setupMapCamera()
@@ -42,11 +42,11 @@ class MapCustomizationsViewController: UIViewController, MKMapViewDelegate {
     fileprivate func updateCompassBtn() {
         // shown
         if mapView.showsCompass {
-            compassBtn.setTitle("Hide Compass", for: UIControlState())
+            compassBtn.setTitle("Hide Compass", for: UIControl.State())
         }
         // hidden
         else {
-            compassBtn.setTitle("Show Compass", for: UIControlState())
+            compassBtn.setTitle("Show Compass", for: UIControl.State())
         }
     }
     
@@ -65,9 +65,9 @@ class MapCustomizationsViewController: UIViewController, MKMapViewDelegate {
         mapView.showsTraffic = !mapView.showsTraffic
 
         if mapView.showsTraffic {
-            sender.setTitle("Hide Traffic", for: UIControlState())
+            sender.setTitle("Hide Traffic", for: UIControl.State())
         } else {
-            sender.setTitle("Show Traffic", for: UIControlState())
+            sender.setTitle("Show Traffic", for: UIControl.State())
         }
     }
     
@@ -76,9 +76,9 @@ class MapCustomizationsViewController: UIViewController, MKMapViewDelegate {
         mapView.showsScale = !mapView.showsScale
 
         if mapView.showsScale {
-            sender.setTitle("Hide Scale", for: UIControlState())
+            sender.setTitle("Hide Scale", for: UIControl.State())
         } else {
-            sender.setTitle("Show Scale", for: UIControlState())
+            sender.setTitle("Show Scale", for: UIControl.State())
         }
     }
 
@@ -92,9 +92,9 @@ class MapCustomizationsViewController: UIViewController, MKMapViewDelegate {
     @IBAction func flyoverBtnTapped(_ sender: UIButton) {
         
         if mapView.showsCompass {
-            sender.setTitle("Hide Compass", for: UIControlState())
+            sender.setTitle("Hide Compass", for: UIControl.State())
         } else {
-            sender.setTitle("Show Compass", for: UIControlState())
+            sender.setTitle("Show Compass", for: UIControl.State())
         }
     }
     

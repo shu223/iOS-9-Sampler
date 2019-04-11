@@ -36,7 +36,7 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
 
         viewBtn = UIBarButtonItem(
             title: "ShowAUVC",
-            style: UIBarButtonItemStyle.plain,
+            style: UIBarButtonItem.Style.plain,
             target: self, action: #selector(AudioUnitComponentManagerViewController.viewBtnTapped(_:)))
         navigationItem.setRightBarButton(viewBtn, animated: false)
         viewBtn.isEnabled = false
@@ -115,11 +115,11 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
     @objc func viewBtnTapped(_ sender: AnyObject) {
 
         // close
-        if childViewControllers.count > 0 {
-            let childViewController = childViewControllers.first!
-            childViewController.willMove(toParentViewController: nil)
+        if children.count > 0 {
+            let childViewController = children.first!
+            childViewController.willMove(toParent: nil)
             childViewController.view.removeFromSuperview()
-            childViewController.removeFromParentViewController()
+            childViewController.removeFromParent()
             
             viewBtn.title = "ShowAUVC"
             return
@@ -130,7 +130,7 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
             guard let strongSelf = self else { return }
             guard let viewController = viewController, let view = viewController.view else { return }
 
-            strongSelf.addChildViewController(viewController)
+            strongSelf.addChild(viewController)
             let parentRect = strongSelf.view.bounds
             view.frame = CGRect(
                 x: 0,
@@ -139,7 +139,7 @@ class AudioUnitComponentManagerViewController: UIViewController, UITableViewData
                 height: parentRect.size.height / 2)
 
             strongSelf.view.addSubview(view)
-            viewController.didMove(toParentViewController: self)
+            viewController.didMove(toParent: self)
             
             strongSelf.viewBtn.title = "CloseAUVC"
         }

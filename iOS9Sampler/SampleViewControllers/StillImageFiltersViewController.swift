@@ -70,7 +70,7 @@ class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource,
             
             // Create CIFilter object
             let params = [kCIInputImageKey: inputImage]
-            guard let filter = CIFilter(name: self.items[row], withInputParameters: params) else {fatalError()}
+            guard let filter = CIFilter(name: self.items[row], parameters: params) else {fatalError()}
             filter.setDefaults()
             
             let attributes = filter.attributes
@@ -104,7 +104,7 @@ class StillImageFiltersViewController: UIViewController, UIPickerViewDataSource,
             }
             
             guard let cgImage = context.createCGImage(outputImage, from: extent) else {fatalError()}
-            let image = UIImage(cgImage: cgImage, scale: scale, orientation: UIImageOrientation.up)
+            let image = UIImage(cgImage: cgImage, scale: scale, orientation: UIImage.Orientation.up)
             print("extent:\(extent), image:\(image), org:\(String(describing: self.orgImage)), scale:\(String(describing: scale))\n")
             
             DispatchQueue.main.async {

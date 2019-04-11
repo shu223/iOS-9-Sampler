@@ -74,10 +74,10 @@ class PhotosViewController: UICollectionViewController {
             let alert = UIAlertController(
                 title: "NO DATA",
                 message: "Couldn't fetch any photos for the selected subtype.",
-                preferredStyle: UIAlertControllerStyle.alert)
+                preferredStyle: UIAlertController.Style.alert)
             let okAction = UIAlertAction(
                 title: "OK",
-                style: UIAlertActionStyle.cancel,
+                style: UIAlertAction.Style.cancel,
                 handler: nil)
             alert.addAction(okAction)
             present(alert, animated: true, completion: nil)
