@@ -11,6 +11,7 @@
 		8A0714B31BA46CF300A1CC22 /* SearchAPIsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0714B21BA46CF300A1CC22 /* SearchAPIsViewController.swift */; };
 		8A0714B51BA46D0500A1CC22 /* SearchAPIs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0714B41BA46D0500A1CC22 /* SearchAPIs.storyboard */; };
 		8A2793801D0CDD12007D3DE0 /* SampleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A27937F1D0CDD12007D3DE0 /* SampleDataSource.swift */; };
+		8A29A3C9225F038800B50E76 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A29A3C8225F038800B50E76 /* PhotosUI.framework */; };
 		8A2AC86C1BB91A3800C05128 /* ForceTouch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A2AC86A1BB91A3800C05128 /* ForceTouch.storyboard */; };
 		8A2AC86D1BB91A3800C05128 /* ForceTouchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2AC86B1BB91A3800C05128 /* ForceTouchViewController.swift */; };
 		8A2AC8741BB91ACD00C05128 /* QuickActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2AC8731BB91ACD00C05128 /* QuickActionsViewController.swift */; };
@@ -128,6 +129,7 @@
 		8A0714B21BA46CF300A1CC22 /* SearchAPIsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAPIsViewController.swift; sourceTree = "<group>"; };
 		8A0714B41BA46D0500A1CC22 /* SearchAPIs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchAPIs.storyboard; sourceTree = "<group>"; };
 		8A27937F1D0CDD12007D3DE0 /* SampleDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleDataSource.swift; sourceTree = "<group>"; };
+		8A29A3C8225F038800B50E76 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
 		8A2AC86A1BB91A3800C05128 /* ForceTouch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ForceTouch.storyboard; sourceTree = "<group>"; };
 		8A2AC86B1BB91A3800C05128 /* ForceTouchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceTouchViewController.swift; sourceTree = "<group>"; };
 		8A2AC8731BB91ACD00C05128 /* QuickActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickActionsViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A29A3C9225F038800B50E76 /* PhotosUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +267,14 @@
 				8AF73FAB1BA051EC00E3783E /* Photos.storyboard */,
 			);
 			name = Photos;
+			sourceTree = "<group>";
+		};
+		8A29A3C7225F038800B50E76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A29A3C8225F038800B50E76 /* PhotosUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8A2AC8721BB91A6F00C05128 /* ForceTouch */ = {
@@ -552,6 +563,7 @@
 				8AD5D7751B295E8C001924F0 /* iOS9SamplerUITests */,
 				8A2AC8781BB91E2200C05128 /* libs */,
 				8AD5D7541B295E8C001924F0 /* Products */,
+				8A29A3C7225F038800B50E76 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

@@ -13,13 +13,13 @@ import MobileCoreServices
 
 class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PHLivePhotoViewDelegate {
     
-    @IBOutlet weak fileprivate var livePhotoView: PHLivePhotoView!
+    @IBOutlet weak private var livePhotoView: PHLivePhotoView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         livePhotoView.contentMode = UIView.ContentMode.scaleAspectFit
-        livePhotoView.delegate = self        
+        livePhotoView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
